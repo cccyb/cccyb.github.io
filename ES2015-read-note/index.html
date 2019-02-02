@@ -84,7 +84,7 @@
 
 
 <div class="post-header-thumb">
-	<div class="post-header-thumb-op" style="background-image:url(/images/thumbs/13.jpg);"></div>
+	<div class="post-header-thumb-op" style="background-image:url(https://ws1.sinaimg.cn/large/c542ee77ly1fzs83ifsetj20jg0d015w.jpg);"></div>
 	<div class="post-header-thumb-cover">
 		<div class="post-header-thumb-container">
 			<div class="post-header-thumb-title">
@@ -134,7 +134,7 @@
 <li>箭头函数（Arrow Function）</li>
 <li>模板字符串（Template String）</li>
 </ul>
-<h2 id="一、let、const和块级作用域"><a href="#一、let、const和块级作用域" class="headerlink" title="一、let、const和块级作用域"></a>一、let、const和块级作用域</h2><h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p><strong>作用域（Scope）</strong>是<code>ECMAScript</code>编程中非常重要的一个概念，虽然它在通报<code>ECMAScript</code>编程中并不能充分引起初学者的注意，但在异步编程中，良好的作用域控制技巧则成为了<code>ECMAScript</code>开发者的必备技能。</p>
+<h2 id="let、const和块级作用域"><a href="#let、const和块级作用域" class="headerlink" title="let、const和块级作用域"></a>let、const和块级作用域</h2><h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p><strong>作用域（Scope）</strong>是<code>ECMAScript</code>编程中非常重要的一个概念，虽然它在通报<code>ECMAScript</code>编程中并不能充分引起初学者的注意，但在异步编程中，良好的作用域控制技巧则成为了<code>ECMAScript</code>开发者的必备技能。</p>
 <p>在<code>ES2015</code>之前的<code>ECMAScript</code>标准中，原本只有<strong>全局作用域</strong>和<strong>函数作用域</strong>。</p>
 <h3 id="let定义变量"><a href="#let定义变量" class="headerlink" title="let定义变量"></a>let定义变量</h3><p>在<code>ES2015</code>中，<code>let</code>可以说是<code>var</code>的进行版本，<code>var</code>在绝大部分情况下可以被<code>let</code>替代。<code>let</code>与<code>var</code>的异同点大致如下表：</p>
 <table>
@@ -154,21 +154,22 @@
 <tr>
 <td>可被释放</td>
 <td>✅</td>
-<td></td>
+<td>❌</td>
 </tr>
 <tr>
 <td>可被提示（Hoist）</td>
-<td></td>
+<td>❌</td>
 <td>✅</td>
 </tr>
 <tr>
 <td>重复定义检查</td>
 <td>✅</td>
-<td></td>
+<td>❌</td>
 </tr>
 <tr>
 <td>可被用于块级作用域</td>
 <td>✅</td>
+<td>❌</td>
 </tr>
 </tbody>
 </table>
@@ -239,7 +240,7 @@ foo = 1; // Assignment
 <li>只有在值容器明确地被确定将会被改变时才使用<code>let</code>来定义（变量）。</li>
 <li>不再使用<code>var</code>。</li>
 </ul>
-<h2 id="二、箭头函数（Arrow-Function）"><a href="#二、箭头函数（Arrow-Function）" class="headerlink" title="二、箭头函数（Arrow Function）"></a>二、箭头函数（Arrow Function）</h2><p>除了<code>let</code>和<code>const</code>外，箭头函数是使用频率最高的新特性了。</p>
+<h2 id="箭头函数（Arrow-Function）"><a href="#箭头函数（Arrow-Function）" class="headerlink" title="箭头函数（Arrow Function）"></a>箭头函数（Arrow Function）</h2><p>除了<code>let</code>和<code>const</code>外，箭头函数是使用频率最高的新特性了。</p>
 <h3 id="使用语法"><a href="#使用语法" class="headerlink" title="使用语法"></a>使用语法</h3><ol>
 <li>单一参数的单行箭头函数</li>
 </ol>
@@ -323,7 +324,7 @@ const ids = [ 1, 2, 3 ];
 const users = ids.map(id =&gt; ({ id: id}));
 //=&gt; Correct: [ { id: 1 }, { id: 2 }, { id: 3 } ]
 </code></pre>
-<h2 id="三、模板字符串"><a href="#三、模板字符串" class="headerlink" title="三、模板字符串"></a>三、模板字符串</h2><h3 id="使用语法-1"><a href="#使用语法-1" class="headerlink" title="使用语法"></a>使用语法</h3><p>我们使用普通字符串时会用单引号或双引号阿里包裹字符串的内容。而<code>ES2015</code>的模板字符串则需要使用<strong>反勾号（backtick，`）</strong>。</p>
+<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><h3 id="使用语法-1"><a href="#使用语法-1" class="headerlink" title="使用语法"></a>使用语法</h3><p>我们使用普通字符串时会用单引号或双引号阿里包裹字符串的内容。而<code>ES2015</code>的模板字符串则需要使用<strong>反勾号（backtick，`）</strong>。</p>
 <pre><code class="javascript">// Systax: `string`
 const str = `something`
 </code></pre>
@@ -413,7 +414,7 @@ const str2 = `Here is the outter string. \`This is a string in another string\``
 </code></pre>
 
 		<p class="post-info">
-			本文由 <a href="https://chenyubo.me">陈钰博</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: Feb 01, 2019 10:14 pm
+			本文由 <a href="https://chenyubo.me">陈钰博</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: Feb 02, 2019 06:07 pm
 		</p>
 	</div>
 </article>

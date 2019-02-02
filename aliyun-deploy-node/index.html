@@ -84,7 +84,7 @@
 
 
 <div class="post-header-thumb">
-	<div class="post-header-thumb-op" style="background-image:url(/images/thumbs/16.jpg);"></div>
+	<div class="post-header-thumb-op" style="background-image:url(https://ws1.sinaimg.cn/large/c542ee77ly1fzs832il5hj20jg0cs10v.jpg);"></div>
 	<div class="post-header-thumb-cover">
 		<div class="post-header-thumb-container">
 			<div class="post-header-thumb-title">
@@ -127,53 +127,38 @@
             
         </p>
 		<p>最近找了个网易云的API项目，由于是<code>Node</code>项目，便计划着部署到服务器上，方便访问，顺便学一学<code>Node</code>项目的部署。</p>
-<h2 id="1、在服务器上安装Node"><a href="#1、在服务器上安装Node" class="headerlink" title="1、在服务器上安装Node"></a>1、在服务器上安装Node</h2><p>先在终端使用<code>ssh username@ip</code>命令远程连接服务器。</p>
-<ol>
-<li><p>下载源码，你需要在<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a>下载最新的<code>Nodejs</code>版本，本文以现在的最新的<code>v6.10.3</code>为例:</p>
+<h2 id="在服务器上安装Node"><a href="#在服务器上安装Node" class="headerlink" title="在服务器上安装Node"></a>在服务器上安装Node</h2><p>先在终端使用<code>ssh username@ip</code>命令远程连接服务器。</p>
+<h3 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h3><p>你需要在<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a>下载最新的<code>Nodejs</code>版本，本文以现在的最新的<code>v6.10.3</code>为例:</p>
 <pre><code class="bash">cd /usr/local/src/
 wget http://nodejs.org/dist/v6.10.3/node-v6.10.3.tar.gz
 </code></pre>
-</li>
-</ol>
 <p>若直接下载后续解压出现问题，可以直接在<code>Nodejs</code>官网下载编译好的<code>Linux</code>二进制包，然后上传到服务器<code>/usr/local/src/</code>目录下。</p>
-<ol start="2">
-<li>解压源码</li>
-</ol>
-<pre><code>cd /usr/local/src/
+<h3 id="解压源码"><a href="#解压源码" class="headerlink" title="解压源码"></a>解压源码</h3><pre><code>cd /usr/local/src/
 tar zxvf node-v6.10.3.tar.gz
-</code></pre><ol start="3">
-<li>编译安装</li>
-</ol>
-<pre><code>cd node-v6.10.3
+</code></pre><h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><pre><code>cd node-v6.10.3
 ./configure --prefix=/usr/local/node/6.10.3
 make
 make install
 </code></pre><p>这里<code>make</code>过程可能比较久，需要耐心等待。</p>
-<ol start="4">
-<li>配置<code>NODE_HOME</code>，进入<code>profile</code>编辑环境变量</li>
-</ol>
-<pre><code>vim /etc/profile
+<h3 id="配置NODE-HOME，进入profile编辑环境变量"><a href="#配置NODE-HOME，进入profile编辑环境变量" class="headerlink" title="配置NODE_HOME，进入profile编辑环境变量"></a>配置<code>NODE_HOME</code>，进入<code>profile</code>编辑环境变量</h3><pre><code>vim /etc/profile
 </code></pre><p>设置 <code>Node.js</code> 环境变量，在 <code>export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL</code> 一行的上面添加如下内容:</p>
 <pre><code>#set for nodejsexport NODE_HOME=/usr/local/node/6.10.3export PATH=$NODE_HOME/bin:$PATH 
 </code></pre><p><code>:wq</code>保存并退出，编译 <code>/etc/profile</code> 使配置生效</p>
 <pre><code class="bash">source /etc/profile 
 </code></pre>
-<ol start="5">
-<li>验证是否安装配置成功</li>
-</ol>
-<pre><code class="bash">node -v
+<h3 id="验证是否安装配置成功"><a href="#验证是否安装配置成功" class="headerlink" title="验证是否安装配置成功"></a>验证是否安装配置成功</h3><pre><code class="bash">node -v
 </code></pre>
 <p>输出 <code>v6.10.3</code> 表示配置成功<br>npm模块安装路径</p>
 <pre><code>/usr/local/node/6.10.3/lib/node_modules/ 
-</code></pre><h2 id="2、传输项目"><a href="#2、传输项目" class="headerlink" title="2、传输项目"></a>2、传输项目</h2><p>将需要部署的项目通过可视化工具或者命令行传输到服务器上，具体方法见上一篇博客<a href="http://www.chenyubo.me/2017/05/10/deploy-node-project/" target="_blank" rel="noopener">阿里云部署项目笔记之Vue篇</a></p>
-<h2 id="3、安装pm2"><a href="#3、安装pm2" class="headerlink" title="3、安装pm2"></a>3、安装pm2</h2><p>执行命令安装<code>pm2</code>来守护进程：</p>
+</code></pre><h2 id="传输项目"><a href="#传输项目" class="headerlink" title="传输项目"></a>传输项目</h2><p>将需要部署的项目通过可视化工具或者命令行传输到服务器上，具体方法见上一篇博客<a href="http://www.chenyubo.me/2017/05/10/deploy-node-project/" target="_blank" rel="noopener">阿里云部署项目笔记之Vue篇</a></p>
+<h2 id="安装pm2"><a href="#安装pm2" class="headerlink" title="安装pm2"></a>安装pm2</h2><p>执行命令安装<code>pm2</code>来守护进程：</p>
 <pre><code>npm install pm2 -g
-</code></pre><h2 id="4、开启项目"><a href="#4、开启项目" class="headerlink" title="4、开启项目"></a>4、开启项目</h2><p>进入项目文件夹内，执行命令：</p>
+</code></pre><h2 id="开启项目"><a href="#开启项目" class="headerlink" title="开启项目"></a>开启项目</h2><p>进入项目文件夹内，执行命令：</p>
 <pre><code>pm2 start app.js
 </code></pre><p>至此结束。</p>
 
 		<p class="post-info">
-			本文由 <a href="https://chenyubo.me">陈钰博</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: Feb 02, 2019 02:54 pm
+			本文由 <a href="https://chenyubo.me">陈钰博</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: Feb 02, 2019 06:00 pm
 		</p>
 	</div>
 </article>
@@ -210,7 +195,7 @@ make install
 						<div class="item-title"><a href="/server-guide/">服务器入门指北</a></div>
 						<div class="item-meta clearfix">
 							<div class="item-meta-date" style="color: #5f5f5f;">Jan 18, 2019</div>
-							<div class="item-meta-ico bg-ico-game" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
+							<div class="item-meta-ico bg-ico-web" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
                             <div class="item-meta-cat">
                                 
                                 <a href="/categories/Tutorials/">Tutorials</a>
@@ -227,7 +212,7 @@ make install
 						<div class="item-title"><a href="/aliyun-deploy-vue/">阿里云部署项目笔记——Vue篇</a></div>
 						<div class="item-meta clearfix">
 							<div class="item-meta-date" style="color: #5f5f5f;">Apr 02, 2017</div>
-							<div class="item-meta-ico bg-ico-lock" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
+							<div class="item-meta-ico bg-ico-note" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
                             <div class="item-meta-cat">
                                 
                                 <a href="/categories/Notes/">Notes</a>
