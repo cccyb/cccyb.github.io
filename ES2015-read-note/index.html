@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    <link rel="dns-prefetch" href="//ws1.sinaimg.cn">
+    
+    <link rel="dns-prefetch" href="//cdn.bootcss.com">
+    <link rel="dns-prefetch" href="//secure.gravatar.com">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    
+    <link rel="shortcut icon" href="/images/favicon.png">
+    
+    
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
+    <title>
+    
+        《实战ES2015》读书笔记 - 陈钰博的博客
+    
+    </title>
+    <meta name="keywords" content="chenyubo,web,linux,html,css,javascript,react,node,vue,前端,后端,技术,博客,blog,爬虫">
+    <meta name="description" content="这是陈钰博的博客">
+    
+    <link href="//cdn.bootcss.com/highlight.js/9.10.0/styles/atom-one-dark.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.min.css">
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="bg-white" gtools_scp_screen_capture_injected="true">
+<!--[if lt IE 8]>
+<div class="browsehappy" role="dialog">
+    当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank">升级你的浏览器</a>。
+</div>
+<![endif]-->
+<header id="header" class="header bg-white">
+    <div class="navbar-container">
+        <a href="/" class="navbar-logo">
+            
+            陈钰博的博客
+            
+        </a>
+        <div class="navbar-menu">
+            
+            <a href="/categories" class="">分类</a>
+            
+            <a href="/tags" class="">标签</a>
+            
+            <a href="/archives" class="">归档</a>
+            
+            <a href="/links" class="">友情链接</a>
+            
+            <a href="/about" class="">关于我</a>
+            
+        </div>
+        <div class="navbar-mobile-menu" onclick="">
+            <span class="icon-menu cross"><span class="middle"></span></span>
+            <ul>
+                
+                <li><a href="/categories" class="">分类</a></li>
+                
+                <li><a href="/tags" class="">标签</a></li>
+                
+                <li><a href="/archives" class="">归档</a></li>
+                
+                <li><a href="/links" class="">友情链接</a></li>
+                
+                <li><a href="/about" class="">关于我</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</header></body></html>
+
+
+
+<div class="post-header-thumb">
+	<div class="post-header-thumb-op" style="background-image:url(/images/thumbs/1.jpg);"></div>
+	<div class="post-header-thumb-cover">
+		<div class="post-header-thumb-container">
+			<div class="post-header-thumb-title">
+				《实战ES2015》读书笔记
+			</div>
+			<div class="post-header-thumb-meta">
+				<time datetime="1488516385" itemprop="datePublished">Published on Mar 03, 2017 in </time><a href="/categories/Notes/">Notes</a>
+			</div>
+			<div class="post-tags">
+				
+				
+                <a href="/tags/ES2105/">ES2105</a>
+                
+                <a href="/tags/ES6/">ES6</a>
+                
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<article class="main-content post-page" itemscope itemtype="http://schema.org/Article">
+	<div class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			《实战ES2015》读书笔记
+		</h1>
+		<div class="post-data">
+            <time datetime="1488516385" itemprop="datePublished">Published on Mar 03, 2017 in </time><a href="/categories/Notes/">Notes</a>
+		</div>
+	</div>
+	<div id="post-content" class="post-content" itemprop="articleBody">
+		<p class="post-tags">
+            
+            
+            <a href="/tags/ES2105/">ES2105</a>
+            
+            <a href="/tags/ES6/">ES6</a>
+            
+            
+        </p>
+		<p>最近这几天抽空看了一下脸谱书系列中的《实战ES2015》，但是还没看完（其实是懒，逃）。其中的第三章对ES2015中的一些新语法进行了详细的讲解，在这里顺便就参照着书里的知识点总结一下，写个笔记记录一下学习的内容，权当加深一下印象吧！</p>
+<p>顺便推荐一下阮一峰老师的ES6教程<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ECMAScript6入门</a></p>
+<p>这本书更加详细的阐述了ES6的知识点，相较于《实战ES2015》来说更加偏向于理论，也更加详细，是一本值得学习的好书籍，推荐大家去看！喜欢看实体书的童鞋也可以去各大平台购买实体书，支持一下阮老师！！！</p>
+<h2 id="本文章主要讲解的新语法有："><a href="#本文章主要讲解的新语法有：" class="headerlink" title="本文章主要讲解的新语法有："></a>本文章主要讲解的新语法有：</h2><ul>
+<li>let、const和块级作用域</li>
+<li>箭头函数（Arrow Function）</li>
+<li>模板字符串（Template String）</li>
+</ul>
+<h2 id="一、let、const和块级作用域"><a href="#一、let、const和块级作用域" class="headerlink" title="一、let、const和块级作用域"></a>一、let、const和块级作用域</h2><h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p><strong>作用域（Scope）</strong>是<code>ECMAScript</code>编程中非常重要的一个概念，虽然它在通报<code>ECMAScript</code>编程中并不能充分引起初学者的注意，但在异步编程中，良好的作用域控制技巧则成为了<code>ECMAScript</code>开发者的必备技能。</p>
+<p>在<code>ES2015</code>之前的<code>ECMAScript</code>标准中，原本只有<strong>全局作用域</strong>和<strong>函数作用域</strong>。</p>
+<h3 id="let定义变量"><a href="#let定义变量" class="headerlink" title="let定义变量"></a>let定义变量</h3><p>在<code>ES2015</code>中，<code>let</code>可以说是<code>var</code>的进行版本，<code>var</code>在绝大部分情况下可以被<code>let</code>替代。<code>let</code>与<code>var</code>的异同点大致如下表：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>let</th>
+<th>var</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义变量</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>可被释放</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>可被提示（Hoist）</td>
+<td></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>重复定义检查</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>可被用于块级作用域</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong>重复定义检查</strong>可以用下面这段代码来说明：</p>
+<pre><code class="javascript">// var
+var foo = &#39;bar&#39;;
+var foo = &#39;abc&#39;;
+console.log(foo); //=&gt; abc
+
+// let
+let bar = &#39;foo&#39;;
+let bar = &#39;def&#39;; //=&gt; Uncaught SyntaxError: Identifier &#39;bar&#39; has already been declared
+</code></pre>
+<p><code>var</code>可以让同一个变量名在同一个作用域里被定义多次，而这种“特性”很可能会导致一些问题。而<code>let</code>则加入了代码审查（Code Review）制度，当同一个变量名在同一个作用域内被定义第二次时，便会抛出错误，以警示开发者修改代码。</p>
+<p>此外，<code>let</code>可被用于<strong>块级作用域（Block Scope）</strong>。</p>
+<p>使用<code>let</code>形成的块级作用域可以在大部分具有<code>{ ... }</code>的语句中使用，例如</p>
+<ul>
+<li><code>for () {}</code></li>
+<li><code>do {} while()</code></li>
+<li><code>while {}</code></li>
+<li><code>switch() {}...</code></li>
+</ul>
+<pre><code class="js">switch(true) {
+    default:
+        let bar = &#39;foo&#39;;
+        break;
+}
+console.log(bar); //=&gt; undifined
+</code></pre>
+<h3 id="const定义常量"><a href="#const定义常量" class="headerlink" title="const定义常量"></a>const定义常量</h3><p><code>const</code>的引入是<code>ECMAScript</code>获得了真正的定义常量的能力。</p>
+<pre><code class="javascript">// 定义一个常量
+const PI = 3.1415926;
+// 尝试对该常量进行重新赋值
+PI = 3.14; //=&gt; Uncaught TypeError: Assignment to constant variable.
+</code></pre>
+<p>变量与内存之间的关系由三个部分组成：</p>
+<ul>
+<li>变量名</li>
+<li>内存绑定</li>
+<li>内存（内存地址）</li>
+</ul>
+<p><code>ECMAScript</code>读取变量时，会从变量当前的内存地址所指想的内存空间中读取内容。当用户改变变量的值时，引擎会重新从内存中分配一个新的内存空间以存储新的值，并将新的内存地址与变量进行绑定。const的原理就是在变量名与内存地址之间建立<strong>不可变</strong>的绑定，当后面的程序尝试申请新的内存空间时，引擎便会抛出错误。</p>
+<p>除了<code>let</code>会产生块级作用域以外，<code>const</code>同样可以产生块级作用域，其定义的常量也同样遵循变量在作用域中的生命周期。</p>
+<h3 id="变量的生命周期"><a href="#变量的生命周期" class="headerlink" title="变量的生命周期"></a>变量的生命周期</h3><p>在<code>ECMAScript</code>中，一个变量（或常量）的生命周期（Life Cycle）模式是固定的，由两种因素决定：</p>
+<ul>
+<li>作用域</li>
+<li>对其的引用</li>
+</ul>
+<p>绝大部分<code>ECMAScript</code>运行引擎对垃圾数据的收集方式都是基于对变量（或常量）的<strong>引用</strong>进行统计，当一个变量的引用被全部解除时，引擎便会将其认定为应该被清除的。简单表示便是：<strong>一个事物当为人所需要时，便永生不朽；但若被抛弃时，便悄离去。</strong></p>
+<p>如果想延长的变量的生命周期，最为常用的方法便是闭包（Closure）。因为变量的生命周期由对其的引用所决定，二闭包的原理便是利用高阶函数来产生能够穿透作用域的引用。</p>
+<p>在<code>ECMAScript</code>中，变量（或常量）的生命周期是从程序进入定义语句所在的作用域开始的，即便是在定义语句之前。例如下面这行代码：</p>
+<pre><code class="javascript">var foo = 1;
+</code></pre>
+<p>我们不妨将这一句拆分成两句，以便更好理解后面的内容。</p>
+<pre><code class="javascript">var foo; // Declaration
+foo = 1; // Assignment
+</code></pre>
+<ol>
+<li><code>ECMAScript</code>引擎在进入一个作用域时，会先扫描这个作用域内的变量（或常量）定义语句（<code>var</code>，<code>let</code>或<code>const</code>），然后在这个作用域内为扫描得到的变量名做准备，在当前作用域内被扫描到的变量名都会进入未声明<strong>（Undeclared）阶段</strong>。</li>
+<li>进入声明语句时，<code>var foo;</code>，即前半句是<strong>声明部分（Declaration）</strong>，用于在<code>ECMAScript</code>引擎中产生一个变量名，当此时此刻变量名没有对应的绑定和内存空间，所以“值”为null。</li>
+<li><code>=</code>的左右是作为变量的赋值语句，引擎执行至此处即为该变量的<strong>赋值部分（Assignment）</strong>，计算将要赋予变量名的值的物理长度（内存空间占用大小），向系统申请相应大小的内存空间，然后将数据存储到里面去，并在变量名和内存空间之间<strong>建立绑定（Binding）关系</strong>，此时变量（或常量）才得到了相应的值。</li>
+<li>到当前作用域中的语句被执行完毕时，引擎便会检查该作用域中被定义的变量（或常量）的被引用情况，如果引用已被全部解除，引擎便会认为其应该被清除。</li>
+<li>运行引擎会不断检查存在于运行时（Runtime）中的变量（或常量）的被引用情况，并重复第四步，直至程序结束。<br>ES2015标准中（一般情况下为严格模式）不允许变量（或常量）在被定义之前被其他语句所读取，以免出现逻辑性错误。</li>
+</ol>
+<h3 id="更佳体验"><a href="#更佳体验" class="headerlink" title="更佳体验"></a>更佳体验</h3><p>从工程化角度上看，我们应该在<code>ES2015</code>中遵循以下三条原则：</p>
+<ul>
+<li>一般情况下，使用<code>const</code>来定义值的存储容器（常量）。</li>
+<li>只有在值容器明确地被确定将会被改变时才使用<code>let</code>来定义（变量）。</li>
+<li>不再使用<code>var</code>。</li>
+</ul>
+<h2 id="二、箭头函数（Arrow-Function）"><a href="#二、箭头函数（Arrow-Function）" class="headerlink" title="二、箭头函数（Arrow Function）"></a>二、箭头函数（Arrow Function）</h2><p>除了<code>let</code>和<code>const</code>外，箭头函数是使用频率最高的新特性了。</p>
+<h3 id="使用语法"><a href="#使用语法" class="headerlink" title="使用语法"></a>使用语法</h3><ol>
+<li>单一参数的单行箭头函数</li>
+</ol>
+<pre><code class="javascript">// Systax: arg =&gt; statement
+const fn = foo =&gt; `${foo} world` // means return `foo + &#39;world&#39;`
+
+// 这是箭头函数最简洁的形式，常见于用作简单的处理函数，如过滤。
+let array = [&#39;a&#39;, &#39;bc&#39;, &#39;def&#39;, &#39;ghij&#39;];
+array = array.filter(item =&gt; item.length &gt;= 2); //=&gt; bc, def, ghij
+</code></pre>
+<ol start="2">
+<li>多参数的单行箭头函数</li>
+</ol>
+<pre><code class="javascript">// Systax: (arg1, arg2) =&gt; statement
+const fn = (foo, bar) =&gt; `${foo} world` // means return `foo + &#39;world&#39;`
+</code></pre>
+<p>在大多数情况下，函数都不会只有一个参数传入，在箭头函数中，多参数的语法跟普通函数一样，以括号来包裹参数列。这种形式常见于数组的处理，如排序。</p>
+<pre><code class="javascript">let array = [&#39;a&#39;, &#39;bc&#39;, &#39;def&#39;, &#39;ghij&#39;];
+array = array.sort((a, b) =&gt; a.length &lt; b.length); //=&gt; ghij, def, bc, a
+</code></pre>
+<ol start="3">
+<li>多行箭头函数</li>
+</ol>
+<pre><code class="javascript">// Systax: arg =&gt; { ... }
+// 单一参数
+foo =&gt; {
+    return `${foo} world`;
+}
+// Systax: (arg1, arg2) =&gt; { ... }
+// 多参数
+(foo, bar) =&gt; {
+    return foo + bar;
+}
+</code></pre>
+<ol start="4">
+<li>无参数箭头函数</li>
+</ol>
+<p>如果一个箭头函数无参数传入，则需要用一对空的括号来表示空的参数列表</p>
+<pre><code class="javascript">// Systax: () =&gt; statement
+const greet = () =&gt; &#39;Hello World&#39;;
+</code></pre>
+<h3 id="this穿透"><a href="#this穿透" class="headerlink" title="this穿透"></a>this穿透</h3><p>箭头函数就如同它在<code>CoffeeScript</code>中的定义一般，是用于将函数内部的<code>this</code>延伸至上一层作用域中，即上一层的上下文会穿透到内层的箭头函数中。</p>
+<h3 id="程序逻辑注意事项"><a href="#程序逻辑注意事项" class="headerlink" title="程序逻辑注意事项"></a>程序逻辑注意事项</h3><ul>
+<li>箭头函数对上下文的绑定是强制性的，无法通过<code>apply</code>或<code>call</code>方法改变。</li>
+<li>因为箭头函数绑定上下文的特性，故不能随意在顶层作用域使用箭头函数。</li>
+<li>同样地，在箭头函数中也没有<code>arguments</code>、<code>callee</code>甚至`caller等对象。</li>
+<li>如果哟使用<code>arguments</code>的需求，可以使用后续参数<code>...set</code>来获得参数列表。</li>
+</ul>
+<h3 id="编写语法注意事项"><a href="#编写语法注意事项" class="headerlink" title="编写语法注意事项"></a>编写语法注意事项</h3><p><code>ES2015</code>提供了多行的箭头函数语法，所有在使用单行箭头函数时，请不要对单行的函数体做任何换行，以免出现语法错误。</p>
+<pre><code class="javascript">const fn = x 
+=&gt; x * 2; // SystaxError
+const fn = x =&gt; x * 2; // OK
+</code></pre>
+<p>参数列表的右括弧、箭头需要保持在同一行内。</p>
+<pre><code class="javascript">const fn = (x, y) // SystaxError
+=&gt; {
+    return x * y;
+}
+const fn = (x, y) =&gt; { // OK
+    return x * y;
+}
+const fn = (x,
+            y) =&gt; { // OK 
+    return x * y;
+}
+</code></pre>
+<p>单行箭头函数只能包含一条语句。但如果是错误抛出语句（throw）等非表达式的语句，则需要使用花括号包裹。</p>
+<pre><code class="javascript">const fn1 = x =&gt; x * 2; // OK
+const fn2 = x =&gt; x = x * 2;  return x + 2; // SystaxError
+const fn3 = x =&gt; { // OK
+    x = x * 2;  
+    return x + 2; 
+}
+const fn4 = x =&gt; { throw new Error(&#39;some error message&#39;); } // OK
+</code></pre>
+<p>若要使用单行箭头函数直接返回一个对象字面量，请使用一个括号包裹该对象字面量，而不是直接使用大括号，否则ECMAScript解析引擎会将其解析为一个多行箭头函数。</p>
+<pre><code class="javascript">const ids = [ 1, 2, 3 ];
+const users = ids.map(id =&gt; { id: id});
+//=&gt; Wrong: [ undefined, undefined, undefined ]
+const ids = [ 1, 2, 3 ];
+const users = ids.map(id =&gt; ({ id: id}));
+//=&gt; Correct: [ { id: 1 }, { id: 2 }, { id: 3 } ]
+</code></pre>
+<h2 id="三、模板字符串"><a href="#三、模板字符串" class="headerlink" title="三、模板字符串"></a>三、模板字符串</h2><h3 id="使用语法-1"><a href="#使用语法-1" class="headerlink" title="使用语法"></a>使用语法</h3><p>我们使用普通字符串时会用单引号或双引号阿里包裹字符串的内容。而<code>ES2015</code>的模板字符串则需要使用<strong>反勾号（backtick，`）</strong>。</p>
+<pre><code class="javascript">// Systax: `string`
+const str = `something`
+</code></pre>
+<p>支持字符串元素注入</p>
+<pre><code class="javascript">// Systax: `before-${injectVariable}-after`
+const str = &#39;str&#39;
+const num = 1;
+// ...
+const str1 = `String: ${str}` //=&gt; String: str
+const str2 = `Number: ${num}` //=&gt; Number: 1
+// ...
+</code></pre>
+<p>支持换行</p>
+<pre><code class="javascript">/**
+ * Systax: `
+ *  content
+ *
+ */
+
+ const sql = `
+     SELECT * FROM Users
+     WHERE FirstName = &#39;Mike&#39;
+     LIMIT 5;
+ `
+</code></pre>
+<p>有以下一些字符串字面量，通常用于非打印或特殊用途的字符，如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>字面量</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\n</code></td>
+<td>换行</td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td>回车</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>制表符</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>空格</td>
+</tr>
+<tr>
+<td><code>\f</code></td>
+<td>进制</td>
+</tr>
+<tr>
+<td><code>\\</code></td>
+<td>用于打印<code>\</code></td>
+</tr>
+<tr>
+<td><code>\&#39;</code></td>
+<td>用于打印<code></code>‘`</td>
+</tr>
+<tr>
+<td><code>\&quot;</code></td>
+<td>用于打印<code>&quot;</code></td>
+</tr>
+<tr>
+<td><code>\xnn</code></td>
+<td>以十六进制代码<code>nn</code> 表示一个字符（其中<code>n</code>为<code>0~F</code>）。例如<code>\x41</code>为<code>A</code></td>
+</tr>
+<tr>
+<td><code>\unnnn</code></td>
+<td>以十六进制代码<code>nnnn</code> 表示一个<code>Unicode</code>字符（其中<code>n</code>为<code>0~F</code>）。例如<code>\u03a3</code>为<code>∑</code></td>
+</tr>
+</tbody>
+</table>
+<p>多行模板字符串会在每一行的最后添加一个<code>\n</code>字面量，所以在读取多行字符串的长度时，除最后一行外，每一行的长度都会加1，即增加了<code>\n</code>的长度</p>
+<pre><code class="javascript">const str = `A
+B
+C
+D` //=&gt; A\nB\nC\nD
+console.log(str.length); //=&gt; 7
+</code></pre>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>与普通字符串不一样的是，多行字符串没有两种或两种以上的定义语法，这就意味着它无法向下面第一行代码中普通字符串那样，使用双引号嵌套单引号来表达字符串中的字符串，但可以使用反斜杠来讲需要显示的反勾号转义为普通的字符。</p>
+<pre><code class="javascript">const str1 = &quot;Here is the outter string. &#39;This is a string in another string&#39;&quot;;
+const str2 = `Here is the outter string. \`This is a string in another string\``;
+</code></pre>
+
+		<p class="post-info">
+			本文由 <a href="https://chenyubo.me">陈钰博</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: Feb 01, 2019 10:14 pm
+		</p>
+	</div>
+</article>
+<div id="post-bottom-bar" class="post-bottom-bar">
+	<div class="bottom-bar-inner">
+		<div class="bottom-bar-items social-share left">
+			<span class="bottom-bar-item">Share : </span>
+			<span class="bottom-bar-item bottom-bar-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://chenyubo.me/ES2015-read-note/index.html" target="_blank" title="《实战ES2015》读书笔记" rel="nofollow">facebook</a></span>
+			<span class="bottom-bar-item bottom-bar-twitter"><a href="https://twitter.com/intent/tweet?url=https://chenyubo.me/ES2015-read-note/&text=《实战ES2015》读书笔记" target="_blank" title="《实战ES2015》读书笔记" rel="nofollow">Twitter</a></span>
+			<span class="bottom-bar-item bottom-bar-weibo"><a href="http://service.weibo.com/share/share.php?url=&amp;title=《实战ES2015》读书笔记" target="_blank" title="《实战ES2015》读书笔记" rel="nofollow">Weibo</a></span>
+			<span class="bottom-bar-item bottom-bar-qrcode"><a href="//pan.baidu.com/share/qrcode?w=300&amp;h=300&amp;url=https://chenyubo.me/ES2015-read-note/index.html" target="_blank" rel="nofollow">QRcode</a></span>
+		</div>
+		<div class="bottom-bar-items right">
+            
+            <span class="bottom-bar-item"><a href="/vue-zhihu-daily/">←</a></span>
+            
+            
+            <span class="bottom-bar-item"><a href="/mac-mysql57-navicat-chinese-messy/">→</a></span>
+            
+			<span class="bottom-bar-item"><a href="#footer">↓</a></span>
+			<span class="bottom-bar-item"><a href="#">↑</a></span>
+		</div>
+	</div>
+</div>
+
+
+
+<footer id="footer" class="footer bg-white">
+	<div class="footer-social">
+		<div class="footer-container clearfix">
+			<div class="social-list">
+				<a class="social weibo" target="blank" href="/">WEIBO</a>
+                <a class="social zhihu" target="blank" href="https://www.zhihu.com/people/52c7f85cb2abafde0b78124e21a68002">ZHIHU</a>
+                <a class="social rss" target="blank" href="/atom.xml">RSS</a>
+				<a class="social github" target="blank" href="https://github.com/cccyb">GITHUB</a>
+                <a class="social twitter" target="blank" href="/">TWITTER</a>
+			</div>
+		</div>
+	</div>
+	<div class="footer-meta">
+		<div class="footer-container">
+			<div class="meta-item meta-copyright">
+				<div class="meta-copyright-info">
+                    <a href="https://chenyubo.me" class="info-logo">
+                        
+                        陈钰博的博客
+                        
+                    </a>
+					<div class="info-text">
+                        <p id="chakhsu"></p>
+                    	<p>Theme is <a href="https://github.com/cccyb/hexo-theme-pinghsu" target="_blank">Pinghsu</a> by <a href="https://chenyubo.cc/" target="_blank">陈钰博</a></p>
+						<p>Powered by <a href="https://hexo.io/" target="_blank" rel="nofollow">hexo</a></p>
+						<p>&copy; 2016 - 2019 <a href="https://chenyubo.me">陈钰博的博客</a></p>
+					</div>
+				</div>
+            </div>
+            
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">最近文章</h3>
+                
+                <li><a href="/hexo-theme-pinghsu/">Pinghsu，A Hexo Theme</a></li>
+                
+                <li><a href="/server-guide/">服务器入门指北</a></li>
+                
+                <li><a href="/start-scroll-snap/">初见Scroll-Snap</a></li>
+                
+                <li><a href="/mac-install-python3-env/">Mac安装Python3开发环境随记</a></li>
+                
+                <li><a href="/aliyun-deploy-node/">阿里云部署项目笔记——Node篇</a></li>
+                
+                <li><a href="/aliyun-deploy-vue/">阿里云部署项目笔记——Vue篇</a></li>
+                
+                <li><a href="/ES2015-read-note/">《实战ES2015》读书笔记</a></li>
+                
+                <li><a href="/mac-mysql57-navicat-chinese-messy/">Mac下MySQL5.7连接Navicat中文乱码解决方案</a></li>
+                
+            </div>
+            
+		</div>
+	</div>
+</footer>
+
+
+<div id="directory-content" class="directory-content">
+    <div id="directory"></div>
+</div>
+<script>
+var postDirectoryBuild = function() {
+    var postChildren = function children(childNodes, reg) {
+        var result = [],
+            isReg = typeof reg === 'object',
+            isStr = typeof reg === 'string',
+            node, i, len;
+        for (i = 0, len = childNodes.length; i < len; i++) {
+            node = childNodes[i];
+            if ((node.nodeType === 1 || node.nodeType === 9) &&
+                (!reg ||
+                isReg && reg.test(node.tagName.toLowerCase()) ||
+                isStr && node.tagName.toLowerCase() === reg)) {
+                result.push(node);
+            }
+        }
+        return result;
+    },
+    createPostDirectory = function(article, directory, isDirNum) {
+        var contentArr = [],
+            titleId = [],
+            levelArr, root, level,
+            currentList, list, li, link, i, len;
+        levelArr = (function(article, contentArr, titleId) {
+            var titleElem = postChildren(article.childNodes, /^h\d$/),
+                levelArr = [],
+                lastNum = 1,
+                lastRevNum = 1,
+                count = 0,
+                guid = 1,
+                id = 'directory' + (Math.random() + '').replace(/\D/, ''),
+                lastRevNum, num, elem;
+            while (titleElem.length) {
+                elem = titleElem.shift();
+                contentArr.push(elem.innerHTML);
+                num = +elem.tagName.match(/\d/)[0];
+                if (num > lastNum) {
+                    levelArr.push(1);
+                    lastRevNum += 1;
+                } else if (num === lastRevNum ||
+                    num > lastRevNum && num <= lastNum) {
+                    levelArr.push(0);
+                    lastRevNum = lastRevNum;
+                } else if (num < lastRevNum) {
+                    levelArr.push(num - lastRevNum);
+                    lastRevNum = num;
+                }
+                count += levelArr[levelArr.length - 1];
+                lastNum = num;
+                elem.id = elem.id || (id + guid++);
+                titleId.push(elem.id);
+            }
+            if (count !== 0 && levelArr[0] === 1) levelArr[0] = 0;
+            return levelArr;
+        })(article, contentArr, titleId);
+        currentList = root = document.createElement('ul');
+        dirNum = [0];
+        for (i = 0, len = levelArr.length; i < len; i++) {
+            level = levelArr[i];
+            if (level === 1) {
+                list = document.createElement('ul');
+                if (!currentList.lastElementChild) {
+                    currentList.appendChild(document.createElement('li'));
+                }
+                currentList.lastElementChild.appendChild(list);
+                currentList = list;
+                dirNum.push(0);
+            } else if (level < 0) {
+                level *= 2;
+                while (level++) {
+                    if (level % 2) dirNum.pop();
+                    currentList = currentList.parentNode;
+                }
+            }
+            dirNum[dirNum.length - 1]++;
+            li = document.createElement('li');
+            link = document.createElement('a');
+            link.href = '#' + titleId[i];
+            link.innerHTML = !isDirNum ? contentArr[i] :
+                dirNum.join('.') + ' ' + contentArr[i] ;
+            li.appendChild(link);
+            currentList.appendChild(li);
+        }
+        directory.appendChild(root);
+    };
+    createPostDirectory(document.getElementById('post-content'),document.getElementById('directory'), true);
+};
+postDirectoryBuild();
+</script>
+
+<script src="//cdn.bootcss.com/headroom/0.9.1/headroom.min.js"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js"></script>
+
+
+<script src="/js/instantclick.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+<script>
+
+var postDirectory = new Headroom(document.getElementById("directory-content"), {
+    tolerance: 0,
+    
+    offset : 280,
+    
+    classes: {
+        initial: "initial",
+        pinned: "pinned",
+        unpinned: "unpinned"
+    }
+});
+postDirectory.init();
+
+
+var postSharer = new Headroom(document.getElementById("post-bottom-bar"), {
+    tolerance: 0,
+    offset : 70,
+    classes: {
+        initial: "animated",
+        pinned: "pinned",
+        unpinned: "unpinned"
+    }
+});
+postSharer.init();
+
+var header = new Headroom(document.getElementById("header"), {
+    tolerance: 0,
+    offset : 70,
+    classes: {
+      initial: "animated",
+      pinned: "slideDown",
+      unpinned: "slideUp"
+    }
+});
+header.init();
+
+hljs.initHighlightingOnLoad();
+
+
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
+
+</script>
+<script>
+var words = 'Front-End,JavaScript,HTML &amp; CSS,Node.js,React,Vue,passion &amp; love'.split(',').map(item => item.trim());
+var chakhsu = function(r){function t(){return b[Math.floor(Math.random()*b.length)]}function e(){return String.fromCharCode(94*Math.random()+33)}function n(r){for(var n=document.createDocumentFragment(),i=0;r>i;i++){var l=document.createElement("span");l.textContent=e(),l.style.color=t(),n.appendChild(l)}return n}function i(){var t=o[c.skillI];c.step?c.step--:(c.step=g,c.prefixP<l.length?(c.prefixP>=0&&(c.text+=l[c.prefixP]),c.prefixP++):"forward"===c.direction?c.skillP<t.length?(c.text+=t[c.skillP],c.skillP++):c.delay?c.delay--:(c.direction="backward",c.delay=a):c.skillP>0?(c.text=c.text.slice(0,-1),c.skillP--):(c.skillI=(c.skillI+1)%o.length,c.direction="forward")),r.textContent=c.text,r.appendChild(n(c.prefixP<l.length?Math.min(s,s+c.prefixP):Math.min(s,t.length-c.skillP))),setTimeout(i,d)}var l="I work with ",o=words.map(function(r){return r+"."}),a=2,g=1,s=5,d=75,b=["rgb(110,64,170)","rgb(150,61,179)","rgb(191,60,175)","rgb(228,65,157)","rgb(254,75,131)","rgb(255,94,99)","rgb(255,120,71)","rgb(251,150,51)","rgb(226,183,47)","rgb(198,214,60)","rgb(175,240,91)","rgb(127,246,88)","rgb(82,246,103)","rgb(48,239,130)","rgb(29,223,163)","rgb(26,199,194)","rgb(35,171,216)","rgb(54,140,225)","rgb(76,110,219)","rgb(96,84,200)"],c={text:"",prefixP:-s,skillI:0,skillP:0,direction:"forward",delay:a,step:g};i()};chakhsu(document.getElementById('chakhsu')); if ('addEventListener' in document) { document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false); }
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    showProcessingMessages: false,
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
+        ignoreClass:"comment-content"
+    },
+    "HTML-CSS": {
+        availableFonts: ["STIX","TeX"],
+        showMathMenu: false
+    }
+});
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+<script data-no-instant="">
+InstantClick.on('change', function(isInitialLoad){
+    
+    var blocks = document.querySelectorAll('pre code');
+    for (var i = 0; i < blocks.length; i++) {
+        hljs.highlightBlock(blocks[i]);
+    }
+    
+    if (isInitialLoad === false) {
+        
+        
+        if (typeof MathJax !== 'undefined'){MathJax.Hub.Queue(["Typeset",MathJax.Hub]);}
+        
+    }
+});
+InstantClick.init('mousedown');
+</script>
+
+

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    <link rel="dns-prefetch" href="//ws1.sinaimg.cn">
+    
+    <link rel="dns-prefetch" href="//cdn.bootcss.com">
+    <link rel="dns-prefetch" href="//secure.gravatar.com">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    
+    <link rel="shortcut icon" href="/images/favicon.png">
+    
+    
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
+    <title>
+    
+        初见Scroll-Snap - 陈钰博的博客
+    
+    </title>
+    <meta name="keywords" content="chenyubo,web,linux,html,css,javascript,react,node,vue,前端,后端,技术,博客,blog,爬虫">
+    <meta name="description" content="这是陈钰博的博客">
+    
+    <link href="//cdn.bootcss.com/highlight.js/9.10.0/styles/atom-one-dark.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.min.css">
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="bg-white" gtools_scp_screen_capture_injected="true">
+<!--[if lt IE 8]>
+<div class="browsehappy" role="dialog">
+    当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank">升级你的浏览器</a>。
+</div>
+<![endif]-->
+<header id="header" class="header bg-white">
+    <div class="navbar-container">
+        <a href="/" class="navbar-logo">
+            
+            陈钰博的博客
+            
+        </a>
+        <div class="navbar-menu">
+            
+            <a href="/categories" class="">分类</a>
+            
+            <a href="/tags" class="">标签</a>
+            
+            <a href="/archives" class="">归档</a>
+            
+            <a href="/links" class="">友情链接</a>
+            
+            <a href="/about" class="">关于我</a>
+            
+        </div>
+        <div class="navbar-mobile-menu" onclick="">
+            <span class="icon-menu cross"><span class="middle"></span></span>
+            <ul>
+                
+                <li><a href="/categories" class="">分类</a></li>
+                
+                <li><a href="/tags" class="">标签</a></li>
+                
+                <li><a href="/archives" class="">归档</a></li>
+                
+                <li><a href="/links" class="">友情链接</a></li>
+                
+                <li><a href="/about" class="">关于我</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</header></body></html>
+
+
+
+<div class="post-header-thumb">
+	<div class="post-header-thumb-op" style="background-image:url(/images/thumbs/13.jpg);"></div>
+	<div class="post-header-thumb-cover">
+		<div class="post-header-thumb-container">
+			<div class="post-header-thumb-title">
+				初见Scroll-Snap
+			</div>
+			<div class="post-header-thumb-meta">
+				<time datetime="1539837985" itemprop="datePublished">Published on Oct 18, 2018 in </time><a href="/categories/Tutorials/">Tutorials</a>
+			</div>
+			<div class="post-tags">
+				
+				
+                <a href="/tags/CSS/">CSS</a>
+                
+                <a href="/tags/Scroll-Snap/">Scroll Snap</a>
+                
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<article class="main-content post-page" itemscope itemtype="http://schema.org/Article">
+	<div class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			初见Scroll-Snap
+		</h1>
+		<div class="post-data">
+            <time datetime="1539837985" itemprop="datePublished">Published on Oct 18, 2018 in </time><a href="/categories/Tutorials/">Tutorials</a>
+		</div>
+	</div>
+	<div id="post-content" class="post-content" itemprop="articleBody">
+		<p class="post-tags">
+            
+            
+            <a href="/tags/CSS/">CSS</a>
+            
+            <a href="/tags/Scroll-Snap/">Scroll Snap</a>
+            
+            
+        </p>
+		<h2 id="什么是CSS-Scroll-Snap？"><a href="#什么是CSS-Scroll-Snap？" class="headerlink" title="什么是CSS Scroll Snap？"></a>什么是CSS Scroll Snap？</h2><p>我们先看一下MDN里对scroll snap的解释：</p>
+<p><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_64d78b0fga46dbf98cc8ce5fb2lkh_642x245.jpg" alt=""></p>
+<p>英语不好的童鞋可以悄悄咪咪的使用百度翻译或者谷歌翻译帮个忙，这段话的大意应该就是：</p>
+<blockquote>
+<p> CSS Scroll Snap是CSS的一个模块，它引入了滚动捕捉位置，可以在滚动操作完成后强制滚动容器的滚动窗口到我们指定的滚动位置。</p>
+</blockquote>
+<p>看了还是一脸懵逼？没关系，我们先看个在线🌰（<a href="https://codepen.io/airen/pen/EeYNwr" target="_blank" rel="noopener">https://codepen.io/airen/pen/EeYNwr</a>），思考一下这个🌰里的滚动与我们平时写的滚动有什么区别呢？</p>
+<p>没错，在使用了scroll snap属性后，元素滚动起来有了一种阻尼感，并没有原生滚动的那种顺滑感，并且可以精确定位到指定位置。</p>
+<p>简单来说，就是CSS Scroll Snap（CSS 滚动捕捉）允许你在用户完成滚动后多锁定特定的元素或位置。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>开始之前，我们先介绍两个概念。</p>
+<ul>
+<li>捕捉</li>
+</ul>
+<p>学过 CAD 系列软件的同学可能很清楚，我们在移动一个对象时，对象总能够自动吸附在栅格线上，使得对象只能落在栅格上的确定位置上，这就是栅格捕捉。或者这样说，在一个普通的量尺上，规定你的画笔只能落在 1mm 和 2mm 的刻度上，而不能落在他们之间。</p>
+<ul>
+<li>滚动捕捉</li>
+</ul>
+<p>滚动捕捉，即在滚动时对滚动位置进行捕捉。</p>
+<p>其实scroll snap的用法很简单，最最最基本的用法只要两行代码就可以实现，先在父元素上定义<code>scroll-snap-type</code>，然后在子元素上定义<code>scroll-snap-align</code>即可。</p>
+<pre><code class="html">&lt;div class=&quot;container&quot;&gt;
+    &lt;section class=&quot;child&quot;&gt;&lt;/section&gt;
+    &lt;section class=&quot;child&quot;&gt;&lt;/section&gt;
+    &lt;section class=&quot;child&quot;&gt;&lt;/section&gt;
+    ...
+&lt;/div&gt;
+</code></pre>
+<pre><code class="css">.container {
+    scroll-snap-type: y madatory;
+}
+.child {
+    scroll-snap-align: start;
+}
+</code></pre>
+<p>是不是很简单，这里我们先对scroll snap属性有个大概的了解，后续我们会详细讲解。</p>
+<p><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_0l24i1l0c1hk9ddi1d1fkfci35i4l_922x290.jpg" alt=""></p>
+<p>上图是来自w3c标准里的一个图示，这个图其实非常形象了描述了滚动捕捉。</p>
+<p>图中的红色区域即为可滚动容器的可视区域或叫捕捉视口。图片黄色框的地方被称为捕捉区域。我们上面设置的 scroll-snap-align 中指定了横轴捕捉点为中心位置。此时将在捕捉视口区域中心（红色虚线）以及捕捉区域中心（黄色虚线）形成捕捉点。</p>
+<p>由此我们可以知道，要想形成捕捉，需要以下两个条件：</p>
+<ol>
+<li>是个可滚动的区域</li>
+<li>确定捕捉视口和捕捉区域的捕捉点</li>
+</ol>
+<p>既然我们要使用CSS属性，那么了解它的流量器兼容性是必不可少的。</p>
+<p><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_34cl4f6h459549l348i816a7000di_915x400.jpg" alt=""></p>
+<p>自2016年推出CSS Scroll Snap以来，浏览器对它的支持有了显著的改善。Google 69+、Firefox、Edge和Safari都支持它的某些版本。但是现实其实还是很残酷的，整体浏览器对scroll snap的支持度并不是很高，只要50%多，不到60%，因此，这个属性我们在平时使用还是需要谨慎考虑兼容性，使用最新的浏览器进行尝鲜未尝不可。待后续各大浏览器稳定支持后再进行扩展。</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>与任何属性一样，熟悉它们所接受的值是一个好主意。滚动捕捉属性应用于父元素和子元素，每个元素都有特定的值。就像Flexbox和Grid那样，父类变成了Flex或Grid容器。在这种情况下，父元素变成了快照（Snap）容器。</p>
+<p>父容器属性主要有两个：</p>
+<ul>
+<li>scroll-snap-type</li>
+</ul>
+<p><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_5b71f8hcbakj2ckdf4jglk0h1401g_796x544.jpg" alt=""></p>
+<p>通过设置 scroll-snap-type 将一个滚动容器转变为一个滚动捕捉容器，并且可以控制捕捉的严格度，如果没有指定严格度，默认为非精确的捕捉（proximity）。</p>
+<p>scroll-snap-type 支持设置两个参数，第一个为捕捉轴向，第二个参数为捕捉严格度，可省略。</p>
+<p>proximity值与mandatory十分相似，只是没有那么严格。改变浏览器的大小或者增加内容区，它可能会(或者而不会)重新获取snap点，取决于它与snap点间的距离。</p>
+<ul>
+<li>scroll-snap-padding</li>
+</ul>
+<p>默认情况下，内容会吸附到容器的边缘。你可以通过在容器上设置scroll-snap-padding属性来改变它。它遵循与常规padding属性相同的语法。如果你的布局中有可能妨碍内容的元素（比如固定的标题），那么这个属性就非常的有用。</p>
+<p>子元素属性主要有三个：</p>
+<ul>
+<li>scroll-snap-align</li>
+</ul>
+<p><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_7dkf7fig7i557lh15ike64fcfe9g4_731x451.jpg" alt=""></p>
+<p>这些是相对于滚动方向的。如果是垂直滚动，start指的是元素的顶部边缘。如果是水平滚动条，它指的是左边缘。center和end遵循相同的原则。你可以为滚动条的不同方向设置不同的值，这两个值之间用空格分隔开。</p>
+<ul>
+<li>scroll-snap-margin</li>
+</ul>
+<p>scroll-margin 则是指定了捕捉区域与捕捉元素之间的边距。例如对捕捉区域设置了 scroll-margin: 20px; 那么实际上生成的捕捉区域会比捕捉元素的尺寸大。 scroll-margin 的参数与我们常见的 margin 参数形式相同，同时也有 margin 一样的 scroll-margin-top 等属性。</p>
+<ul>
+<li>scroll-snap-stop</li>
+</ul>
+<p>默认情况下，滚动捕捉仅在用户停止滚动时启动，这意味着用户可以在停止之前跳过多个捕捉点。</p>
+<p>你可以在任何子元素上设置scroll-snap-stop: always来改变它。这会强制滚动容器在该元素上停止，然后用户可以继续滚动。</p>
+<h2 id="举几个🌰"><a href="#举几个🌰" class="headerlink" title="举几个🌰"></a>举几个🌰</h2><ul>
+<li>垂直列表</li>
+</ul>
+<p>要使用垂直列表与每个列表元素对齐，只需要几行CSS。首先，我们告诉容器沿骑垂直轴捕捉：</p>
+<pre><code class="css">.container {
+    scroll-snap-type: y mandatory;
+}
+</code></pre>
+<p>  然后，我们定义捕捉点。这里，我们指定每个列表元素的顶部将成为一个捕捉点：</p>
+<pre><code class="css">.child {
+    scroll-snap-align: start;
+}
+</code></pre>
+<p>在线预览效果见：<a href="https://codepen.io/airen/pen/yxBMPa" target="_blank" rel="noopener">https://codepen.io/airen/pen/yxBMPa</a></p>
+<ul>
+<li>水平滑块</li>
+</ul>
+<p>为了制作一个水平滑块，我们告诉容器沿着它的<code>x</code>轴对齐。</p>
+<pre><code class="css">.container {
+    scroll-snap-type: x mandatory;
+}
+</code></pre>
+<p> 然后，我们告诉容器哪个点被捕捉。为了使图库居中，我们将每个元素的中心点定义为一个捕捉点。</p>
+<pre><code class="css">.child {
+    scroll-snap-align: center;
+}
+</code></pre>
+<p>在线预览效果见：<a href="https://codepen.io/cccyb/pen/KGQdMz" target="_blank" rel="noopener">https://codepen.io/cccyb/pen/KGQdMz</a></p>
+<ul>
+<li>垂直全屏</li>
+</ul>
+<p>我们可以直接在<code>body</code>元素<code>y</code>轴上设置捕捉点：</p>
+<pre><code class="css">body {
+    scroll-snap-type: y mandatory;
+}
+</code></pre>
+<p>然后，我们将每个部分的大小设置和视窗一样大，并将顶部边缘定义为捕捉点：</p>
+<pre><code class="css">section {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+}
+</code></pre>
+<p> 在线预览效果见：<a href="https://codepen.io/airen/pen/GXKWyL" target="_blank" rel="noopener">https://codepen.io/airen/pen/GXKWyL</a></p>
+<ul>
+<li>水平全屏</li>
+</ul>
+<p>这个案例与前面的垂直全屏类似，但在<code>x</code>轴上使用了捕捉点。</p>
+<pre><code class="css">body {
+    scroll-snap-type: x mandatory;
+
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+}
+</code></pre>
+<p>在线预览见：<a href="https://codepen.io/airen/pen/EeYWQb" target="_blank" rel="noopener">https://codepen.io/airen/pen/EeYWQb</a></p>
+<ul>
+<li>2D图像网格</li>
+</ul>
+<p>滚动捕捉可以同时在两个方向上工作。同样，我们可以直接在<code>body</code>元素上设置<code>scroll-snap-type</code>：</p>
+<pre><code class="css">.container {
+    scroll-snap-type: both mandatory;
+}
+</code></pre>
+<p>然后，将每个<code>.tile</code>左上角定义为一个捕捉点：</p>
+<pre><code class="css">.tile {
+    scroll-snap-align: start;
+}
+</code></pre>
+<p><a href="https://codepen.io/airen/pen/aaoJGq" target="_blank" rel="noopener">在线预览见：https://codepen.io/airen/pen/aaoJGq</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>一旦浏览器可以稳定的支持CSS Scroll Snap属性时，对于触控设备产生的意义将十分重大。如，我们可以在next/previous之间快速查看画廊中的每一张图片。</p>
+<p>使用CSS创建Scroll Snap意味着不再需要使用JavaScript或者导入一个多余的库定义滚动行为。并且Scroll Snap属于硬件加速，保证了可以在浏览器中平滑的执行。</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://www.w3.org/TR/css-scroll-snap-1/#scroll-snap-stop" target="_blank" rel="noopener">https://www.w3.org/TR/css-scroll-snap-1/#scroll-snap-stop</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap</a></li>
+<li><a href="https://mp.weixin.qq.com/s/0Duum2IKSpc5fPNXPAPf6Q" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/0Duum2IKSpc5fPNXPAPf6Q</a></li>
+<li><a href="https://www.w3cplus.com/css/practical-css-scroll-snapping.html" target="_blank" rel="noopener">https://www.w3cplus.com/css/practical-css-scroll-snapping.html</a></li>
+<li><a href="https://caniuse.com/#search=scroll-snap" target="_blank" rel="noopener">https://caniuse.com/#search=scroll-snap</a></li>
+</ul>
+
+		<p class="post-info">
+			本文由 <a href="https://chenyubo.me">陈钰博</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: Feb 02, 2019 02:54 pm
+		</p>
+	</div>
+</article>
+<div id="post-bottom-bar" class="post-bottom-bar">
+	<div class="bottom-bar-inner">
+		<div class="bottom-bar-items social-share left">
+			<span class="bottom-bar-item">Share : </span>
+			<span class="bottom-bar-item bottom-bar-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://chenyubo.me/start-scroll-snap/index.html" target="_blank" title="初见Scroll-Snap" rel="nofollow">facebook</a></span>
+			<span class="bottom-bar-item bottom-bar-twitter"><a href="https://twitter.com/intent/tweet?url=https://chenyubo.me/start-scroll-snap/&text=初见Scroll-Snap" target="_blank" title="初见Scroll-Snap" rel="nofollow">Twitter</a></span>
+			<span class="bottom-bar-item bottom-bar-weibo"><a href="http://service.weibo.com/share/share.php?url=&amp;title=初见Scroll-Snap" target="_blank" title="初见Scroll-Snap" rel="nofollow">Weibo</a></span>
+			<span class="bottom-bar-item bottom-bar-qrcode"><a href="//pan.baidu.com/share/qrcode?w=300&amp;h=300&amp;url=https://chenyubo.me/start-scroll-snap/index.html" target="_blank" rel="nofollow">QRcode</a></span>
+		</div>
+		<div class="bottom-bar-items right">
+            
+            <span class="bottom-bar-item"><a href="/server-guide/">←</a></span>
+            
+            
+            <span class="bottom-bar-item"><a href="/mac-install-python3-env/">→</a></span>
+            
+			<span class="bottom-bar-item"><a href="#footer">↓</a></span>
+			<span class="bottom-bar-item"><a href="#">↑</a></span>
+		</div>
+	</div>
+</div>
+
+
+<div class="related-post-lists">
+	<div class="post-lists">
+		<div class="post-lists-body">
+		
+			<div class="post-list-item">
+				<div class="post-list-item-container">
+					<div class="item-label">
+						<div class="item-title"><a href="/start-grid-layout/">初探Grid-Layout布局</a></div>
+						<div class="item-meta clearfix">
+							<div class="item-meta-date" style="color: #5f5f5f;">Aug 08, 2018</div>
+							<div class="item-meta-ico bg-ico-image" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
+                            <div class="item-meta-cat">
+                                
+                                <a href="/categories/Tutorials/">Tutorials</a>
+                                
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+
+<footer id="footer" class="footer bg-white">
+	<div class="footer-social">
+		<div class="footer-container clearfix">
+			<div class="social-list">
+				<a class="social weibo" target="blank" href="/">WEIBO</a>
+                <a class="social zhihu" target="blank" href="https://www.zhihu.com/people/52c7f85cb2abafde0b78124e21a68002">ZHIHU</a>
+                <a class="social rss" target="blank" href="/atom.xml">RSS</a>
+				<a class="social github" target="blank" href="https://github.com/cccyb">GITHUB</a>
+                <a class="social twitter" target="blank" href="/">TWITTER</a>
+			</div>
+		</div>
+	</div>
+	<div class="footer-meta">
+		<div class="footer-container">
+			<div class="meta-item meta-copyright">
+				<div class="meta-copyright-info">
+                    <a href="https://chenyubo.me" class="info-logo">
+                        
+                        陈钰博的博客
+                        
+                    </a>
+					<div class="info-text">
+                        <p id="chakhsu"></p>
+                    	<p>Theme is <a href="https://github.com/cccyb/hexo-theme-pinghsu" target="_blank">Pinghsu</a> by <a href="https://chenyubo.cc/" target="_blank">陈钰博</a></p>
+						<p>Powered by <a href="https://hexo.io/" target="_blank" rel="nofollow">hexo</a></p>
+						<p>&copy; 2016 - 2019 <a href="https://chenyubo.me">陈钰博的博客</a></p>
+					</div>
+				</div>
+            </div>
+            
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">最近文章</h3>
+                
+                <li><a href="/hexo-theme-pinghsu/">Pinghsu，A Hexo Theme</a></li>
+                
+                <li><a href="/server-guide/">服务器入门指北</a></li>
+                
+                <li><a href="/start-scroll-snap/">初见Scroll-Snap</a></li>
+                
+                <li><a href="/mac-install-python3-env/">Mac安装Python3开发环境随记</a></li>
+                
+                <li><a href="/aliyun-deploy-node/">阿里云部署项目笔记——Node篇</a></li>
+                
+                <li><a href="/aliyun-deploy-vue/">阿里云部署项目笔记——Vue篇</a></li>
+                
+                <li><a href="/ES2015-read-note/">《实战ES2015》读书笔记</a></li>
+                
+                <li><a href="/mac-mysql57-navicat-chinese-messy/">Mac下MySQL5.7连接Navicat中文乱码解决方案</a></li>
+                
+            </div>
+            
+		</div>
+	</div>
+</footer>
+
+
+<div id="directory-content" class="directory-content">
+    <div id="directory"></div>
+</div>
+<script>
+var postDirectoryBuild = function() {
+    var postChildren = function children(childNodes, reg) {
+        var result = [],
+            isReg = typeof reg === 'object',
+            isStr = typeof reg === 'string',
+            node, i, len;
+        for (i = 0, len = childNodes.length; i < len; i++) {
+            node = childNodes[i];
+            if ((node.nodeType === 1 || node.nodeType === 9) &&
+                (!reg ||
+                isReg && reg.test(node.tagName.toLowerCase()) ||
+                isStr && node.tagName.toLowerCase() === reg)) {
+                result.push(node);
+            }
+        }
+        return result;
+    },
+    createPostDirectory = function(article, directory, isDirNum) {
+        var contentArr = [],
+            titleId = [],
+            levelArr, root, level,
+            currentList, list, li, link, i, len;
+        levelArr = (function(article, contentArr, titleId) {
+            var titleElem = postChildren(article.childNodes, /^h\d$/),
+                levelArr = [],
+                lastNum = 1,
+                lastRevNum = 1,
+                count = 0,
+                guid = 1,
+                id = 'directory' + (Math.random() + '').replace(/\D/, ''),
+                lastRevNum, num, elem;
+            while (titleElem.length) {
+                elem = titleElem.shift();
+                contentArr.push(elem.innerHTML);
+                num = +elem.tagName.match(/\d/)[0];
+                if (num > lastNum) {
+                    levelArr.push(1);
+                    lastRevNum += 1;
+                } else if (num === lastRevNum ||
+                    num > lastRevNum && num <= lastNum) {
+                    levelArr.push(0);
+                    lastRevNum = lastRevNum;
+                } else if (num < lastRevNum) {
+                    levelArr.push(num - lastRevNum);
+                    lastRevNum = num;
+                }
+                count += levelArr[levelArr.length - 1];
+                lastNum = num;
+                elem.id = elem.id || (id + guid++);
+                titleId.push(elem.id);
+            }
+            if (count !== 0 && levelArr[0] === 1) levelArr[0] = 0;
+            return levelArr;
+        })(article, contentArr, titleId);
+        currentList = root = document.createElement('ul');
+        dirNum = [0];
+        for (i = 0, len = levelArr.length; i < len; i++) {
+            level = levelArr[i];
+            if (level === 1) {
+                list = document.createElement('ul');
+                if (!currentList.lastElementChild) {
+                    currentList.appendChild(document.createElement('li'));
+                }
+                currentList.lastElementChild.appendChild(list);
+                currentList = list;
+                dirNum.push(0);
+            } else if (level < 0) {
+                level *= 2;
+                while (level++) {
+                    if (level % 2) dirNum.pop();
+                    currentList = currentList.parentNode;
+                }
+            }
+            dirNum[dirNum.length - 1]++;
+            li = document.createElement('li');
+            link = document.createElement('a');
+            link.href = '#' + titleId[i];
+            link.innerHTML = !isDirNum ? contentArr[i] :
+                dirNum.join('.') + ' ' + contentArr[i] ;
+            li.appendChild(link);
+            currentList.appendChild(li);
+        }
+        directory.appendChild(root);
+    };
+    createPostDirectory(document.getElementById('post-content'),document.getElementById('directory'), true);
+};
+postDirectoryBuild();
+</script>
+
+<script src="//cdn.bootcss.com/headroom/0.9.1/headroom.min.js"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js"></script>
+
+
+<script src="/js/instantclick.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+<script>
+
+var postDirectory = new Headroom(document.getElementById("directory-content"), {
+    tolerance: 0,
+    
+    offset : 280,
+    
+    classes: {
+        initial: "initial",
+        pinned: "pinned",
+        unpinned: "unpinned"
+    }
+});
+postDirectory.init();
+
+
+var postSharer = new Headroom(document.getElementById("post-bottom-bar"), {
+    tolerance: 0,
+    offset : 70,
+    classes: {
+        initial: "animated",
+        pinned: "pinned",
+        unpinned: "unpinned"
+    }
+});
+postSharer.init();
+
+var header = new Headroom(document.getElementById("header"), {
+    tolerance: 0,
+    offset : 70,
+    classes: {
+      initial: "animated",
+      pinned: "slideDown",
+      unpinned: "slideUp"
+    }
+});
+header.init();
+
+hljs.initHighlightingOnLoad();
+
+
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
+
+</script>
+<script>
+var words = 'Front-End,JavaScript,HTML &amp; CSS,Node.js,React,Vue,passion &amp; love'.split(',').map(item => item.trim());
+var chakhsu = function(r){function t(){return b[Math.floor(Math.random()*b.length)]}function e(){return String.fromCharCode(94*Math.random()+33)}function n(r){for(var n=document.createDocumentFragment(),i=0;r>i;i++){var l=document.createElement("span");l.textContent=e(),l.style.color=t(),n.appendChild(l)}return n}function i(){var t=o[c.skillI];c.step?c.step--:(c.step=g,c.prefixP<l.length?(c.prefixP>=0&&(c.text+=l[c.prefixP]),c.prefixP++):"forward"===c.direction?c.skillP<t.length?(c.text+=t[c.skillP],c.skillP++):c.delay?c.delay--:(c.direction="backward",c.delay=a):c.skillP>0?(c.text=c.text.slice(0,-1),c.skillP--):(c.skillI=(c.skillI+1)%o.length,c.direction="forward")),r.textContent=c.text,r.appendChild(n(c.prefixP<l.length?Math.min(s,s+c.prefixP):Math.min(s,t.length-c.skillP))),setTimeout(i,d)}var l="I work with ",o=words.map(function(r){return r+"."}),a=2,g=1,s=5,d=75,b=["rgb(110,64,170)","rgb(150,61,179)","rgb(191,60,175)","rgb(228,65,157)","rgb(254,75,131)","rgb(255,94,99)","rgb(255,120,71)","rgb(251,150,51)","rgb(226,183,47)","rgb(198,214,60)","rgb(175,240,91)","rgb(127,246,88)","rgb(82,246,103)","rgb(48,239,130)","rgb(29,223,163)","rgb(26,199,194)","rgb(35,171,216)","rgb(54,140,225)","rgb(76,110,219)","rgb(96,84,200)"],c={text:"",prefixP:-s,skillI:0,skillP:0,direction:"forward",delay:a,step:g};i()};chakhsu(document.getElementById('chakhsu')); if ('addEventListener' in document) { document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false); }
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    showProcessingMessages: false,
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
+        ignoreClass:"comment-content"
+    },
+    "HTML-CSS": {
+        availableFonts: ["STIX","TeX"],
+        showMathMenu: false
+    }
+});
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+<script data-no-instant="">
+InstantClick.on('change', function(isInitialLoad){
+    
+    var blocks = document.querySelectorAll('pre code');
+    for (var i = 0; i < blocks.length; i++) {
+        hljs.highlightBlock(blocks[i]);
+    }
+    
+    if (isInitialLoad === false) {
+        
+        
+        if (typeof MathJax !== 'undefined'){MathJax.Hub.Queue(["Typeset",MathJax.Hub]);}
+        
+    }
+});
+InstantClick.init('mousedown');
+</script>
+
+

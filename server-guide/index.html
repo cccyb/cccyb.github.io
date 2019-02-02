@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    <link rel="dns-prefetch" href="//ws1.sinaimg.cn">
+    
+    <link rel="dns-prefetch" href="//cdn.bootcss.com">
+    <link rel="dns-prefetch" href="//secure.gravatar.com">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    
+    <link rel="shortcut icon" href="/images/favicon.png">
+    
+    
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
+    <title>
+    
+        服务器入门指北 - 陈钰博的博客
+    
+    </title>
+    <meta name="keywords" content="chenyubo,web,linux,html,css,javascript,react,node,vue,前端,后端,技术,博客,blog,爬虫">
+    <meta name="description" content="这是陈钰博的博客">
+    
+    <link href="//cdn.bootcss.com/highlight.js/9.10.0/styles/atom-one-dark.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.min.css">
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="bg-white" gtools_scp_screen_capture_injected="true">
+<!--[if lt IE 8]>
+<div class="browsehappy" role="dialog">
+    当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank">升级你的浏览器</a>。
+</div>
+<![endif]-->
+<header id="header" class="header bg-white">
+    <div class="navbar-container">
+        <a href="/" class="navbar-logo">
+            
+            陈钰博的博客
+            
+        </a>
+        <div class="navbar-menu">
+            
+            <a href="/categories" class="">分类</a>
+            
+            <a href="/tags" class="">标签</a>
+            
+            <a href="/archives" class="">归档</a>
+            
+            <a href="/links" class="">友情链接</a>
+            
+            <a href="/about" class="">关于我</a>
+            
+        </div>
+        <div class="navbar-mobile-menu" onclick="">
+            <span class="icon-menu cross"><span class="middle"></span></span>
+            <ul>
+                
+                <li><a href="/categories" class="">分类</a></li>
+                
+                <li><a href="/tags" class="">标签</a></li>
+                
+                <li><a href="/archives" class="">归档</a></li>
+                
+                <li><a href="/links" class="">友情链接</a></li>
+                
+                <li><a href="/about" class="">关于我</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</header></body></html>
+
+
+
+<div class="post-header-thumb">
+	<div class="post-header-thumb-op" style="background-image:url(/images/thumbs/12.jpg);"></div>
+	<div class="post-header-thumb-cover">
+		<div class="post-header-thumb-container">
+			<div class="post-header-thumb-title">
+				服务器入门指北
+			</div>
+			<div class="post-header-thumb-meta">
+				<time datetime="1547786785" itemprop="datePublished">Published on Jan 18, 2019 in </time><a href="/categories/Tutorials/">Tutorials</a>
+			</div>
+			<div class="post-tags">
+				
+				
+                <a href="/tags/Server/">Server</a>
+                
+                <a href="/tags/Node/">Node</a>
+                
+                <a href="/tags/Vps/">Vps</a>
+                
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<article class="main-content post-page" itemscope itemtype="http://schema.org/Article">
+	<div class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			服务器入门指北
+		</h1>
+		<div class="post-data">
+            <time datetime="1547786785" itemprop="datePublished">Published on Jan 18, 2019 in </time><a href="/categories/Tutorials/">Tutorials</a>
+		</div>
+	</div>
+	<div id="post-content" class="post-content" itemprop="articleBody">
+		<p class="post-tags">
+            
+            
+            <a href="/tags/Server/">Server</a>
+            
+            <a href="/tags/Node/">Node</a>
+            
+            <a href="/tags/Vps/">Vps</a>
+            
+            
+        </p>
+		<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>说起为啥又双叒叕的折腾起新服务器了，具体原因概括起来应该就是以下几点：</p>
+<ul>
+<li>以前在大学弄的阿里云学生主机过期了，</li>
+<li>原来的阿里云学生主机上也部署了几个项目，想着还是捡回来的比较好</li>
+<li>以前单纯为了搭ss买的vps硬盘和内存都太小了，装完ss基本就告罄了，也折腾不了其他东西了</li>
+<li>国内的主机都有点太贵了，只能退而求其次买个国外的配置稍微好点的主机，一可以多折腾一些小东西，二可以顺便搭个ss，也就可以把以前的那个ss主机停了</li>
+</ul>
+<p>总结起来就是一句话：不要怂，就是折腾，干就完了~</p>
+<h3 id="选择服务器"><a href="#选择服务器" class="headerlink" title="选择服务器"></a>选择服务器</h3><p>我选用的是国外比较著名的<a href="https://www.vultr.com/" target="_blank" rel="noopener">Vlutr</a>，洛杉矶主机，CentOs7.0系统，5刀/月的套餐。具体选啥主机，选啥套餐，用啥系统，根据每个人的需求因人而异，我不多做介绍。如果有兴趣的可以看下我同事写的文章，<a href="http://taoweng.site/index.php/archives/99/#directory01186845456699059412" target="_blank" rel="noopener">国外服务器如何选择以及搭建ShadowSocks教程</a>，里面比较详细的介绍了如果选择国外服务器。</p>
+<h3 id="登录服务器"><a href="#登录服务器" class="headerlink" title="登录服务器"></a>登录服务器</h3><p>购买完主机了，就可以开始登录我们的服务器了。由于本人使用的是Mac系统，Mac的终端自带ssh，下面都以Mac系统为主，所以如果使用Windows的同学，可以自行百度搜索如何登录服务器，比较著名的是Putty和Xshell。</p>
+<p>打开iTerm终端，username一般默认是root，然后在终端使用<code>ssh root@ip</code>命令远程连接服务器，在Vultr主机信息页面复制密码，在终端粘贴即可，<strong>注意，这里输入密码时终端是看不到的，</strong>粘贴完回车即可。</p>
+<p>正常情况下，没有意外的话，你的终端应该已经成功进入了服务器的终端命令行输入界面。</p>
+<p>但是，如果你输完ip，一直处于空白等待状态，没有提示你输入密码，那这时候要注意了，极有可能是你申请的主机ip和端口被墙了，导致ssh连接不上，这时你就需要检测一下主机是否真的被墙了。</p>
+<p>具体可以见<a href="https://www.vultrcn.com/11.html" target="_blank" rel="noopener">Vultr 能 Ping 但是 SSH 无法连接的解决办法</a>，按照里面的方法进行测试，如果确定是被ip和端口被封了，解决方案就是申请新的服务器主机以获取新的ip<strong>（注意：这里操作时必须保留原有的服务器，再额外申请新的服务器，这样才能获得新的ip，如果你先删除原有的服务器，然后在申请，这样申请到的服务器ip是和原先的一样的，）</strong>，同时对新得到的ip继续进行ssh登录，如果ssh登录时提示输入密码，即表示这台服务器的ip是可以使用的，此时可以删除前面申请的无效的服务器，否则重复申请操作直到获取一个可以使用的ip为止。</p>
+<h3 id="安装宝塔面板"><a href="#安装宝塔面板" class="headerlink" title="安装宝塔面板"></a>安装宝塔面板</h3><p>简单好用的 Linux/Windows 面板：<a href="https://www.bt.cn/" target="_blank" rel="noopener">https://www.bt.cn/</a></p>
+<p>建议安装一个宝塔面板，方便管理Linux，对于服务器小白特别适用，也适合我这种懒人，如果有服务器大神或者愿意折腾的小伙伴可以跳过。</p>
+<ol>
+<li>安装宝塔</li>
+</ol>
+<ul>
+<li>CentOS安装命令：</li>
+</ul>
+<pre><code class="bash">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh
+</code></pre>
+<ul>
+<li>Ubuntu/Deepin安装命令：</li>
+</ul>
+<pre><code class="bash">wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh
+</code></pre>
+<ul>
+<li>Debian安装命令：</li>
+</ul>
+<pre><code class="bash">wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; bash install.sh
+</code></pre>
+<ul>
+<li>Fedora安装命令:</li>
+</ul>
+<pre><code class="bash">wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; bash install.sh
+</code></pre>
+<p>中间需要根据提示输入 “y” 或者自定义目录，新手不了解的情况下最好不要动。</p>
+<ol start="2">
+<li><p>安装完终端会显示宝塔登录地址，以及随机生成的用户名密码，在浏览器中输入登录宝塔面板</p>
+</li>
+<li><p>进入首页，会建议你安装web运行环境：LNMP(Linux + Nginx + MySQL + PHP)或LAMP(Linux + Apache + MySQL + PHP)，这里推荐使用LNMP，使用极速安装，对新手友好。</p>
+</li>
+<li><p>点击侧边栏的面板设置，修改面板别名、默认端口、面板用户和密码。</p>
+</li>
+<li><p>点击侧边栏的安全，修改ssh登录端口号。</p>
+</li>
+<li><p>宝塔常用linux命令大全：<a href="https://www.bt.cn/btcode.html，有需要可以查看。" target="_blank" rel="noopener">https://www.bt.cn/btcode.html，有需要可以查看。</a></p>
+</li>
+</ol>
+<h3 id="搭建-Shadowsocks-服务，科学上网"><a href="#搭建-Shadowsocks-服务，科学上网" class="headerlink" title="搭建 Shadowsocks 服务，科学上网"></a>搭建 Shadowsocks 服务，科学上网</h3><ol>
+<li>检测是否安装Python和Pip</li>
+</ol>
+<pre><code class="bash">python -V
+pip -V
+</code></pre>
+<p>如果正确显示python和pip的版本，则跳转第3步进行安装Shadowsocks，否则跳转第2步安装pip</p>
+<ol start="2">
+<li>安装pip</li>
+</ol>
+<pre><code class="bash">yum install python-setuptools &amp;&amp; easy_install pip
+</code></pre>
+<ol start="3">
+<li>安装Shadowsocks</li>
+</ol>
+<pre><code class="bash">pip install shadowsocks
+</code></pre>
+<ol start="4">
+<li>配置服务器参数</li>
+</ol>
+<p>生成配置文件：<code>touch /etc/shadowsocks.json</code></p>
+<p>编辑配置文件：<code>vi /etc/shadowsocks.json</code></p>
+<p>写入以下配置：</p>
+<pre><code class="json">{
+    &quot;server&quot;:&quot;my_server_ip&quot;, // 你的服务器ip
+    &quot;server_port&quot;: 8388, // 端口自定义
+    &quot;local_address&quot;: &quot;127.0.0.1&quot;,
+    &quot;local_port&quot;:1080,
+    &quot;password&quot;:&quot;mypassword&quot;, // 自定义密码，后续客户端连接需要用到
+    &quot;timeout&quot;:300,
+    &quot;method&quot;:&quot;aes-256-cfb&quot;,
+    &quot;fast_open&quot;: false
+}
+</code></pre>
+<ul>
+<li>server：填写你的服务器的ip</li>
+<li>server_port：填写端口，自定义</li>
+<li>password：填写你自定义的密码，后续客户端连接需要用到</li>
+</ul>
+<ol start="5">
+<li>开启防火墙端口</li>
+</ol>
+<p>进入宝塔面板，点击安全，在下方端口界面出输入8388端口，点击放行即可。</p>
+<p>或者使用命令行</p>
+<pre><code class="bash">firewall-cmd --permanent --zone=public --add-port=8388/tcp
+firewall-cmd --reload
+</code></pre>
+<ol start="6">
+<li>后台运行服务</li>
+</ol>
+<pre><code class="bash">ssserver -c /etc/shadowsocks.json -d start
+</code></pre>
+<p>至此，服务端的搭建就完成了，后续只需要在你的电脑上下载一个客户端配置即可。</p>
+
+		<p class="post-info">
+			本文由 <a href="https://chenyubo.me">陈钰博</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: Feb 02, 2019 02:54 pm
+		</p>
+	</div>
+</article>
+<div id="post-bottom-bar" class="post-bottom-bar">
+	<div class="bottom-bar-inner">
+		<div class="bottom-bar-items social-share left">
+			<span class="bottom-bar-item">Share : </span>
+			<span class="bottom-bar-item bottom-bar-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://chenyubo.me/server-guide/index.html" target="_blank" title="服务器入门指北" rel="nofollow">facebook</a></span>
+			<span class="bottom-bar-item bottom-bar-twitter"><a href="https://twitter.com/intent/tweet?url=https://chenyubo.me/server-guide/&text=服务器入门指北" target="_blank" title="服务器入门指北" rel="nofollow">Twitter</a></span>
+			<span class="bottom-bar-item bottom-bar-weibo"><a href="http://service.weibo.com/share/share.php?url=&amp;title=服务器入门指北" target="_blank" title="服务器入门指北" rel="nofollow">Weibo</a></span>
+			<span class="bottom-bar-item bottom-bar-qrcode"><a href="//pan.baidu.com/share/qrcode?w=300&amp;h=300&amp;url=https://chenyubo.me/server-guide/index.html" target="_blank" rel="nofollow">QRcode</a></span>
+		</div>
+		<div class="bottom-bar-items right">
+            
+            <span class="bottom-bar-item"><a href="/hexo-theme-pinghsu/">←</a></span>
+            
+            
+            <span class="bottom-bar-item"><a href="/start-scroll-snap/">→</a></span>
+            
+			<span class="bottom-bar-item"><a href="#footer">↓</a></span>
+			<span class="bottom-bar-item"><a href="#">↑</a></span>
+		</div>
+	</div>
+</div>
+
+
+<div class="related-post-lists">
+	<div class="post-lists">
+		<div class="post-lists-body">
+		
+			<div class="post-list-item">
+				<div class="post-list-item-container">
+					<div class="item-label">
+						<div class="item-title"><a href="/aliyun-deploy-node/">阿里云部署项目笔记——Node篇</a></div>
+						<div class="item-meta clearfix">
+							<div class="item-meta-date" style="color: #5f5f5f;">May 10, 2017</div>
+							<div class="item-meta-ico bg-ico-game" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
+                            <div class="item-meta-cat">
+                                
+                                <a href="/categories/Notes/">Notes</a>
+                                
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		
+			<div class="post-list-item">
+				<div class="post-list-item-container">
+					<div class="item-label">
+						<div class="item-title"><a href="/aliyun-deploy-vue/">阿里云部署项目笔记——Vue篇</a></div>
+						<div class="item-meta clearfix">
+							<div class="item-meta-date" style="color: #5f5f5f;">Apr 02, 2017</div>
+							<div class="item-meta-ico bg-ico-game" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
+                            <div class="item-meta-cat">
+                                
+                                <a href="/categories/Notes/">Notes</a>
+                                
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+
+<footer id="footer" class="footer bg-white">
+	<div class="footer-social">
+		<div class="footer-container clearfix">
+			<div class="social-list">
+				<a class="social weibo" target="blank" href="/">WEIBO</a>
+                <a class="social zhihu" target="blank" href="https://www.zhihu.com/people/52c7f85cb2abafde0b78124e21a68002">ZHIHU</a>
+                <a class="social rss" target="blank" href="/atom.xml">RSS</a>
+				<a class="social github" target="blank" href="https://github.com/cccyb">GITHUB</a>
+                <a class="social twitter" target="blank" href="/">TWITTER</a>
+			</div>
+		</div>
+	</div>
+	<div class="footer-meta">
+		<div class="footer-container">
+			<div class="meta-item meta-copyright">
+				<div class="meta-copyright-info">
+                    <a href="https://chenyubo.me" class="info-logo">
+                        
+                        陈钰博的博客
+                        
+                    </a>
+					<div class="info-text">
+                        <p id="chakhsu"></p>
+                    	<p>Theme is <a href="https://github.com/cccyb/hexo-theme-pinghsu" target="_blank">Pinghsu</a> by <a href="https://chenyubo.cc/" target="_blank">陈钰博</a></p>
+						<p>Powered by <a href="https://hexo.io/" target="_blank" rel="nofollow">hexo</a></p>
+						<p>&copy; 2016 - 2019 <a href="https://chenyubo.me">陈钰博的博客</a></p>
+					</div>
+				</div>
+            </div>
+            
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">最近文章</h3>
+                
+                <li><a href="/hexo-theme-pinghsu/">Pinghsu，A Hexo Theme</a></li>
+                
+                <li><a href="/server-guide/">服务器入门指北</a></li>
+                
+                <li><a href="/start-scroll-snap/">初见Scroll-Snap</a></li>
+                
+                <li><a href="/mac-install-python3-env/">Mac安装Python3开发环境随记</a></li>
+                
+                <li><a href="/aliyun-deploy-node/">阿里云部署项目笔记——Node篇</a></li>
+                
+                <li><a href="/aliyun-deploy-vue/">阿里云部署项目笔记——Vue篇</a></li>
+                
+                <li><a href="/ES2015-read-note/">《实战ES2015》读书笔记</a></li>
+                
+                <li><a href="/mac-mysql57-navicat-chinese-messy/">Mac下MySQL5.7连接Navicat中文乱码解决方案</a></li>
+                
+            </div>
+            
+		</div>
+	</div>
+</footer>
+
+
+<div id="directory-content" class="directory-content">
+    <div id="directory"></div>
+</div>
+<script>
+var postDirectoryBuild = function() {
+    var postChildren = function children(childNodes, reg) {
+        var result = [],
+            isReg = typeof reg === 'object',
+            isStr = typeof reg === 'string',
+            node, i, len;
+        for (i = 0, len = childNodes.length; i < len; i++) {
+            node = childNodes[i];
+            if ((node.nodeType === 1 || node.nodeType === 9) &&
+                (!reg ||
+                isReg && reg.test(node.tagName.toLowerCase()) ||
+                isStr && node.tagName.toLowerCase() === reg)) {
+                result.push(node);
+            }
+        }
+        return result;
+    },
+    createPostDirectory = function(article, directory, isDirNum) {
+        var contentArr = [],
+            titleId = [],
+            levelArr, root, level,
+            currentList, list, li, link, i, len;
+        levelArr = (function(article, contentArr, titleId) {
+            var titleElem = postChildren(article.childNodes, /^h\d$/),
+                levelArr = [],
+                lastNum = 1,
+                lastRevNum = 1,
+                count = 0,
+                guid = 1,
+                id = 'directory' + (Math.random() + '').replace(/\D/, ''),
+                lastRevNum, num, elem;
+            while (titleElem.length) {
+                elem = titleElem.shift();
+                contentArr.push(elem.innerHTML);
+                num = +elem.tagName.match(/\d/)[0];
+                if (num > lastNum) {
+                    levelArr.push(1);
+                    lastRevNum += 1;
+                } else if (num === lastRevNum ||
+                    num > lastRevNum && num <= lastNum) {
+                    levelArr.push(0);
+                    lastRevNum = lastRevNum;
+                } else if (num < lastRevNum) {
+                    levelArr.push(num - lastRevNum);
+                    lastRevNum = num;
+                }
+                count += levelArr[levelArr.length - 1];
+                lastNum = num;
+                elem.id = elem.id || (id + guid++);
+                titleId.push(elem.id);
+            }
+            if (count !== 0 && levelArr[0] === 1) levelArr[0] = 0;
+            return levelArr;
+        })(article, contentArr, titleId);
+        currentList = root = document.createElement('ul');
+        dirNum = [0];
+        for (i = 0, len = levelArr.length; i < len; i++) {
+            level = levelArr[i];
+            if (level === 1) {
+                list = document.createElement('ul');
+                if (!currentList.lastElementChild) {
+                    currentList.appendChild(document.createElement('li'));
+                }
+                currentList.lastElementChild.appendChild(list);
+                currentList = list;
+                dirNum.push(0);
+            } else if (level < 0) {
+                level *= 2;
+                while (level++) {
+                    if (level % 2) dirNum.pop();
+                    currentList = currentList.parentNode;
+                }
+            }
+            dirNum[dirNum.length - 1]++;
+            li = document.createElement('li');
+            link = document.createElement('a');
+            link.href = '#' + titleId[i];
+            link.innerHTML = !isDirNum ? contentArr[i] :
+                dirNum.join('.') + ' ' + contentArr[i] ;
+            li.appendChild(link);
+            currentList.appendChild(li);
+        }
+        directory.appendChild(root);
+    };
+    createPostDirectory(document.getElementById('post-content'),document.getElementById('directory'), true);
+};
+postDirectoryBuild();
+</script>
+
+<script src="//cdn.bootcss.com/headroom/0.9.1/headroom.min.js"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js"></script>
+
+
+<script src="/js/instantclick.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+<script>
+
+var postDirectory = new Headroom(document.getElementById("directory-content"), {
+    tolerance: 0,
+    
+    offset : 280,
+    
+    classes: {
+        initial: "initial",
+        pinned: "pinned",
+        unpinned: "unpinned"
+    }
+});
+postDirectory.init();
+
+
+var postSharer = new Headroom(document.getElementById("post-bottom-bar"), {
+    tolerance: 0,
+    offset : 70,
+    classes: {
+        initial: "animated",
+        pinned: "pinned",
+        unpinned: "unpinned"
+    }
+});
+postSharer.init();
+
+var header = new Headroom(document.getElementById("header"), {
+    tolerance: 0,
+    offset : 70,
+    classes: {
+      initial: "animated",
+      pinned: "slideDown",
+      unpinned: "slideUp"
+    }
+});
+header.init();
+
+hljs.initHighlightingOnLoad();
+
+
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
+
+</script>
+<script>
+var words = 'Front-End,JavaScript,HTML &amp; CSS,Node.js,React,Vue,passion &amp; love'.split(',').map(item => item.trim());
+var chakhsu = function(r){function t(){return b[Math.floor(Math.random()*b.length)]}function e(){return String.fromCharCode(94*Math.random()+33)}function n(r){for(var n=document.createDocumentFragment(),i=0;r>i;i++){var l=document.createElement("span");l.textContent=e(),l.style.color=t(),n.appendChild(l)}return n}function i(){var t=o[c.skillI];c.step?c.step--:(c.step=g,c.prefixP<l.length?(c.prefixP>=0&&(c.text+=l[c.prefixP]),c.prefixP++):"forward"===c.direction?c.skillP<t.length?(c.text+=t[c.skillP],c.skillP++):c.delay?c.delay--:(c.direction="backward",c.delay=a):c.skillP>0?(c.text=c.text.slice(0,-1),c.skillP--):(c.skillI=(c.skillI+1)%o.length,c.direction="forward")),r.textContent=c.text,r.appendChild(n(c.prefixP<l.length?Math.min(s,s+c.prefixP):Math.min(s,t.length-c.skillP))),setTimeout(i,d)}var l="I work with ",o=words.map(function(r){return r+"."}),a=2,g=1,s=5,d=75,b=["rgb(110,64,170)","rgb(150,61,179)","rgb(191,60,175)","rgb(228,65,157)","rgb(254,75,131)","rgb(255,94,99)","rgb(255,120,71)","rgb(251,150,51)","rgb(226,183,47)","rgb(198,214,60)","rgb(175,240,91)","rgb(127,246,88)","rgb(82,246,103)","rgb(48,239,130)","rgb(29,223,163)","rgb(26,199,194)","rgb(35,171,216)","rgb(54,140,225)","rgb(76,110,219)","rgb(96,84,200)"],c={text:"",prefixP:-s,skillI:0,skillP:0,direction:"forward",delay:a,step:g};i()};chakhsu(document.getElementById('chakhsu')); if ('addEventListener' in document) { document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false); }
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    showProcessingMessages: false,
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
+        ignoreClass:"comment-content"
+    },
+    "HTML-CSS": {
+        availableFonts: ["STIX","TeX"],
+        showMathMenu: false
+    }
+});
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+<script data-no-instant="">
+InstantClick.on('change', function(isInitialLoad){
+    
+    var blocks = document.querySelectorAll('pre code');
+    for (var i = 0; i < blocks.length; i++) {
+        hljs.highlightBlock(blocks[i]);
+    }
+    
+    if (isInitialLoad === false) {
+        
+        
+        if (typeof MathJax !== 'undefined'){MathJax.Hub.Queue(["Typeset",MathJax.Hub]);}
+        
+    }
+});
+InstantClick.init('mousedown');
+</script>
+
+
