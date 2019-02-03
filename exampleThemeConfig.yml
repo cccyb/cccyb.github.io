@@ -23,6 +23,7 @@ menu:
 archive: year
 
 # Social Setting 社交设置
+# 留空则不显示
 # weibo 微博链接
 # zhihu 知乎链接
 # rss rss链接
@@ -30,9 +31,9 @@ archive: year
 # twitter twitter链接
 social:
   weibo: 
-  zhihu: https://www.zhihu.com/people/52c7f85cb2abafde0b78124e21a68002
+  zhihu: 
   rss: /atom.xml
-  github: https://github.com/cccyb
+  github: 
   twitter: 
 
 # ===========================================
@@ -49,7 +50,7 @@ dnsPrefetch: true
 
 # 自定义CDN加速地址
 # 若设置，且启用DNS预解析，则会被加速，可以填写图床地址进行图片加载加速，或者加速其他cdn
-cdnAdd: ws1.sinaimg.cn
+cdnAdd: 
 
 # 是否启用移动端点击延迟消除设置
 enableFastClick: true
@@ -116,14 +117,10 @@ highlight:
 # 底部彩色动态词语配置
 # 一个词语一行
 animateWords:
-  - Front-End
-  - JavaScript
-  - HTML & CSS
-  - Node.js
-  - React
-  - Vue
-  - passion & 
-  
+  - Hexo
+  - Theme
+  - Pinghsu
+
 # 不蒜子网站统计
 busuanzi: true
 
@@ -136,12 +133,12 @@ clickLove: true
 # 配置项具体含义见文档：https://github.com/gitalk/gitalk/blob/master/readme-cn.md
 gitalk:
   enable: true
-  clientID: 8890a35d7f119c779789
-  clientSecret: 5b0dd838137db535c35fe0d41f77f96e8bfce25c
-  repo: gitalk
-  owner: cccyb
-  admin: 
-    - cccyb
+  clientID: 
+  clientSecret: 
+  repo: 
+  owner: 
+  admin: # 如果有多个，一个一行
+    - 
   id: location.pathname
   perPage: 15
   distractionFreeMode: false
