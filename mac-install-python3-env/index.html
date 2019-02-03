@@ -225,7 +225,7 @@ trusted-host = pypi.douban.com
 						<div class="item-title"><a href="/mac-mysql57-navicat-chinese-messy/">Mac下MySQL5.7连接Navicat中文乱码解决方案</a></div>
 						<div class="item-meta clearfix">
 							<div class="item-meta-date" style="color: #5f5f5f;">Aug 08, 2016</div>
-							<div class="item-meta-ico bg-ico-game" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
+							<div class="item-meta-ico bg-ico-web" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
                             <div class="item-meta-cat">
                                 
                                 <a href="/categories/Notes/">Notes</a>
@@ -245,6 +245,26 @@ trusted-host = pypi.douban.com
 <div class="comment-container">
 	<div id="gitalk-container"></div>
 </div>
+
+
+
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script>
+var gitalk = new Gitalk({
+    clientID: '8890a35d7f119c779789',
+    clientSecret: '5b0dd838137db535c35fe0d41f77f96e8bfce25c',
+    repo: 'gitalk',
+    owner: 'cccyb',
+    admin: 'cccyb'.split(','),
+    id: 'location.pathname',
+    perPage: 15,
+    distractionFreeMode: false,
+    pagerDirection: 'last',
+    createIssueManually: true,
+    enableHotKey: true
+})
+gitalk.render('gitalk-container')
+</script>
 
 
 <footer id="footer" class="footer bg-white">
@@ -491,25 +511,6 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-
-<script>
-var gitalk = new Gitalk({
-    clientID: '8890a35d7f119c779789',
-    clientSecret: '5b0dd838137db535c35fe0d41f77f96e8bfce25c',
-    repo: 'gitalk',
-    owner: 'cccyb',
-    admin: 'cccyb'.split(','),
-    id: 'location.pathname',
-    perPage: 15,
-    distractionFreeMode: false,
-    pagerDirection: 'last',
-    createIssueManually: true,
-    enableHotKey: true
-})
-gitalk.render('gitalk-container')
-</script>
 
 
 
