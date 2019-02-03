@@ -642,26 +642,6 @@ auto: 自动展示位置，默认跨度为1。
 </div>
 
 
-
-<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-<script>
-var gitalk = new Gitalk({
-    clientID: '8890a35d7f119c779789',
-    clientSecret: '5b0dd838137db535c35fe0d41f77f96e8bfce25c',
-    repo: 'gitalk',
-    owner: 'cccyb',
-    admin: 'cccyb'.split(','),
-    id: location.pathname,
-    perPage: 15,
-    distractionFreeMode: false,
-    pagerDirection: 'last',
-    createIssueManually: true,
-    enableHotKey: true
-})
-gitalk.render('gitalk-container')
-</script>
-
-
 <footer id="footer" class="footer bg-white">
 	<div class="footer-social">
 		<div class="footer-container clearfix">
@@ -906,6 +886,27 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script>
+var gitalk = new Gitalk({
+    clientID: '8890a35d7f119c779789',
+    clientSecret: '5b0dd838137db535c35fe0d41f77f96e8bfce25c',
+    repo: 'gitalk',
+    owner: 'cccyb',
+    admin: 'cccyb'.split(','),
+    id: location.pathname,
+    title: title,
+    body: location.href,
+    perPage: 15,
+    distractionFreeMode: false,
+    pagerDirection: 'last',
+    createIssueManually: true,
+    enableHotKey: true
+})
+gitalk.render('gitalk-container')
+</script>
 
 
 
