@@ -91,44 +91,44 @@
         <div class="search-tags">
         
             
-            <a href="/tags/Server/" class="text-white bg-blue"># Server(3)</a>
+            <a href="/tags/Server/" class="text-white bg-yellow"># Server(3)</a>
             
-            <a href="/tags/Vue/" class="text-white bg-green"># Vue(2)</a>
+            <a href="/tags/Vue/" class="text-white bg-purple"># Vue(2)</a>
             
-            <a href="/tags/Mac/" class="text-white bg-red"># Mac(2)</a>
+            <a href="/tags/Mac/" class="text-white bg-yellow"># Mac(2)</a>
             
             <a href="/tags/Node/" class="text-white bg-green"># Node(2)</a>
             
-            <a href="/tags/CSS/" class="text-white bg-green"># CSS(2)</a>
+            <a href="/tags/CSS/" class="text-white bg-blue"># CSS(2)</a>
             
-            <a href="/tags/Environment/" class="text-white bg-yellow"># Environment(1)</a>
+            <a href="/tags/Python/" class="text-white bg-purple"># Python(1)</a>
             
-            <a href="/tags/MySQL/" class="text-white bg-red"># MySQL(1)</a>
+            <a href="/tags/Environment/" class="text-white bg-purple"># Environment(1)</a>
             
-            <a href="/tags/Vps/" class="text-white bg-purple"># Vps(1)</a>
+            <a href="/tags/Vps/" class="text-white bg-blue"># Vps(1)</a>
             
-            <a href="/tags/ES2105/" class="text-white bg-red"># ES2105(1)</a>
+            <a href="/tags/ES2105/" class="text-white bg-green"># ES2105(1)</a>
             
             <a href="/tags/Layout/" class="text-white bg-purple"># Layout(1)</a>
             
-            <a href="/tags/Python/" class="text-white bg-yellow"># Python(1)</a>
+            <a href="/tags/MySQL/" class="text-white bg-yellow"># MySQL(1)</a>
             
-            <a href="/tags/Scroll-Snap/" class="text-white bg-blue"># Scroll Snap(1)</a>
+            <a href="/tags/Scroll-Snap/" class="text-white bg-purple"># Scroll Snap(1)</a>
             
-            <a href="/tags/WebApp/" class="text-white bg-purple"># WebApp(1)</a>
+            <a href="/tags/WebApp/" class="text-white bg-green"># WebApp(1)</a>
             
-            <a href="/tags/Hexo/" class="text-white bg-purple"># Hexo(1)</a>
+            <a href="/tags/Hexo/" class="text-white bg-blue"># Hexo(1)</a>
             
-            <a href="/tags/Theme/" class="text-white bg-purple"># Theme(1)</a>
+            <a href="/tags/Theme/" class="text-white bg-red"># Theme(1)</a>
             
-            <a href="/tags/Pinghsu/" class="text-white bg-green"># Pinghsu(1)</a>
+            <a href="/tags/Pinghsu/" class="text-white bg-orange"># Pinghsu(1)</a>
             
-            <a href="/tags/Grid/" class="text-white bg-yellow"># Grid(1)</a>
+            <a href="/tags/Grid/" class="text-white bg-purple"># Grid(1)</a>
             
             <a href="/tags/ES6/" class="text-white bg-yellow"># ES6(1)</a>
             
         
-            <div class="search-tags-hr bg-red"></div>
+            <div class="search-tags-hr bg-purple"></div>
         </div>
     </div>
 </div>
@@ -137,12 +137,18 @@
 	<div class="footer-social">
 		<div class="footer-container clearfix">
 			<div class="social-list">
-				<a class="social weibo" target="blank" href="/">WEIBO</a>
+                
+                
                 <a class="social zhihu" target="blank" href="https://www.zhihu.com/people/52c7f85cb2abafde0b78124e21a68002">ZHIHU</a>
+                
+                
                 <a class="social rss" target="blank" href="/atom.xml">RSS</a>
-				<a class="social github" target="blank" href="https://github.com/cccyb">GITHUB</a>
-                <a class="social twitter" target="blank" href="/">TWITTER</a>
-			</div>
+				
+                
+                <a class="social github" target="blank" href="https://github.com/cccyb">GITHUB</a>
+                
+                
+            </div>
 		</div>
 	</div>
 	<div class="footer-meta">
@@ -156,7 +162,7 @@
                     </a>
 					<div class="info-text">
                         <p id="chakhsu"></p>
-                    	<p>Theme is <a href="https://github.com/cccyb/hexo-theme-pinghsu" target="_blank">Pinghsu</a> by <a href="https://chenyubo.cc/" target="_blank">陈钰博</a></p>
+                    	<p>Theme is <a href="https://github.com/cccyb/hexo-theme-pinghsu" target="_blank">Pinghsu</a> by <a href="https://chenyubo.me" target="_blank">陈钰博</a></p>
 						<p>Powered by <a href="https://hexo.io/" target="_blank" rel="nofollow">hexo</a></p>
 						<p>&copy; 2016 - 2019 <a href="https://chenyubo.me">陈钰博的博客</a></p>
 					</div>
@@ -194,7 +200,7 @@
 <script src="//cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js"></script>
 
 
-<script src="/js/instantclick.min.js"></script>
+<script src="/js/instantclick.min.js" data-no-instant=""></script>
 
 
 <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
@@ -212,9 +218,7 @@ var header = new Headroom(document.getElementById("header"), {
     }
 });
 header.init();
-
-hljs.initHighlightingOnLoad();
-
+ 
 
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
@@ -264,7 +268,7 @@ InstantClick.on('change', function(isInitialLoad){
         
         if (typeof MathJax !== 'undefined'){MathJax.Hub.Queue(["Typeset",MathJax.Hub]);}
         
-    }
+    } 
 });
 InstantClick.init('mousedown');
 </script>

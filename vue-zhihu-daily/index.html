@@ -355,12 +355,18 @@ npm run build
 	<div class="footer-social">
 		<div class="footer-container clearfix">
 			<div class="social-list">
-				<a class="social weibo" target="blank" href="/">WEIBO</a>
+                
+                
                 <a class="social zhihu" target="blank" href="https://www.zhihu.com/people/52c7f85cb2abafde0b78124e21a68002">ZHIHU</a>
+                
+                
                 <a class="social rss" target="blank" href="/atom.xml">RSS</a>
-				<a class="social github" target="blank" href="https://github.com/cccyb">GITHUB</a>
-                <a class="social twitter" target="blank" href="/">TWITTER</a>
-			</div>
+				
+                
+                <a class="social github" target="blank" href="https://github.com/cccyb">GITHUB</a>
+                
+                
+            </div>
 		</div>
 	</div>
 	<div class="footer-meta">
@@ -374,7 +380,7 @@ npm run build
                     </a>
 					<div class="info-text">
                         <p id="chakhsu"></p>
-                    	<p>Theme is <a href="https://github.com/cccyb/hexo-theme-pinghsu" target="_blank">Pinghsu</a> by <a href="https://chenyubo.cc/" target="_blank">陈钰博</a></p>
+                    	<p>Theme is <a href="https://github.com/cccyb/hexo-theme-pinghsu" target="_blank">Pinghsu</a> by <a href="https://chenyubo.me" target="_blank">陈钰博</a></p>
 						<p>Powered by <a href="https://hexo.io/" target="_blank" rel="nofollow">hexo</a></p>
 						<p>&copy; 2016 - 2019 <a href="https://chenyubo.me">陈钰博的博客</a></p>
 					</div>
@@ -505,7 +511,7 @@ postDirectoryBuild();
 <script src="//cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js"></script>
 
 
-<script src="/js/instantclick.min.js"></script>
+<script src="/js/instantclick.min.js" data-no-instant=""></script>
 
 
 <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
@@ -547,9 +553,7 @@ var header = new Headroom(document.getElementById("header"), {
     }
 });
 header.init();
-
-hljs.initHighlightingOnLoad();
-
+ 
 
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
@@ -599,7 +603,7 @@ InstantClick.on('change', function(isInitialLoad){
         
         if (typeof MathJax !== 'undefined'){MathJax.Hub.Queue(["Typeset",MathJax.Hub]);}
         
-    }
+    } 
 });
 InstantClick.init('mousedown');
 </script>
