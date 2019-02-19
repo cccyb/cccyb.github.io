@@ -99,6 +99,14 @@ $ git clone https://github.com/cccyb/hexo-theme-pinghsu.git themes/pinghsu
 theme: pinghsu
 ```
 
+### Update 更新主题
+进入`Hexo`博客目录下的主题`themes`目录下的`pinghsu`目录：
+
+```bash
+$ cd your-hexo-site/themes/pinghsu
+$ git pull
+```
+
 ## Setting 主题设置
 
 ### Site Setting 网站通用设置
@@ -467,12 +475,11 @@ social:
 ## Todos 未来
 
 - 搜索页
-- 集成评论系统
-- 百度统计
 - 谷歌分析
-- 阅读次数
-- 不蒜子
-- 404页面
+- 文章阅读次数
+- 打赏功能
+- 代码压缩
+- 更完整的使用文档
 - 图片点击放大预览
 - ...more
 
