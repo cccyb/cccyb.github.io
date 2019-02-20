@@ -62,6 +62,13 @@ recentlyPosts:
   enable: true
   limit: 8
 
+# 底部最近评论设置
+# enable：是否启用
+# limit：显示数量，建议设置不超过8条
+recentlyComments:
+  enable: true
+  limit: 8
+
 # ===========================================
 # Appearance Setting 外观设置
 # ===========================================
@@ -103,11 +110,13 @@ highlight:
 animateWords:
   - Front-End
   - JavaScript
-  - HTML & CSS
+  - HTML
+  - CSS
   - Node.js
   - React
   - Vue
-  - passion & 
+  - passion
+  - love 
   
 # 不蒜子网站统计
 busuanzi: true
@@ -115,25 +124,18 @@ busuanzi: true
 # 网站点击红心效果
 clickLove: true
 
-# gitalk评论系统
-# 配置项具体含义见文档：https://github.com/gitalk/gitalk/blob/master/readme-cn.md
-gitalk:
-  enable: true
-  clientID: 8890a35d7f119c779789
-  clientSecret: 5b0dd838137db535c35fe0d41f77f96e8bfce25c
-  repo: gitalk
-  owner: cccyb
-  admin: 
-    - cccyb
-  id: location.pathname
-  perPage: 15
-  distractionFreeMode: false
-  pagerDirection: last
-  createIssueManually: true
-  enableHotKey: true
-
-# 百度统计
+# 百度统计，填写复 hm.js? 后面那串统计脚本 id
 baiduAnalytics: 1c3cfd25e61e2ebebfa42a5529d2d621
 
 # 网站备案信息
 beian: 
+
+# valine评论系统
+valine:
+  enable: true
+  appId: pyBLR79r66pCCErtN6UptDgW-gzGzoHsz
+  appKey: OH0atmy3O9rPdTndkp5xGc5U
+  placeholder: Your commnet here. Be cool.
+  pageSize: 10
+  avatar: mp
+  visitor: true
