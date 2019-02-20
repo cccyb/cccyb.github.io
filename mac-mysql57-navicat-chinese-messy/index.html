@@ -5,6 +5,8 @@
     
     <meta http-equiv="x-dns-prefetch-control" content="on">
     
+    <link rel="dns-prefetch" href="//ws1.sinaimg.cn">
+    
     <link rel="dns-prefetch" href="//cdn.bootcss.com">
     <link rel="dns-prefetch" href="//secure.gravatar.com">
     
@@ -29,14 +31,25 @@
     <meta name="description" content="这是陈钰博的博客">
     
     <link href="//cdn.bootcss.com/highlight.js/9.10.0/styles/atom-one-dark.min.css" rel="stylesheet">
-    
-    <link href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="/style.min.css">
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?1c3cfd25e61e2ebebfa42a5529d2d621";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
     
 </head>
 <body class="bg-white" gtools_scp_screen_capture_injected="true">
@@ -94,7 +107,16 @@
 				Mac下MySQL5.7连接Navicat中文乱码解决方案
 			</div>
 			<div class="post-header-thumb-meta">
-				<time datetime="1470631585" itemprop="datePublished">Published on Aug 08, 2016 in </time><a href="/categories/Notes/">Notes</a>
+				
+				<span id="/mac-mysql57-navicat-chinese-messy/" class="leancloud-visitors" data-flag-title="Mac下MySQL5.7连接Navicat中文乱码解决方案">
+					<span class="leancloud-visitors-count"></span> Views 
+				</span>
+				
+				<time datetime="1470631585" itemprop="datePublished">Published on Aug 08, 2016 in </time>
+				<a href="/categories/Notes/">Notes</a>
+				
+				with <a id="page-title-comment" href="#vcomments"></a>
+				
 			</div>
 			<div class="post-tags">
 				
@@ -116,7 +138,15 @@
 			Mac下MySQL5.7连接Navicat中文乱码解决方案
 		</h1>
 		<div class="post-data">
+			
+			<span id="/mac-mysql57-navicat-chinese-messy/" class="leancloud-visitors" data-flag-title="Mac下MySQL5.7连接Navicat中文乱码解决方案">
+				<span class="leancloud-visitors-count">0</span> Views 
+			</span>
+			
             <time datetime="1470631585" itemprop="datePublished">Published on Aug 08, 2016 in </time><a href="/categories/Notes/">Notes</a>
+			
+			with <a id="page-title-comment" href="#vcomments"></a>
+			
 		</div>
 	</div>
 	<div id="post-content" class="post-content" itemprop="articleBody">
@@ -193,7 +223,7 @@
 						<div class="item-title"><a href="/mac-install-python3-env/">Mac安装Python3开发环境随记</a></div>
 						<div class="item-meta clearfix">
 							<div class="item-meta-date" style="color: #5f5f5f;">Aug 11, 2018</div>
-							<div class="item-meta-ico bg-ico-code" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
+							<div class="item-meta-ico bg-ico-lock" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
                             <div class="item-meta-cat">
                                 
                                 <a href="/categories/Notes/">Notes</a>
@@ -211,7 +241,7 @@
 
 
 <div class="comment-container">
-	<div id="gitalk-container"></div>
+	<div id="vcomments"></div>
 </div>
 
 
@@ -220,9 +250,11 @@
 		<div class="footer-container clearfix">
 			<div class="social-list">
                 
-                    <a class="social" target="blank" href="">知乎</a>
+                    <a class="social" target="blank" href="https://www.zhihu.com/people/52c7f85cb2abafde0b78124e21a68002">知乎</a>
                 
-                    <a class="social" target="blank" href="">Github</a>
+                    <a class="social" target="blank" href="/atom.xml">Rss</a>
+                
+                    <a class="social" target="blank" href="https://github.com/cccyb">Github</a>
                 
             </div>
 		</div>
@@ -269,6 +301,10 @@
                 
                 <li><a href="/vue-zhihu-daily-intro/">当Vue遇上知乎日报</a></li>
                 
+            </div>
+            
+            
+            <div class="meta-item meta-comments">
             </div>
             
 		</div>
@@ -426,7 +462,7 @@ if ('addEventListener' in document) {
 
 </script>
 <script>
-var words = 'Hexo,Theme,Pinghsu'.split(',').map(item => item.trim());
+var words = 'Front-End,JavaScript,HTML,CSS,Node.js,React,Vue,passion,love'.split(',').map(item => item.trim());
 var chakhsu = function(r){function t(){return b[Math.floor(Math.random()*b.length)]}function e(){return String.fromCharCode(94*Math.random()+33)}function n(r){for(var n=document.createDocumentFragment(),i=0;r>i;i++){var l=document.createElement("span");l.textContent=e(),l.style.color=t(),n.appendChild(l)}return n}function i(){var t=o[c.skillI];c.step?c.step--:(c.step=g,c.prefixP<l.length?(c.prefixP>=0&&(c.text+=l[c.prefixP]),c.prefixP++):"forward"===c.direction?c.skillP<t.length?(c.text+=t[c.skillP],c.skillP++):c.delay?c.delay--:(c.direction="backward",c.delay=a):c.skillP>0?(c.text=c.text.slice(0,-1),c.skillP--):(c.skillI=(c.skillI+1)%o.length,c.direction="forward")),r.textContent=c.text,r.appendChild(n(c.prefixP<l.length?Math.min(s,s+c.prefixP):Math.min(s,t.length-c.skillP))),setTimeout(i,d)}var l="I work with ",o=words.map(function(r){return r+"."}),a=2,g=1,s=5,d=75,b=["rgb(110,64,170)","rgb(150,61,179)","rgb(191,60,175)","rgb(228,65,157)","rgb(254,75,131)","rgb(255,94,99)","rgb(255,120,71)","rgb(251,150,51)","rgb(226,183,47)","rgb(198,214,60)","rgb(175,240,91)","rgb(127,246,88)","rgb(82,246,103)","rgb(48,239,130)","rgb(29,223,163)","rgb(26,199,194)","rgb(35,171,216)","rgb(54,140,225)","rgb(76,110,219)","rgb(96,84,200)"],c={text:"",prefixP:-s,skillI:0,skillP:0,direction:"forward",delay:a,step:g};i()};chakhsu(document.getElementById('chakhsu')); if ('addEventListener' in document) { document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false); }
 </script>
 
@@ -458,25 +494,54 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 <script src="/js/love.js"></script>
 
 
-    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
 <script>
-var gitalk = new Gitalk({
-    clientID: '',
-    clientSecret: '',
-    repo: '',
-    owner: '',
-    admin: ''.split(','),
-    id: location.pathname,
-    title: 'Mac下MySQL5.7连接Navicat中文乱码解决方案',
-    body: location.href,
-    perPage: 15,
-    distractionFreeMode: false,
-    pagerDirection: 'last',
-    createIssueManually: true,
-    enableHotKey: true
-})
-gitalk.render('gitalk-container')
+    new Valine({
+        el: '#vcomments',
+        appId: 'pyBLR79r66pCCErtN6UptDgW-gzGzoHsz',
+        appKey: 'OH0atmy3O9rPdTndkp5xGc5U',
+        placeholder: 'Your commnet here. Be cool.' || 'Your commnet here. Be cool.',
+        avatar: 'mp' || 'mp',
+        pageSize: 10 || 10,
+        visitor: true,
+    })
 </script>
-    
 
+
+
+<script>
+
+// 获取文章评论数
+var query1 = new AV.Query('Comment');
+query1.equalTo('url', '/mac-mysql57-navicat-chinese-messy/');
+query1.doesNotExist('pid');
+query1.count().then(function (count) {
+    document.getElementById('page-title-comment').innerText = count + ' comment';
+}, function (error) {
+    console.log(error.message);    
+}).catch(function (error) {
+    console.log(error.message);
+});
+
+
+
+// 获取最近评论
+var query2 = new AV.Query('Comment');
+query2.doesNotExist('pid');
+query2.descending('createdAt');
+query2.limit(8);
+query2.find().then(function (data) {
+    var _dom = '<h3 class="meta-title">最近评论</h3>';
+    data.forEach(function(comment) {
+        const plainComment = comment.get('comment').replace(/<[^>]+>/gim, '');
+        const href = `${comment.get('url')}#${comment.get('objectId')}`;
+        _dom += `<li><a href="${href}">${comment.get('nick')} : ${plainComment}</a></li>`
+    })
+    document.getElementsByClassName('meta-comments')[0].innerHTML = _dom;
+}, function (error) {
+    console.log(error.message);    
+}).catch(function (error) {
+    console.log(error.message);
+});
+
+</script>
 
