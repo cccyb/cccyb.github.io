@@ -84,7 +84,7 @@ colorBgPosts: true
 
 # 文章题图设置
 # 启用则在文章页顶部显示缩略图
-showPostThumb: true
+showPostThumb: false
 
 # 默认缩略图
 defaultThumb: 
@@ -131,11 +131,29 @@ baiduAnalytics: 1c3cfd25e61e2ebebfa42a5529d2d621
 beian: 
 
 # valine评论系统
+# 配置详情参考：https://valine.js.org/configuration.html
 valine:
-  enable: true
-  appId: pyBLR79r66pCCErtN6UptDgW-gzGzoHsz
-  appKey: OH0atmy3O9rPdTndkp5xGc5U
-  placeholder: Your commnet here. Be cool.
-  pageSize: 10
-  avatar: mp
-  visitor: true
+  enable: true # 是否启用
+  appId: pyBLR79r66pCCErtN6UptDgW-gzGzoHsz # 应用AppID
+  appKey: OH0atmy3O9rPdTndkp5xGc5U # 应用AppKey
+  placeholder: Your commnet here. Be cool. # 输入框默认显示文本
+  pageSize: 10 # 每页评论数量
+  avatar: mp # 头像类型
+  visitor: true # 文章阅读量统计
+
+# 打赏配置
+reward:
+  enable: true # 是否启用
+  text: 如果我的文章对你有很大帮助，那么不妨 # 打赏文案
+  wechat: /images/wechat.JPG # 微信支付二维码地址
+  alipay: /images/alipay.JPG # 支付宝二维码地址
+
+# 文章页音乐播放器设置
+# 配置详情参考：https://github.com/metowolf/MetingJS
+music:
+  enable: true # 是否启用
+  id: 1303019637 # song id / playlist id / album id / search keyword
+  server: netease # music platform: netease, tencent, kugou, xiami, baidu
+  type: song # song, playlist, album, search, artist
+  auto: # music link, support: netease, tencent, xiami
+  autoplay: true # 是否自动播放
