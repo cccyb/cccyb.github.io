@@ -98,43 +98,7 @@
 </header></body></html>
 
 
-
-<div class="post-header-thumb">
-	<div class="post-header-thumb-op" style="background-image:url(https://ws1.sinaimg.cn/large/c542ee77ly1fzs83ifsetj20jg0d015w.jpg);"></div>
-	<div class="post-header-thumb-cover">
-		<div class="post-header-thumb-container">
-			<div class="post-header-thumb-title">
-				Pinghsu，A Hexo Theme
-			</div>
-			<div class="post-header-thumb-meta">
-				
-				<span id="/hexo-theme-pinghsu/" class="leancloud-visitors" data-flag-title="Pinghsu，A Hexo Theme">
-					<span class="leancloud-visitors-count"></span> Views 
-				</span>
-				
-				<time datetime="1549082785" itemprop="datePublished">Published on Feb 02, 2019 in </time>
-				<a href="/categories/Tutorials/">Tutorials</a>
-				
-				with <a id="page-title-comment" href="#vcomments"></a>
-				
-			</div>
-			<div class="post-tags">
-				
-				
-                <a href="/tags/Hexo/">Hexo</a>
-                
-                <a href="/tags/Theme/">Theme</a>
-                
-                <a href="/tags/Pinghsu/">Pinghsu</a>
-                
-				
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<article class="main-content post-page" itemscope itemtype="http://schema.org/Article">
+<article class="main-content page-page" itemscope itemtype="http://schema.org/Article">
 	<div class="post-header">
 		<h1 class="post-title" itemprop="name headline">
 			Pinghsu，A Hexo Theme
@@ -149,6 +113,11 @@
 			
 			with <a id="page-title-comment" href="#vcomments"></a>
 			
+			<div style="font-size: 13px;">
+				<span class="post-count">本文字数：966 字</span>
+				<span>|</span>
+				<span class="post-count">阅读时长 ≈ 3 min</span>
+			</div>
 		</div>
 	</div>
 	<div id="post-content" class="post-content" itemprop="articleBody">
@@ -390,6 +359,32 @@ highlight:
 <h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><p>欢迎各种形式的贡献，包括但不限于优化，添加功能，文档 &amp; 代码的改进，问题和 bugs 的报告。</p>
 <h2 id="许可证"><a href="#许可证" class="headerlink" title="许可证"></a>许可证</h2><p><a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT</a></p>
 
+		
+		<div style="text-align: center; margin: 20px 0;">
+			<p>如果我的文章对你有很大帮助，那么不妨</p>
+			<button id="reward-button" disable="enable" onclick='var qr=document.getElementById("QR");"none"===qr.style.display?qr.style.display="block":qr.style.display="none"'><span>打赏</span></button>
+			<div id="QR" style="display: none;">
+				<div id="wechat" style="display: inline-block;">
+					<img src="/images/wechat.JPG" alt="微信支付" id="wechat-qr">
+					<p>微信支付</p>
+				</div>
+				<div id="alipay" style="display: inline-block;">
+					<img src="/images/alipay.JPG" alt="支付宝" id="alipay-qr">
+					<p>支付宝</p>
+				</div>
+			</div>
+		</div>
+		
+		
+		<meting-js
+			id="1303019637"
+			server="netease"
+			type="song"
+			auto=""
+			autoplay="true"
+			>
+		</meting-js>
+		
 		<p class="post-info">
 			本文由 <a href="https://chenyubo.me">陈钰博</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: Feb 20, 2019 10:07 pm
 		</p>
@@ -450,12 +445,13 @@ highlight:
                         <p id="chakhsu"></p>
                     	<p>Theme is <a href="https://github.com/cccyb/hexo-theme-pinghsu" target="_blank">Pinghsu</a> by <a href="https://chenyubo.me" target="_blank">陈钰博</a></p>
 						<p>Powered by <a href="https://hexo.io/" target="_blank" rel="nofollow">hexo</a></p>
-						<p style="margin-top: 10px">&copy; 2016 - 2019 <a href="https://chenyubo.me">陈钰博的博客</a></p>
+                        <p style="margin-top: 10px">站点总字数：16.3k</p>
                         
-                        <p style="margin-top: 10px"><span id="busuanzi_container_site_pv" style="display:none">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span></p>
+                        <p><span id="busuanzi_container_site_pv" style="display:none">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span></p>
                         <p><span id="busuanzi_container_site_uv" style="display:none">本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</span></p>
                         
                         
+                        <p style="margin-top: 10px">&copy; 2016 - 2019 <a href="https://chenyubo.me">陈钰博的博客</a></p>
                     </div>
 				</div>
             </div>
@@ -596,7 +592,7 @@ postDirectoryBuild();
 var postDirectory = new Headroom(document.getElementById("directory-content"), {
     tolerance: 0,
     
-    offset : 280,
+    offset : 90,
     
     classes: {
         initial: "initial",
@@ -720,5 +716,10 @@ query2.find().then(function (data) {
     console.log(error.message);
 });
 
+
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
 
