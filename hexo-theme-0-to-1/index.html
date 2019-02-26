@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    <link rel="dns-prefetch" href="//ws1.sinaimg.cn">
+    
+    <link rel="dns-prefetch" href="//cdn.bootcss.com">
+    <link rel="dns-prefetch" href="//secure.gravatar.com">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    <link rel="shortcut icon" href="/images/favicon.png">
+    
+    
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
+    <title>
+    
+        从零开始一个Hexo主题 - 陈钰博的博客
+    
+    </title>
+    <meta name="keywords" content="chenyubo,web,linux,html,css,javascript,react,node,vue,前端,后端,技术,博客,blog,爬虫">
+    <meta name="description" content="这是陈钰博的博客">
+    
+    <link href="//cdn.bootcss.com/highlight.js/9.10.0/styles/atom-one-dark.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.min.css">
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?1c3cfd25e61e2ebebfa42a5529d2d621";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    
+</head>
+<body class="bg-white" gtools_scp_screen_capture_injected="true">
+<!--[if lt IE 8]>
+<div class="browsehappy" role="dialog">
+    当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank">升级你的浏览器</a>。
+</div>
+<![endif]-->
+<header id="header" class="header bg-white">
+    <div class="navbar-container">
+        <a href="/" class="navbar-logo">
+            
+            陈钰博的博客
+            
+        </a>
+        <div class="navbar-menu">
+            
+            <a href="/categories" class="">分类</a>
+            
+            <a href="/tags" class="">标签</a>
+            
+            <a href="/archives" class="">归档</a>
+            
+            <a href="/links" class="">友情链接</a>
+            
+            <a href="/about" class="">关于我</a>
+            
+        </div>
+        <div class="navbar-mobile-menu" onclick="">
+            <span class="icon-menu cross"><span class="middle"></span></span>
+            <ul>
+                
+                <li><a href="/categories" class="">分类</a></li>
+                
+                <li><a href="/tags" class="">标签</a></li>
+                
+                <li><a href="/archives" class="">归档</a></li>
+                
+                <li><a href="/links" class="">友情链接</a></li>
+                
+                <li><a href="/about" class="">关于我</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</header></body></html>
+
+
+<article class="main-content page-page" itemscope itemtype="http://schema.org/Article">
+	<div class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			从零开始一个Hexo主题
+		</h1>
+		<div class="post-data">
+			
+			<span id="/hexo-theme-0-to-1/" class="leancloud-visitors" data-flag-title="从零开始一个Hexo主题">
+				<span class="leancloud-visitors-count">0</span> Views 
+			</span>
+			
+            <time datetime="1551152318" itemprop="datePublished">Published on Feb 26, 2019 in </time><a href="/categories/Tutorials/">Tutorials</a>
+			
+			with <a id="page-title-comment" href="#vcomments"></a>
+			
+			<div style="font-size: 13px;">
+				<span class="post-count">本文字数：5k 字</span>
+				<span>|</span>
+				<span class="post-count">阅读时长 ≈ 22 min</span>
+			</div>
+		</div>
+	</div>
+	<div id="post-content" class="post-content" itemprop="articleBody">
+		<p class="post-tags">
+            
+            
+            <a href="/tags/Hexo/">Hexo</a>
+            
+            <a href="/tags/Theme/">Theme</a>
+            
+            
+        </p>
+		<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本文将会从零开始编写一个简单的Hexo博客主题，目的是了解一个Hexo博客主题的构成以及如何编写，因此，本示例中的博客页面样式不做过多描绘，样式主要参考 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo theme</a> 中的 <a href="https://github.com/lotabout/hexo-theme-noise" target="_blank" rel="noopener">Noise</a> 主题。</p>
+<p>在开始前，你需要对以下的一些知识点有必要的了解：</p>
+<ul>
+<li>模板引擎语法</li>
+<li>CSS预处理器</li>
+<li>YML语法</li>
+<li>Hexo文档</li>
+</ul>
+<p>本文使用的模板引擎为 <a href="https://ejs.bootcss.com/" target="_blank" rel="noopener">ejs</a>，使用的 CSS 预处理器为 <a href="http://stylus-lang.com/" target="_blank" rel="noopener">stylus</a>。这也是 hexo 项目预装了的 render 插件，如果想使用其他模板引擎或者其他 CSS 预处理器，可以安装相对应的 render 插件。</p>
+<p>本文的代码：<a href="https://github.com/cccyb/theme-example" target="_blank" rel="noopener">https://github.com/cccyb/theme-example</a></p>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>根据下图，在<code>themes</code>目录下新建一个<code>theme-example</code>文件夹作为我们的主题目录。</p>
+<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0ipnb7mhgj20f407e0t6.jpg" alt=""></p>
+<p>如图所示，一个hexo主题的目录主要包括以下五部分：</p>
+<ul>
+<li>languages：用于国际化的语言文件</li>
+<li>layout：主题布局模板文件</li>
+<li>scripts：hexo脚本插件目录，可以编写一些辅助函数脚本</li>
+<li>source：资源文件目录，包括页面样式，js脚本等</li>
+<li>_config.yml：主题配置文件</li>
+</ul>
+<h3 id="局部模板"><a href="#局部模板" class="headerlink" title="局部模板"></a>局部模板</h3><p>我们通过分析常见的博客网站可以知道，大部分的博客网站都由三部分组成：顶部导航栏，中间内容区域，以及底部信息展示区域。每次点击导航栏选项跳转页面时，顶部导航栏以及底部信息展示区域是不变的，只是中间的内容区域重新渲染，因此，我们可以将通用的代码抽离成局部模板以复用。</p>
+<p>我们在<code>layout</code>目录下新建<code>_partial</code>目录，在该目录下添加<code>head.ejs</code>,<code>header.ejs</code>以及<code>footer.ejs</code>文件。</p>
+<p><code>layout/_partial/head.ejs</code>:</p>
+<pre><code class="ejs">&lt;head&gt;
+    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+    &lt;meta content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot; name=&quot;viewport&quot;&gt;
+    &lt;title&gt;标题&lt;/title&gt;
+&lt;/head&gt;
+</code></pre>
+<p><code>layout/_partial/header.ejs</code>:</p>
+<pre><code class="ejs">&lt;header&gt;我是导航栏&lt;/header&gt;
+</code></pre>
+<p><code>layout/_partial/footer.ejs</code>:</p>
+<pre><code class="ejs">&lt;footer&gt;我是底部信息&lt;/footer&gt;
+</code></pre>
+<p>我们在<code>layout</code>中创建<code>layout.ejs</code>，并引入<code>head.ejs</code>,<code>header/ejs</code>和<code>footer.ejs</code>文件，<code>layout.ejs</code>文件是通用的布局文件模板，我们在后面新增的<code>ejs</code>文件都会继承<code>layout.ejs</code>，并将其内容填充到<code>body</code>中。</p>
+<p><code>layout/layout.ejs</code>:</p>
+<pre><code class="ejs">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;%- partial(&#39;_partial/head&#39;) %&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+    &lt;%- partial(&#39;_partial/header&#39;) %&gt;
+    &lt;%- body %&gt;
+    &lt;%- partial(&#39;_partial/footer&#39;) %&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt; 
+</code></pre>
+<h3 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h3><p>首页是我们的网站加载完毕后的第一个页面。</p>
+<p>我们在 <code>layout</code> 中创建 <code>index.ejs</code> 文件，<code>index.ejs</code>首页将会继承<code>layout.ejs</code>布局模板生成 HTML 文件。</p>
+<blockquote>
+<p>partial()函数的作用是可以引入其他模板文件，详情参考hexo文档</p>
+</blockquote>
+<p><code>layout/index.ejs</code>:</p>
+<pre><code class="ejs">&lt;h1&gt;Hello World&lt;/h1&gt;
+</code></pre>
+<p>修改<strong>站点配置文件</strong>中的主题配置，使用我们刚刚创建的 <code>theme-example</code> 主题：</p>
+<pre><code class="yaml"># Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: theme-example
+</code></pre>
+<p>运行 <code>hexo server</code> 开启 Hexo 本地服务器预览，访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>。</p>
+<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0iqkcsz2dj21z20fen08.jpg" alt=""></p>
+<h3 id="编写导航栏和底部信息"><a href="#编写导航栏和底部信息" class="headerlink" title="编写导航栏和底部信息"></a>编写导航栏和底部信息</h3><p>前面，我们只是搭了个页面框架，接下来我们就将开始正式开始一步步的完善我们的主题，以下两个文档我们将频繁的使用，最好可以提前阅读一遍有个了解：</p>
+<ul>
+<li><a href="https://hexo.io/zh-cn/docs/variables" target="_blank" rel="noopener">Hexo | 变量</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/helpers" target="_blank" rel="noopener">Hexo | 辅助函数</a></li>
+</ul>
+<p><code>layout/_partial/head.ejs</code>:</p>
+<pre><code class="ejs">&lt;head&gt;
+    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+    &lt;meta content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot; name=&quot;viewport&quot;&gt;
+    &lt;title&gt;&lt;%= config.title %&gt;&lt;/title&gt;
+&lt;/head&gt;
+</code></pre>
+<p>这里我们使用了<code>config</code>全局变量，该变量包含的是站点配置（即站点根目录下 <code>_config.yml</code> 中的配置）。除此之外，我还有将经常使用的是<code>theme</code>变量，该变量是主题配置（即主题根目录下 <code>_config.yml</code> 中的配置），其他变量参见hexo文档。</p>
+<p>编辑导航栏部分，<code>layout/_partial/header.ejs</code>：</p>
+<pre><code class="ejs">&lt;header class=&quot;header&quot;&gt;
+    &lt;div class=&quot;title&quot;&gt;
+        &lt;a href=&quot;&lt;%= url_for() %&gt;&quot; class=&quot;logo&quot;&gt;&lt;%= config.title %&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;nav class=&quot;navbar&quot;&gt;
+        &lt;ul class=&quot;menu&quot;&gt;
+            &lt;li class=&quot;menu-item&quot;&gt;
+                &lt;a href=&quot;/&quot; class=&quot;menu-item-link&quot;&gt;Home&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;menu-item&quot;&gt;
+                &lt;a href=&quot;/categories&quot; class=&quot;menu-item-link&quot;&gt;Categories&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;menu-item&quot;&gt;
+                &lt;a href=&quot;/tags&quot; class=&quot;menu-item-link&quot;&gt;Tags&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;menu-item&quot;&gt;
+                &lt;a href=&quot;/archives&quot; class=&quot;menu-item-link&quot;&gt;Archives&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+</code></pre>
+<p>编辑底部信息部分，<code>layout/_partial/footer.ejs</code>：</p>
+<pre><code class="ejs">&lt;footer&gt;
+    &lt;p&gt;Theme is &lt;a href=&quot;/&quot; target=&quot;_blank&quot;&gt;Theme-example&lt;/a&gt; by &lt;a href=&quot;&lt;%= config.url %&gt;&quot; target=&quot;_blank&quot;&gt;&lt;%= config.author %&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;Powered by &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;hexo&lt;/a&gt; &amp;copy; &lt;%- date(Date.now(), &#39;YYYY&#39;) %&gt;&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>
+<p>这样，我们就得到了一个包含导航栏和底部信息的简单页面。</p>
+<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0is6aotexj21z20l2n17.jpg" alt=""></p>
+<h3 id="添加主题配置"><a href="#添加主题配置" class="headerlink" title="添加主题配置"></a>添加主题配置</h3><p>实际上我们需要让导航菜单根据我们的需要显示不同的项，上面这种写法不方便修改。所以我们会在主题的配置文件中添加导航菜单的配置。在 <code>theme-example</code> 下的配置文件 <code>_config.yml</code>，在其中添加需要配置的字段。然后可以通过 <code>theme</code> 这个变量来拿到该配置文件中的配置。</p>
+<p><code>theme-example/_config.yml</code>:</p>
+<pre><code class="yaml">menu:
+  home: /
+  categories: /categories
+  tags: /tags
+  archives: /archivesz
+</code></pre>
+<p>这样我们就可以在 <code>header.ejs</code> 中使用 <code>theme.menu</code> 获取到导航菜单的设置。将 <code>header.ejs</code> 修改为：</p>
+<pre><code class="ejs">&lt;header class=&quot;header&quot;&gt;
+    &lt;div class=&quot;title&quot;&gt;
+        &lt;a href=&quot;&lt;%= url_for() %&gt;&quot; class=&quot;logo&quot;&gt;&lt;%= config.title %&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;nav class=&quot;navbar&quot;&gt;
+        &lt;ul class=&quot;menu&quot;&gt;
+            &lt;% for (name in theme.menu) { %&gt;
+            &lt;li class=&quot;menu-item&quot;&gt;
+                &lt;a href=&quot;&lt;%- url_for(theme.menu[name]) %&gt;&quot; class=&quot;menu-item-link&quot;&gt;&lt;%= name %&gt;&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;% } %&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+</code></pre>
+<p> 这样，我们就可以动态的配置导航的信息了，我们还可以在主题配置文件中添加其他配置项供我们使用。</p>
+<h3 id="添加文章列表"><a href="#添加文章列表" class="headerlink" title="添加文章列表"></a>添加文章列表</h3><p>接着我们完善首页的模板，使其能够显示文章列表。前面已经说过 Hexo 提供了各种有用的变量，在这里将会使用到 <code>page</code> 这个变量。<code>page</code> 会根据不同的页面拥有不同的属性。具体有什么属性，可以获取到哪些数据可以查看<a href="https://hexo.io/docs/variables.html#Page-Variables" target="_blank" rel="noopener">这里</a>。</p>
+<p>那么这里我们会使用 <code>page</code> 变量的 <code>posts</code> 属性拿到文章数据的集合。编辑 <code>index.ejs</code> 文件：</p>
+<pre><code class="ejs">&lt;section class=&quot;posts&quot;&gt;
+    &lt;% page.posts.each(function (post) { %&gt;
+    &lt;article class=&quot;post&quot;&gt;
+        &lt;div class=&quot;post-title&quot;&gt;
+            &lt;a class=&quot;post-title-link&quot; href=&quot;&lt;%- url_for(post.path) %&gt;&quot;&gt;&lt;%= post.title %&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;post-content&quot;&gt;
+            &lt;%- post.content %&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;post-meta&quot;&gt;
+            &lt;span class=&quot;post-time&quot;&gt;&lt;%- date(post.date, &quot;YYYY-MM-DD&quot;) %&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;% }) %&gt;
+&lt;/section&gt;
+</code></pre>
+<p>从 <code>page.posts</code> 中获取单篇文章的数据，并获取文章的标题，内容等数据填充到模板中。处理文章创建时间的时候使用了 <code>date()</code> 函数，这是 Hexo 提供的时间处理的<a href="https://hexo.io/docs/helpers.html#date" target="_blank" rel="noopener">辅助函数</a>。</p>
+<p>由于首页显示文章内容时使用的是 <code>post.content</code>，即文章的全部内容。所以首页会显示每一篇文章的内容，实际上我们并不想在首页显示那么多内容，只想显示文章的摘录。</p>
+<p>Hexo 提供了 <code>excerpt</code> 属性来获取文章的摘录部分，不过这里需要在文章中添加一个 <code>&lt;!--more--&gt;</code> 标记。添加了这个标记之后，<code>post.excerpt</code> 将会获取到标记之前的内容。如果没有这个标记，那么 <code>post.excerpt</code> 会是空的。所以我们可以把首页文章内容部分的 <code>post.content</code> 替换成 <code>post.excerpt</code>。</p>
+<pre><code class="ejs">&lt;div class=&quot;post-content&quot;&gt;
+    &lt;%- post.excerpt %&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="添加样式"><a href="#添加样式" class="headerlink" title="添加样式"></a>添加样式</h3><p>到目前为止，我们完成了首页的整体页面结构，不过由于没添加css样式，因此整体页面非常难看，所以我们需要给页面加上一些样式来美化一下我们的页面。</p>
+<p>由于 Hexo 在新建项目的时候会安装 <code>hexo-renderer-stylus</code> 这个插件，所以我们无需其他步骤，只需要将样式文件放到 <code>css</code> 文件夹中。Hexo 在生成页面的时候会将 <code>source</code> 中的所有文件复制到生成的 <code>public</code> 文件中，并且在此之前会编译 <code>styl</code> 为 <code>css</code> 文件。</p>
+<p>在 <code>css</code> 文件夹中创建 <code>style.styl</code>，编写一些基础的样式，并把所有样式 <code>import</code> 到这个文件。所以最终编译之后只会有 <code>style.css</code> 一个文件。创建 <code>_partial/header.styl</code> 与 <code>_partial/post.styl</code> 存放页面导航以及文章的样式，并且在 <code>style.styl</code> 中 <code>import</code> 这两个文件。</p>
+<p><code>_partial/header.styl</code>：</p>
+<pre><code class="stylus">.header {
+    margin-top: 2em
+    display: flex
+    align-items: baseline
+    justify-content: space-between
+
+    .blog-title .logo {
+        color: #AAA;
+        font-size: 2em;
+        font-family: &quot;Comic Sans MS&quot;,cursive,LiSu,sans-serif;
+        text-decoration: none;
+    }
+
+    .menu {
+        margin: 0;
+        padding: 0;
+
+        .menu-item {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .menu-item-link {
+            color: #AAA;
+            text-decoration: none;
+
+            &amp;:hover {
+                color: #368CCB;
+            }
+        }
+    }
+}
+</code></pre>
+<p><code>index.styl</code>:</p>
+<pre><code class="stylus">.post {
+    margin: 1em auto;
+    padding: 30px 50px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 2px #ddd;
+}
+
+.posts  {
+    .post:first-child {
+        margin-top: 0;
+    }
+
+    .post-title {
+        font-size: 1.5em;
+
+        .post-title-link {
+            color: #368CCB;
+            text-decoration: none;
+        }
+    }
+
+    .post-content {
+        a {
+            color: #368CCB;
+            text-decoration: none;
+        }
+    }
+
+    .post-meta {
+        color: #BABABA;
+    }
+}
+</code></pre>
+<p><code>style.styl</code>:</p>
+<pre><code class="stylus">body {
+    background-color: #F2F2F2;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+@import &quot;_partial/header&quot;;
+@import &quot;_partial/index&quot;;
+</code></pre>
+<p>最后，我们需要把样式添加到页面中，这里使用了另外一个辅助函数 <a href="https://hexo.io/docs/helpers.html#css" target="_blank" rel="noopener"><code>css()</code></a>:</p>
+<p><code>layout/_partial/head.ejs</code>:</p>
+<pre><code class="ejs">&lt;head&gt;
+    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+    &lt;meta content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot; name=&quot;viewport&quot;&gt;
+    &lt;title&gt;&lt;%= config.title %&gt;&lt;/title&gt;
+    &lt;%- css(&#39;css/style.css&#39;) %&gt;
+&lt;/head&gt;
+</code></pre>
+<p>至此，我们会看到站点的首页是这个样子的：</p>
+<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0it4ozg82j21yy0vmq8g.jpg" alt=""></p>
+<h3 id="添加分页"><a href="#添加分页" class="headerlink" title="添加分页"></a>添加分页</h3><p>在站点的 <code>source/_post/</code> 目录下存放的是我们的文章，现在我们把原本的 <code>hello-world.md</code> 复制黏贴 10+ 次，再查看站点首页。会发现，首页只显示了 10 篇文章。</p>
+<p>首页显示的文章数量我们可以通过站点配置文件中的 <code>per_page</code> 字段来修改，但是我们不可能把所有文章都放在一页，所以我们现在来添加文章列表的分页。</p>
+<p>新建 <code>_partial/paginator.ejs</code>:</p>
+<pre><code class="ejs">&lt;% if (page.total &gt; 1){ %&gt;
+    &lt;nav class=&quot;page-nav&quot;&gt;
+    &lt;%- paginator({
+        prev_text: &quot;&amp;laquo; Prev&quot;,
+        next_text: &quot;Next &amp;raquo;&quot;
+    }) %&gt;
+    &lt;/nav&gt;
+&lt;% } %&gt;
+</code></pre>
+<p>在 <code>index.ejs</code> 中添加这个文件的内容：</p>
+<pre><code class="ejs">...
+&lt;/section&gt;
+&lt;%- partial(&#39;_partial/paginator&#39;) %&gt;
+</code></pre>
+<p>这里我们使用到了另外的一个辅助函数 <a href="https://hexo.io/docs/helpers.html#paginator" target="_blank" rel="noopener"><code>paginator</code></a>，它能够帮助我们插入分页链接。</p>
+<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0ity1ov1qj21z014q7a5.jpg" alt=""></p>
+<h3 id="添加文章详情页"><a href="#添加文章详情页" class="headerlink" title="添加文章详情页"></a>添加文章详情页</h3><p>文章详情页对应的布局文件是 <code>post.ejs</code>，新建 <code>post.ejs</code>:</p>
+<pre><code class="ejs">&lt;article class=&quot;post&quot;&gt;
+    &lt;div class=&quot;post-title&quot;&gt;
+        &lt;h2 class=&quot;title&quot;&gt;&lt;%= page.title %&gt;&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;post-meta&quot;&gt;
+        &lt;span class=&quot;post-time&quot;&gt;&lt;%- date(page.date, &quot;YYYY-MM-DD&quot;) %&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;post-content&quot;&gt;
+        &lt;%- page.content %&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+</code></pre>
+<p>由于这里是文章的模板，所以变量 <code>page</code> 表示的是文章的数据，而不是首页的文章数据集合。</p>
+<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0ityp6mwmj21z214mtf5.jpg" alt=""></p>
+<h3 id="添加归档页"><a href="#添加归档页" class="headerlink" title="添加归档页"></a>添加归档页</h3><p>创建归档页使用的模板文件 <code>archive.ejs</code>:</p>
+<pre><code class="ejs">&lt;section class=&quot;archive&quot;&gt;
+    &lt;ul class=&quot;post-archive&quot;&gt;
+    &lt;% page.posts.each(function (post) { %&gt;
+        &lt;li class=&quot;post-item&quot;&gt;
+            &lt;span class=&quot;post-date&quot;&gt;&lt;%= date(post.date, &quot;YYYY-MM-DD&quot;) %&gt;&lt;/span&gt;
+            &lt;a class=&quot;post-title&quot; href=&quot;&lt;%- url_for(post.path) %&gt;&quot;&gt;&lt;%= post.title %&gt;&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;% }) %&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+&lt;%- partial(&#39;_partial/paginator&#39;) %&gt;
+</code></pre>
+<p>其实结构跟首页差不多，只是不显示文章内容而已。添加归档页的样式：</p>
+<p><code>css/_partial/archive.styl</code>:</p>
+<pre><code class="stylus">.archive {
+    margin: 1em auto;
+    padding: 30px 50px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 2px #ddd;
+
+    .post-archive {
+        list-style: none;
+        padding: 0;
+
+        .post-item {
+            margin: 5px 0;
+
+            .post-date {
+                display: inline-block;
+                margin-right: 10px;
+                color: #BABABA;
+            }
+
+            .post-title {
+                color: #368CCB;
+                text-decoration: none;
+            }
+        }
+    }
+}
+</code></pre>
+<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0iu1jngalj21z214qqax.jpg" alt=""></p>
+<h3 id="添加分类页"><a href="#添加分类页" class="headerlink" title="添加分类页"></a>添加分类页</h3><p>分类页跟归档页也类似，相当于根据不同的分类进行归档。</p>
+<p>分类页和标签页的模板编写比较特殊，本质上，分类页和标签页属于自定义页面，我们需要新建自定义页面模板<code>page.ejs</code>:</p>
+<pre><code class="ejs">&lt;% if (is_current(theme.menu.categories)) { %&gt;
+&lt;%- partial(&#39;_partial/category&#39;) %&gt;
+&lt;% } else if (is_current(theme.menu.tags)) { %&gt;
+&lt;%- partial(&#39;_partial/tag&#39;) %&gt;
+&lt;% } else { %&gt;
+&lt;%- partial(&#39;_partial/custom&#39;) %&gt;
+&lt;% } %&gt;
+</code></pre>
+<p>这里，我们需要根据当前自定义页面的类型来决定渲染何种自定义页面模板。</p>
+<p>新建<code>_partial/category.ejs</code>:</p>
+<pre><code class="ejs">&lt;section class=&quot;archive&quot;&gt;
+    &lt;ul class=&quot;post-archive&quot;&gt;
+    &lt;% site.categories.each(function (category) { %&gt;
+        &lt;span&gt;&lt;%= category.name %&gt;&lt;/span&gt;
+        &lt;% category.posts.forEach(function(post) { %&gt;
+        &lt;li class=&quot;post-item&quot;&gt;
+            &lt;span class=&quot;post-date&quot;&gt;&lt;%= date(post.date, &quot;YYYY-MM-DD&quot;) %&gt;&lt;/span&gt;
+            &lt;a class=&quot;post-title&quot; href=&quot;&lt;%- url_for(post.path) %&gt;&quot;&gt;&lt;%= post.title %&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;% }) %&gt;
+    &lt;% }) %&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+<p><code>site.categories</code>包括了站点所有的分类信息，可以遍历获取分类信息，其中<code>category.posts</code>又包含了该分类的所有文章信息。</p>
+<p>需要注意的是，要想在页面中展示分类页，需要先执行<code>hexo new page categories</code>生成分类页面，并添加<code>type</code>为<code>categories</code>：</p>
+<pre><code class="markdown">title: categories
+date: 2019-02-25 18:19:55
+type: &quot;categories&quot;
+---
+</code></pre>
+<p>后续的标签页类似。</p>
+<h3 id="添加标签页"><a href="#添加标签页" class="headerlink" title="添加标签页"></a>添加标签页</h3><p>标签页与分类页及其类似，只是根据标签进行归档。</p>
+<p>新建<code>_partial/tag.ejs</code>:</p>
+<pre><code class="ejs">&lt;section class=&quot;archive&quot;&gt;
+    &lt;ul class=&quot;post-archive&quot;&gt;
+    &lt;% site.tags.each(function (tag) { %&gt;
+        &lt;span&gt;&lt;%= tag.name %&gt;&lt;/span&gt;
+        &lt;% tag.posts.forEach(function(post) { %&gt;
+        &lt;li class=&quot;post-item&quot;&gt;
+            &lt;span class=&quot;post-date&quot;&gt;&lt;%= date(post.date, &quot;YYYY-MM-DD&quot;) %&gt;&lt;/span&gt;
+            &lt;a class=&quot;post-title&quot; href=&quot;&lt;%- url_for(post.path) %&gt;&quot;&gt;&lt;%= post.title %&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;% }) %&gt;
+    &lt;% }) %&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+<h3 id="添加自定义页面"><a href="#添加自定义页面" class="headerlink" title="添加自定义页面"></a>添加自定义页面</h3><p>自定义页面与文章详情页类似。</p>
+<p>新建<code>_partial/custom.ejs</code>:</p>
+<pre><code class="ejs">&lt;article class=&quot;post&quot;&gt;
+    &lt;div class=&quot;post-title&quot;&gt;
+        &lt;h2 class=&quot;title&quot;&gt;&lt;%= page.title %&gt;&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;post-meta&quot;&gt;
+        &lt;span class=&quot;post-time&quot;&gt;&lt;%- date(page.date, &quot;YYYY-MM-DD&quot;) %&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;post-content&quot;&gt;
+        &lt;%- page.content %&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+</code></pre>
+<p>我们在主题配置文件中添加自定义页面的菜单：</p>
+<pre><code class="yaml">menu:
+  home: /
+  categories: /categories
+  tags: /tags
+  archives: /archivesz
+  about: /about
+</code></pre>
+<p>执行<code>hexo new page about</code>进行手动生成页面，编辑文件内容即可。</p>
+<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0iw9k3aonj21z214safs.jpg" alt=""></p>
+<h3 id="Hexo插件"><a href="#Hexo插件" class="headerlink" title="Hexo插件"></a>Hexo插件</h3><p>Hexo 有强大的插件系统，让我们能够轻松扩展功能而不用修改核心模块的源码。在 Hexo 中有两种形式的插件：</p>
+<ul>
+<li><p>脚本（Scripts）</p>
+</li>
+<li><p>插件（Packages）</p>
+</li>
+</ul>
+<p>如果我们的代码很简单，我们可以编写脚本，只需要把 JavaScript 文件放到 <code>scripts</code> 文件夹，在启动时就会自动载入。简单来说，脚本文件可以相当于一些这样的的工具函数，当我们发现Hexo官方提供的函数不能满足我们的需求时，我们可以通过添加一个脚本来实现。</p>
+<p>比如，我们现在有这样一个简单的需求，我们想给首页文章列表中的文章块添加一个背景颜色，背景颜色我们可以在文章md文件中定义，如果未定义，则随机选用一种颜色。</p>
+<p>首先，我们先在文章md文件中顶部<a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">Front-matter</a>添加一个color字段：</p>
+<p><code>_posts/hello-world-1.md</code>:</p>
+<pre><code class="markdown">title: Hello World 1
+date: 2019-02-12 17:49:32
+categories: 分类1
+tags: 
+    - 标签1
+color: blue
+---
+</code></pre>
+<p>定义完成后，我们就可以在文章信息字段<code>post</code>或者<code>page</code>中获取到<code>color</code>。</p>
+<p>然后，我们需要添加一个脚本函数来根据<code>color</code>字段来获取文章块的背景颜色，新增<code>scripts/getPostBgColor.js</code>:</p>
+<pre><code class="js">const arr = [ &#39;blue&#39;, &#39;purple&#39;, &#39;green&#39;, &#39;yellow&#39;, &#39;red&#39;, &#39;orange&#39; ];
+
+var getPostBgColor = function(color) {
+  if (arr.indexOf(color) &gt;= 0) {
+    return `bg-${color}`;
+  }
+  return &#39;bg-&#39; + randBgColor();
+};
+
+function randBgColor() {
+  return arr[randomInt(0, 5)];
+}
+
+function randomInt(min, max) {
+  return Math.round(Math.random() * (max - min)) + min;
+}
+
+hexo.extend.helper.register(&#39;getPostBgColor&#39;, getPostBgColor);
+</code></pre>
+<p>最后一行我们通过<code>hexo.extend.helper.register</code>全局注册一个脚本函数，注册完成后，我们就可以在模板文件中和Hexo官方提供的全局函数一样使用。</p>
+<p>修改<code>layout/index.ejs</code>:</p>
+<pre><code class="ejs">...
+&lt;article class=&quot;post &lt;%= getPostBgColor(theme.colorBgPosts, post.color, &#39;deepgrey&#39;) %&gt;&quot;&gt;
+...
+</code></pre>
+<p>添加背景颜色样式，编辑<code>css/index.styl</code>:</p>
+<pre><code class="stylus">...
+.bg-blue {
+    background-color: #6fa3ef;
+}
+.bg-purple {
+    background-color: #bc99c4;
+}
+.bg-green {
+    background-color: #46c47c;
+}
+.bg-yellow {
+    background-color: #f9bb3c;
+}
+.bg-red {
+    background-color: #e8583d;
+}
+.bg-orange {
+    background-color: #f68e5f;
+}
+</code></pre>
+<p>看下效果，Hello World 1这篇文章我们定义了<code>color：blue</code>，因此是蓝色，其他文章，我们未定义<code>color</code>，因此是随机颜色。</p>
+<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0jm9hctmlj21z214sq8n.jpg" alt=""></p>
+<p>这样，我们就实现了随机背景色这个小需求，当然这只是一个非常简单的例子，如果有其他复杂的需求，我们可以通过编写更加复杂的脚本来实现。</p>
+<h3 id="Hexo的数据DB扩展查询"><a href="#Hexo的数据DB扩展查询" class="headerlink" title="Hexo的数据DB扩展查询"></a>Hexo的数据DB扩展查询</h3><p>我们已经知道，Hexo已经为我们预先定义了很多常用的变量供我们使用，具体可以在 <a href="https://hexo.io/zh-cn/docs/variables" target="_blank" rel="noopener">Hexo | 变量</a> 查询。但是如果系统提供的变量数据不能满足我们的要求，那我们该怎么办呢？其实我们可以通过扩展查询来获取到我们期望的数据。</p>
+<p>其实Hexo所有的文章分类标签等等变量信息，在编译成本地静态文件之前，都是本地存储在一个<code>db.json</code>中的，相当于小型的本地数据库，Hexo在运行阶段，所有的数据相关操作其实都是在这个小型数据库上进行操作，其底层使用的查询引擎就是<a href="https://hexojs.github.io/warehouse/Query.html" target="_blank" rel="noopener">Warehouse</a>。因此我们可以通过Warehouse的语法进行自定义扩展查询。</p>
+<p>比如我们需要在页面的底部展示全站的最近6篇文章列表，由于Hexo首页只提供了第一页的数据，因此我们可以基于<code>site</code>变量进行扩展查询：</p>
+<pre><code class="ejs">site.posts.sort({date: -1}).limit(6)
+</code></pre>
+<p><code>site.posts</code>表示所有的文章，<code>sort（{date: -1})</code>表示按创建时间倒序排列，<code>limit(6)</code>表示只取前6条数据，这样我们就可以拿到了全站的最近6文章信息，后续进行相应展示操作即可。</p>
+<p>其他更多复杂的扩展查询都可以根据Warehouse语法文档进行按需扩展。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>其实说白了，Hexo就是把那些 Markdown 文件，按照我们编写的对应布局模板，填上对应的数据生成 HTML 页面，然后在编译的过程中将JS/CSS等文件引入HTML，然后生成每个页面的对应HMTL静态文件。</p>
+<p>而Hexo主题的作用就是决定每个布局模板长什么样。</p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="https://hexojs.github.io/warehouse/index.html" target="_blank" rel="noopener">Warehouse 文档</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/themes" target="_blank" rel="noopener">Hexo | 主题</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/templates" target="_blank" rel="noopener">Hexo | 模板</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/variables" target="_blank" rel="noopener">Hexo | 变量</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/helpers" target="_blank" rel="noopener">Hexo | 辅助函数</a></li>
+<li><a href="https://www.ahonn.me/2016/12/15/create-a-hexo-theme-from-scratch/#%E6%B7%BB%E5%8A%A0%E5%BD%92%E6%A1%A3%E9%A1%B5" target="_blank" rel="noopener">https://www.ahonn.me/2016/12/15/create-a-hexo-theme-from-scratch/#%E6%B7%BB%E5%8A%A0%E5%BD%92%E6%A1%A3%E9%A1%B5</a></li>
+</ul>
+
+		
+		<div style="text-align: center; margin: 20px 0;">
+			<p>如果我的文章对你有很大帮助，那么不妨</p>
+			<button id="reward-button" disable="enable" onclick='var qr=document.getElementById("QR");"none"===qr.style.display?qr.style.display="block":qr.style.display="none"'><span>打赏</span></button>
+			<div id="QR" style="display: none;">
+				<div id="wechat" style="display: inline-block;">
+					<img src="/images/wechat.JPG" alt="微信支付" id="wechat-qr">
+					<p>微信支付</p>
+				</div>
+				<div id="alipay" style="display: inline-block;">
+					<img src="/images/alipay.JPG" alt="支付宝" id="alipay-qr">
+					<p>支付宝</p>
+				</div>
+			</div>
+		</div>
+		
+		
+		<meting-js
+			id="1303019637"
+			server="netease"
+			type="song"
+			auto=""
+			autoplay="true"
+			>
+		</meting-js>
+		
+		<p class="post-info">
+			本文由 <a href="https://chenyubo.me">陈钰博</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: Feb 26, 2019 11:44 am
+		</p>
+	</div>
+</article>
+<div id="post-bottom-bar" class="post-bottom-bar">
+	<div class="bottom-bar-inner">
+		<div class="bottom-bar-items social-share left">
+			<span class="bottom-bar-item">Share : </span>
+			<span class="bottom-bar-item bottom-bar-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://chenyubo.me/hexo-theme-0-to-1/index.html" target="_blank" title="从零开始一个Hexo主题" rel="nofollow">facebook</a></span>
+			<span class="bottom-bar-item bottom-bar-twitter"><a href="https://twitter.com/intent/tweet?url=https://chenyubo.me/hexo-theme-0-to-1/&text=从零开始一个Hexo主题" target="_blank" title="从零开始一个Hexo主题" rel="nofollow">Twitter</a></span>
+			<span class="bottom-bar-item bottom-bar-weibo"><a href="http://service.weibo.com/share/share.php?url=&amp;title=从零开始一个Hexo主题" target="_blank" title="从零开始一个Hexo主题" rel="nofollow">Weibo</a></span>
+			<span class="bottom-bar-item bottom-bar-qrcode"><a href="//pan.baidu.com/share/qrcode?w=300&amp;h=300&amp;url=https://chenyubo.me/hexo-theme-0-to-1/index.html" target="_blank" rel="nofollow">QRcode</a></span>
+		</div>
+		<div class="bottom-bar-items right">
+            
+            
+            <span class="bottom-bar-item"><a href="/hexo-theme-pinghsu/">→</a></span>
+            
+			<span class="bottom-bar-item"><a href="#footer">↓</a></span>
+			<span class="bottom-bar-item"><a href="#">↑</a></span>
+		</div>
+	</div>
+</div>
+
+
+<div class="related-post-lists">
+	<div class="post-lists">
+		<div class="post-lists-body">
+		
+			<div class="post-list-item">
+				<div class="post-list-item-container">
+					<div class="item-label">
+						<div class="item-title"><a href="/hexo-theme-pinghsu/">Pinghsu，A Hexo Theme</a></div>
+						<div class="item-meta clearfix">
+							<div class="item-meta-date" style="color: #5f5f5f;">Feb 02, 2019</div>
+							<div class="item-meta-ico bg-ico-image" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
+                            <div class="item-meta-cat">
+                                
+                                <a href="/categories/Tutorials/">Tutorials</a>
+                                
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+
+
+<div class="comment-container">
+	<div id="vcomments"></div>
+</div>
+
+
+<footer id="footer" class="footer bg-white">
+	<div class="footer-social">
+		<div class="footer-container clearfix">
+			<div class="social-list">
+                
+                    <a class="social" target="blank" href="https://www.zhihu.com/people/52c7f85cb2abafde0b78124e21a68002">知乎</a>
+                
+                    <a class="social" target="blank" href="/atom.xml">Rss</a>
+                
+                    <a class="social" target="blank" href="https://github.com/cccyb">Github</a>
+                
+            </div>
+		</div>
+	</div>
+	<div class="footer-meta">
+		<div class="footer-container">
+			<div class="meta-item meta-copyright">
+				<div class="meta-copyright-info">
+                    <a href="https://chenyubo.me" class="info-logo">
+                        
+                        陈钰博的博客
+                        
+                    </a>
+					<div class="info-text">
+                        <p id="chakhsu"></p>
+                    	<p>Theme is <a href="https://github.com/cccyb/hexo-theme-pinghsu" target="_blank">Pinghsu</a> by <a href="https://chenyubo.me" target="_blank">陈钰博</a></p>
+						<p>Powered by <a href="https://hexo.io/" target="_blank" rel="nofollow">hexo</a></p>
+                        <p style="margin-top: 10px">站点总字数：21.3k</p>
+                        
+                        <p><span id="busuanzi_container_site_pv" style="display:none">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span></p>
+                        <p><span id="busuanzi_container_site_uv" style="display:none">本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</span></p>
+                        
+                        
+                        <p style="margin-top: 10px">&copy; 2016 - 2019 <a href="https://chenyubo.me">陈钰博的博客</a></p>
+                    </div>
+				</div>
+            </div>
+            
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">最近文章</h3>
+                
+                <li><a href="/hexo-theme-0-to-1/">从零开始一个Hexo主题</a></li>
+                
+                <li><a href="/hexo-theme-pinghsu/">Pinghsu，A Hexo Theme</a></li>
+                
+                <li><a href="/server-guide/">服务器入门指北</a></li>
+                
+                <li><a href="/start-scroll-snap/">初见Scroll-Snap</a></li>
+                
+                <li><a href="/mac-install-python3-env/">Mac安装Python3开发环境随记</a></li>
+                
+                <li><a href="/start-grid-layout/">初探Grid-Layout布局</a></li>
+                
+                <li><a href="/aliyun-deploy-node/">阿里云部署项目笔记——Node篇</a></li>
+                
+                <li><a href="/aliyun-deploy-vue/">阿里云部署项目笔记——Vue篇</a></li>
+                
+            </div>
+            
+            
+            <div class="meta-item meta-comments">
+            </div>
+            
+		</div>
+	</div>
+</footer>
+
+
+<div id="directory-content" class="directory-content">
+    <div id="directory"></div>
+</div>
+<script>
+var postDirectoryBuild = function() {
+    var postChildren = function children(childNodes, reg) {
+        var result = [],
+            isReg = typeof reg === 'object',
+            isStr = typeof reg === 'string',
+            node, i, len;
+        for (i = 0, len = childNodes.length; i < len; i++) {
+            node = childNodes[i];
+            if ((node.nodeType === 1 || node.nodeType === 9) &&
+                (!reg ||
+                isReg && reg.test(node.tagName.toLowerCase()) ||
+                isStr && node.tagName.toLowerCase() === reg)) {
+                result.push(node);
+            }
+        }
+        return result;
+    },
+    createPostDirectory = function(article, directory, isDirNum) {
+        var contentArr = [],
+            titleId = [],
+            levelArr, root, level,
+            currentList, list, li, link, i, len;
+        levelArr = (function(article, contentArr, titleId) {
+            var titleElem = postChildren(article.childNodes, /^h\d$/),
+                levelArr = [],
+                lastNum = 1,
+                lastRevNum = 1,
+                count = 0,
+                guid = 1,
+                id = 'directory' + (Math.random() + '').replace(/\D/, ''),
+                lastRevNum, num, elem;
+            while (titleElem.length) {
+                elem = titleElem.shift();
+                contentArr.push(elem.innerHTML);
+                num = +elem.tagName.match(/\d/)[0];
+                if (num > lastNum) {
+                    levelArr.push(1);
+                    lastRevNum += 1;
+                } else if (num === lastRevNum ||
+                    num > lastRevNum && num <= lastNum) {
+                    levelArr.push(0);
+                    lastRevNum = lastRevNum;
+                } else if (num < lastRevNum) {
+                    levelArr.push(num - lastRevNum);
+                    lastRevNum = num;
+                }
+                count += levelArr[levelArr.length - 1];
+                lastNum = num;
+                elem.id = elem.id || (id + guid++);
+                titleId.push(elem.id);
+            }
+            if (count !== 0 && levelArr[0] === 1) levelArr[0] = 0;
+            return levelArr;
+        })(article, contentArr, titleId);
+        currentList = root = document.createElement('ul');
+        dirNum = [0];
+        for (i = 0, len = levelArr.length; i < len; i++) {
+            level = levelArr[i];
+            if (level === 1) {
+                list = document.createElement('ul');
+                if (!currentList.lastElementChild) {
+                    currentList.appendChild(document.createElement('li'));
+                }
+                currentList.lastElementChild.appendChild(list);
+                currentList = list;
+                dirNum.push(0);
+            } else if (level < 0) {
+                level *= 2;
+                while (level++) {
+                    if (level % 2) dirNum.pop();
+                    currentList = currentList.parentNode;
+                }
+            }
+            dirNum[dirNum.length - 1]++;
+            li = document.createElement('li');
+            link = document.createElement('a');
+            link.href = '#' + titleId[i];
+            link.innerHTML = !isDirNum ? contentArr[i] :
+                dirNum.join('.') + ' ' + contentArr[i] ;
+            li.appendChild(link);
+            currentList.appendChild(li);
+        }
+        directory.appendChild(root);
+    };
+    createPostDirectory(document.getElementById('post-content'),document.getElementById('directory'), true);
+};
+postDirectoryBuild();
+</script>
+
+<script src="//cdn.bootcss.com/headroom/0.9.1/headroom.min.js"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+<script>
+
+var postDirectory = new Headroom(document.getElementById("directory-content"), {
+    tolerance: 0,
+    
+    offset : 90,
+    
+    classes: {
+        initial: "initial",
+        pinned: "pinned",
+        unpinned: "unpinned"
+    }
+});
+postDirectory.init();
+
+
+var postSharer = new Headroom(document.getElementById("post-bottom-bar"), {
+    tolerance: 0,
+    offset : 70,
+    classes: {
+        initial: "animated",
+        pinned: "pinned",
+        unpinned: "unpinned"
+    }
+});
+postSharer.init();
+
+var header = new Headroom(document.getElementById("header"), {
+    tolerance: 0,
+    offset : 70,
+    classes: {
+      initial: "animated",
+      pinned: "slideDown",
+      unpinned: "slideUp"
+    }
+});
+header.init();
+
+hljs.initHighlightingOnLoad();
+ 
+
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
+
+</script>
+<script>
+var words = 'Front-End,JavaScript,HTML,CSS,Node.js,React,Vue,passion,love'.split(',').map(item => item.trim());
+var chakhsu = function(r){function t(){return b[Math.floor(Math.random()*b.length)]}function e(){return String.fromCharCode(94*Math.random()+33)}function n(r){for(var n=document.createDocumentFragment(),i=0;r>i;i++){var l=document.createElement("span");l.textContent=e(),l.style.color=t(),n.appendChild(l)}return n}function i(){var t=o[c.skillI];c.step?c.step--:(c.step=g,c.prefixP<l.length?(c.prefixP>=0&&(c.text+=l[c.prefixP]),c.prefixP++):"forward"===c.direction?c.skillP<t.length?(c.text+=t[c.skillP],c.skillP++):c.delay?c.delay--:(c.direction="backward",c.delay=a):c.skillP>0?(c.text=c.text.slice(0,-1),c.skillP--):(c.skillI=(c.skillI+1)%o.length,c.direction="forward")),r.textContent=c.text,r.appendChild(n(c.prefixP<l.length?Math.min(s,s+c.prefixP):Math.min(s,t.length-c.skillP))),setTimeout(i,d)}var l="I work with ",o=words.map(function(r){return r+"."}),a=2,g=1,s=5,d=75,b=["rgb(110,64,170)","rgb(150,61,179)","rgb(191,60,175)","rgb(228,65,157)","rgb(254,75,131)","rgb(255,94,99)","rgb(255,120,71)","rgb(251,150,51)","rgb(226,183,47)","rgb(198,214,60)","rgb(175,240,91)","rgb(127,246,88)","rgb(82,246,103)","rgb(48,239,130)","rgb(29,223,163)","rgb(26,199,194)","rgb(35,171,216)","rgb(54,140,225)","rgb(76,110,219)","rgb(96,84,200)"],c={text:"",prefixP:-s,skillI:0,skillP:0,direction:"forward",delay:a,step:g};i()};chakhsu(document.getElementById('chakhsu')); if ('addEventListener' in document) { document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false); }
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    showProcessingMessages: false,
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
+        ignoreClass:"comment-content"
+    },
+    "HTML-CSS": {
+        availableFonts: ["STIX","TeX"],
+        showMathMenu: false
+    }
+});
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/love.js"></script>
+
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'pyBLR79r66pCCErtN6UptDgW-gzGzoHsz',
+        appKey: 'OH0atmy3O9rPdTndkp5xGc5U',
+        placeholder: 'Your commnet here. Be cool.' || 'Your commnet here. Be cool.',
+        avatar: 'mp' || 'mp',
+        pageSize: 10 || 10,
+        visitor: true,
+    })
+</script>
+
+
+<script>
+
+// 获取文章评论数
+var query1 = new AV.Query('Comment');
+query1.equalTo('url', '/hexo-theme-0-to-1/');
+query1.doesNotExist('pid');
+query1.count().then(function (count) {
+    document.getElementById('page-title-comment').innerText = count + ' comment';
+}, function (error) {
+    console.log(error.message);    
+}).catch(function (error) {
+    console.log(error.message);
+});
+
+
+
+// 获取最近评论
+var query2 = new AV.Query('Comment');
+query2.doesNotExist('pid');
+query2.descending('createdAt');
+query2.limit(8);
+query2.find().then(function (data) {
+    var _dom = '<h3 class="meta-title">最近评论</h3>';
+    data.forEach(function(comment) {
+        const plainComment = comment.get('comment').replace(/<[^>]+>/gim, '');
+        const href = `${comment.get('url')}#${comment.get('objectId')}`;
+        _dom += `<li><a href="${href}">${comment.get('nick')} : ${plainComment}</a></li>`
+    })
+    document.getElementsByClassName('meta-comments')[0].innerHTML = _dom;
+}, function (error) {
+    console.log(error.message);    
+}).catch(function (error) {
+    console.log(error.message);
+});
+
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+
