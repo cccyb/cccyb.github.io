@@ -144,11 +144,11 @@
 <p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0ipnb7mhgj20f407e0t6.jpg" alt=""></p>
 <p>如图所示，一个hexo主题的目录主要包括以下五部分：</p>
 <ul>
-<li>languages：用于国际化的语言文件</li>
-<li>layout：主题布局模板文件</li>
-<li>scripts：hexo脚本插件目录，可以编写一些辅助函数脚本</li>
-<li>source：资源文件目录，包括页面样式，js脚本等</li>
-<li>_config.yml：主题配置文件</li>
+<li><code>languages</code>：用于国际化的语言文件</li>
+<li><code>layout</code>：主题布局模板文件</li>
+<li><code>scripts</code>：hexo脚本插件目录，可以编写一些辅助函数脚本</li>
+<li><code>source</code>：资源文件目录，包括页面样式，js脚本等</li>
+<li><code>_config.yml</code>：主题配置文件</li>
 </ul>
 <h3 id="局部模板"><a href="#局部模板" class="headerlink" title="局部模板"></a>局部模板</h3><p>我们通过分析常见的博客网站可以知道，大部分的博客网站都由三部分组成：顶部导航栏，中间内容区域，以及底部信息展示区域。每次点击导航栏选项跳转页面时，顶部导航栏以及底部信息展示区域是不变的，只是中间的内容区域重新渲染，因此，我们可以将通用的代码抽离成局部模板以复用。</p>
 <p>我们在<code>layout</code>目录下新建<code>_partial</code>目录，在该目录下添加<code>head.ejs</code>,<code>header.ejs</code>以及<code>footer.ejs</code>文件。</p>
@@ -245,7 +245,7 @@ theme: theme-example
   home: /
   categories: /categories
   tags: /tags
-  archives: /archivesz
+  archives: /archives
 </code></pre>
 <p>这样我们就可以在 <code>header.ejs</code> 中使用 <code>theme.menu</code> 获取到导航菜单的设置。将 <code>header.ejs</code> 修改为：</p>
 <pre><code class="ejs">&lt;header class=&quot;header&quot;&gt;
@@ -382,7 +382,7 @@ theme: theme-example
     &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
     &lt;meta content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot; name=&quot;viewport&quot;&gt;
     &lt;title&gt;&lt;%= config.title %&gt;&lt;/title&gt;
-    &lt;%- css(&#39;css/style.css&#39;) %&gt;
+    &lt;%- css(&#39;css/style.styl&#39;) %&gt;
 &lt;/head&gt;
 </code></pre>
 <p>至此，我们会看到站点的首页是这个样子的：</p>
@@ -404,7 +404,7 @@ theme: theme-example
 &lt;/section&gt;
 &lt;%- partial(&#39;_partial/paginator&#39;) %&gt;
 </code></pre>
-<p>这里我们使用到了另外的一个辅助函数 <a href="https://hexo.io/docs/helpers.html#paginator" target="_blank" rel="noopener"><code>paginator</code></a>，它能够帮助我们插入分页链接。</p>
+<p>这里我们使用到了另外的一个辅助函数 <a href="https://hexo.io/docs/helpers.html#paginator" target="_blank" rel="noopener"><code>paginator</code></a>，它能够帮助我们插入分页链接，这里我们只是实现了一个最基本的分页，具体的样式可以自行添加，或者根据文档使用其他配置自定义分页。</p>
 <p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0ity1ov1qj21z014q7a5.jpg" alt=""></p>
 <h3 id="添加文章详情页"><a href="#添加文章详情页" class="headerlink" title="添加文章详情页"></a>添加文章详情页</h3><p>文章详情页对应的布局文件是 <code>post.ejs</code>，新建 <code>post.ejs</code>:</p>
 <pre><code class="ejs">&lt;article class=&quot;post&quot;&gt;
@@ -548,7 +548,7 @@ type: &quot;categories&quot;
 </ul>
 <p>如果我们的代码很简单，我们可以编写脚本，只需要把 JavaScript 文件放到 <code>scripts</code> 文件夹，在启动时就会自动载入。简单来说，脚本文件可以相当于一些这样的的工具函数，当我们发现Hexo官方提供的函数不能满足我们的需求时，我们可以通过添加一个脚本来实现。</p>
 <p>比如，我们现在有这样一个简单的需求，我们想给首页文章列表中的文章块添加一个背景颜色，背景颜色我们可以在文章md文件中定义，如果未定义，则随机选用一种颜色。</p>
-<p>首先，我们先在文章md文件中顶部<a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">Front-matter</a>添加一个color字段：</p>
+<p>首先，我们先在文章md文件中顶部<a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">Front-matter</a>添加一个<code>color</code>字段：</p>
 <p><code>_posts/hello-world-1.md</code>:</p>
 <pre><code class="markdown">title: Hello World 1
 date: 2019-02-12 17:49:32
@@ -582,7 +582,7 @@ hexo.extend.helper.register(&#39;getPostBgColor&#39;, getPostBgColor);
 <p>最后一行我们通过<code>hexo.extend.helper.register</code>全局注册一个脚本函数，注册完成后，我们就可以在模板文件中和Hexo官方提供的全局函数一样使用。</p>
 <p>修改<code>layout/index.ejs</code>:</p>
 <pre><code class="ejs">...
-&lt;article class=&quot;post &lt;%= getPostBgColor(theme.colorBgPosts, post.color, &#39;deepgrey&#39;) %&gt;&quot;&gt;
+&lt;article class=&quot;post &lt;%= getPostBgColor(post.color) %&gt;&quot;&gt;
 ...
 </code></pre>
 <p>添加背景颜色样式，编辑<code>css/index.styl</code>:</p>
@@ -654,7 +654,7 @@ hexo.extend.helper.register(&#39;getPostBgColor&#39;, getPostBgColor);
 		</meting-js>
 		
 		<p class="post-info">
-			本文由 <a href="https://chenyubo.me">陈钰博</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: Feb 26, 2019 11:44 am
+			本文由 <a href="https://chenyubo.me">陈钰博</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: Mar 04, 2019 10:27 am
 		</p>
 	</div>
 </article>
@@ -689,7 +689,7 @@ hexo.extend.helper.register(&#39;getPostBgColor&#39;, getPostBgColor);
 						<div class="item-title"><a href="/hexo-theme-pinghsu/">Pinghsu，A Hexo Theme</a></div>
 						<div class="item-meta clearfix">
 							<div class="item-meta-date" style="color: #5f5f5f;">Feb 02, 2019</div>
-							<div class="item-meta-ico bg-ico-image" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
+							<div class="item-meta-ico bg-ico-design" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
                             <div class="item-meta-cat">
                                 
                                 <a href="/categories/Tutorials/">Tutorials</a>
