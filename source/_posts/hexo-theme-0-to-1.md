@@ -32,11 +32,11 @@ thumb: https://ws1.sinaimg.cn/large/c542ee77ly1g0jogbl6ljj21z418gtln.jpg
 
 如图所示，一个hexo主题的目录主要包括以下五部分：
 
-- languages：用于国际化的语言文件
-- layout：主题布局模板文件
-- scripts：hexo脚本插件目录，可以编写一些辅助函数脚本
-- source：资源文件目录，包括页面样式，js脚本等
-- _config.yml：主题配置文件
+- `languages`：用于国际化的语言文件
+- `layout`：主题布局模板文件
+- `scripts`：hexo脚本插件目录，可以编写一些辅助函数脚本
+- `source`：资源文件目录，包括页面样式，js脚本等
+- `_config.yml`：主题配置文件
 
 ### 局部模板
 
@@ -180,7 +180,7 @@ menu:
   home: /
   categories: /categories
   tags: /tags
-  archives: /archivesz
+  archives: /archives
 ```
 
 这样我们就可以在 `header.ejs` 中使用 `theme.menu` 获取到导航菜单的设置。将 `header.ejs` 修改为：
@@ -350,7 +350,7 @@ body {
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title><%= config.title %></title>
-    <%- css('css/style.css') %>
+    <%- css('css/style.styl') %>
 </head>
 ```
 
@@ -385,7 +385,7 @@ body {
 <%- partial('_partial/paginator') %>
 ```
 
-这里我们使用到了另外的一个辅助函数 [`paginator`](https://hexo.io/docs/helpers.html#paginator)，它能够帮助我们插入分页链接。
+这里我们使用到了另外的一个辅助函数 [`paginator`](https://hexo.io/docs/helpers.html#paginator)，它能够帮助我们插入分页链接，这里我们只是实现了一个最基本的分页，具体的样式可以自行添加，或者根据文档使用其他配置自定义分页。
 
 ![](https://ws1.sinaimg.cn/large/c542ee77ly1g0ity1ov1qj21z014q7a5.jpg)
 
@@ -583,7 +583,7 @@ Hexo 有强大的插件系统，让我们能够轻松扩展功能而不用修改
 
 比如，我们现在有这样一个简单的需求，我们想给首页文章列表中的文章块添加一个背景颜色，背景颜色我们可以在文章md文件中定义，如果未定义，则随机选用一种颜色。
 
-首先，我们先在文章md文件中顶部[Front-matter](https://hexo.io/zh-cn/docs/front-matter)添加一个color字段：
+首先，我们先在文章md文件中顶部[Front-matter](https://hexo.io/zh-cn/docs/front-matter)添加一个`color`字段：
 
 `_posts/hello-world-1.md`:
 
@@ -628,7 +628,7 @@ hexo.extend.helper.register('getPostBgColor', getPostBgColor);
 
 ```ejs
 ...
-<article class="post <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>">
+<article class="post <%= getPostBgColor(post.color) %>">
 ...
 ```
 
