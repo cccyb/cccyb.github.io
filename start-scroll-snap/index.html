@@ -9,6 +9,7 @@
     
     <link rel="dns-prefetch" href="//cdn.bootcss.com">
     <link rel="dns-prefetch" href="//secure.gravatar.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
@@ -51,6 +52,9 @@
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
     <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
     
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 </head>
 <body class="bg-white" gtools_scp_screen_capture_injected="true">
 <!--[if lt IE 8]>
@@ -131,7 +135,7 @@
             
         </p>
 		<h2 id="什么是CSS-Scroll-Snap？"><a href="#什么是CSS-Scroll-Snap？" class="headerlink" title="什么是CSS Scroll Snap？"></a>什么是CSS Scroll Snap？</h2><p>我们先看一下MDN里对scroll snap的解释：</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_64d78b0fga46dbf98cc8ce5fb2lkh_642x245.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/181019_64d78b0fga46dbf98cc8ce5fb2lkh_642x245.jpg" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_64d78b0fga46dbf98cc8ce5fb2lkh_642x245.jpg"></a></p>
 <p>英语不好的童鞋可以悄悄咪咪的使用百度翻译或者谷歌翻译帮个忙，这段话的大意应该就是：</p>
 <blockquote>
 <p> CSS Scroll Snap是CSS的一个模块，它引入了滚动捕捉位置，可以在滚动操作完成后强制滚动容器的滚动窗口到我们指定的滚动位置。</p>
@@ -164,7 +168,7 @@
 }
 </code></pre>
 <p>是不是很简单，这里我们先对scroll snap属性有个大概的了解，后续我们会详细讲解。</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_0l24i1l0c1hk9ddi1d1fkfci35i4l_922x290.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/181019_0l24i1l0c1hk9ddi1d1fkfci35i4l_922x290.jpg" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_0l24i1l0c1hk9ddi1d1fkfci35i4l_922x290.jpg"></a></p>
 <p>上图是来自w3c标准里的一个图示，这个图其实非常形象了描述了滚动捕捉。</p>
 <p>图中的红色区域即为可滚动容器的可视区域或叫捕捉视口。图片黄色框的地方被称为捕捉区域。我们上面设置的 scroll-snap-align 中指定了横轴捕捉点为中心位置。此时将在捕捉视口区域中心（红色虚线）以及捕捉区域中心（黄色虚线）形成捕捉点。</p>
 <p>由此我们可以知道，要想形成捕捉，需要以下两个条件：</p>
@@ -173,14 +177,14 @@
 <li>确定捕捉视口和捕捉区域的捕捉点</li>
 </ol>
 <p>既然我们要使用CSS属性，那么了解它的流量器兼容性是必不可少的。</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_34cl4f6h459549l348i816a7000di_915x400.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/181019_34cl4f6h459549l348i816a7000di_915x400.jpg" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_34cl4f6h459549l348i816a7000di_915x400.jpg"></a></p>
 <p>自2016年推出CSS Scroll Snap以来，浏览器对它的支持有了显著的改善。Google 69+、Firefox、Edge和Safari都支持它的某些版本。但是现实其实还是很残酷的，整体浏览器对scroll snap的支持度并不是很高，只要50%多，不到60%，因此，这个属性我们在平时使用还是需要谨慎考虑兼容性，使用最新的浏览器进行尝鲜未尝不可。待后续各大浏览器稳定支持后再进行扩展。</p>
 <h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>与任何属性一样，熟悉它们所接受的值是一个好主意。滚动捕捉属性应用于父元素和子元素，每个元素都有特定的值。就像Flexbox和Grid那样，父类变成了Flex或Grid容器。在这种情况下，父元素变成了快照（Snap）容器。</p>
 <p>父容器属性主要有两个：</p>
 <ul>
 <li>scroll-snap-type</li>
 </ul>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_5b71f8hcbakj2ckdf4jglk0h1401g_796x544.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/181019_5b71f8hcbakj2ckdf4jglk0h1401g_796x544.jpg" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_5b71f8hcbakj2ckdf4jglk0h1401g_796x544.jpg"></a></p>
 <p>通过设置 scroll-snap-type 将一个滚动容器转变为一个滚动捕捉容器，并且可以控制捕捉的严格度，如果没有指定严格度，默认为非精确的捕捉（proximity）。</p>
 <p>scroll-snap-type 支持设置两个参数，第一个为捕捉轴向，第二个参数为捕捉严格度，可省略。</p>
 <p>proximity值与mandatory十分相似，只是没有那么严格。改变浏览器的大小或者增加内容区，它可能会(或者而不会)重新获取snap点，取决于它与snap点间的距离。</p>
@@ -192,7 +196,7 @@
 <ul>
 <li>scroll-snap-align</li>
 </ul>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_7dkf7fig7i557lh15ike64fcfe9g4_731x451.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/181019_7dkf7fig7i557lh15ike64fcfe9g4_731x451.jpg" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/181019_7dkf7fig7i557lh15ike64fcfe9g4_731x451.jpg"></a></p>
 <p>这些是相对于滚动方向的。如果是垂直滚动，start指的是元素的顶部边缘。如果是水平滚动条，它指的是左边缘。center和end遵循相同的原则。你可以为滚动条的不同方向设置不同的值，这两个值之间用空格分隔开。</p>
 <ul>
 <li>scroll-snap-margin</li>
@@ -351,7 +355,7 @@ section {
 						<div class="item-title"><a href="/start-grid-layout/">初探Grid-Layout布局</a></div>
 						<div class="item-meta clearfix">
 							<div class="item-meta-date" style="color: #5f5f5f;">Aug 08, 2018</div>
-							<div class="item-meta-ico bg-ico-image" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
+							<div class="item-meta-ico bg-ico-design" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
                             <div class="item-meta-cat">
                                 
                                 <a href="/categories/Tutorials/">Tutorials</a>

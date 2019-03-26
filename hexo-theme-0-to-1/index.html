@@ -9,6 +9,7 @@
     
     <link rel="dns-prefetch" href="//cdn.bootcss.com">
     <link rel="dns-prefetch" href="//secure.gravatar.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
@@ -51,6 +52,9 @@
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
     <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
     
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 </head>
 <body class="bg-white" gtools_scp_screen_capture_injected="true">
 <!--[if lt IE 8]>
@@ -141,7 +145,7 @@
 <p>本文使用的模板引擎为 <a href="https://ejs.bootcss.com/" target="_blank" rel="noopener">ejs</a>，使用的 CSS 预处理器为 <a href="http://stylus-lang.com/" target="_blank" rel="noopener">stylus</a>。这也是 hexo 项目预装了的 render 插件，如果想使用其他模板引擎或者其他 CSS 预处理器，可以安装相对应的 render 插件。</p>
 <p>本文的代码：<a href="https://github.com/cccyb/theme-example" target="_blank" rel="noopener">https://github.com/cccyb/theme-example</a></p>
 <h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>根据下图，在<code>themes</code>目录下新建一个<code>theme-example</code>文件夹作为我们的主题目录。</p>
-<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0ipnb7mhgj20f407e0t6.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://ws1.sinaimg.cn/large/c542ee77ly1g0ipnb7mhgj20f407e0t6.jpg" data-height="800"><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0ipnb7mhgj20f407e0t6.jpg"></a></p>
 <p>如图所示，一个hexo主题的目录主要包括以下五部分：</p>
 <ul>
 <li><code>languages</code>：用于国际化的语言文件</li>
@@ -194,7 +198,7 @@
 theme: theme-example
 </code></pre>
 <p>运行 <code>hexo server</code> 开启 Hexo 本地服务器预览，访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>。</p>
-<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0iqkcsz2dj21z20fen08.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://ws1.sinaimg.cn/large/c542ee77ly1g0iqkcsz2dj21z20fen08.jpg" data-height="800"><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0iqkcsz2dj21z20fen08.jpg"></a></p>
 <h3 id="编写导航栏和底部信息"><a href="#编写导航栏和底部信息" class="headerlink" title="编写导航栏和底部信息"></a>编写导航栏和底部信息</h3><p>前面，我们只是搭了个页面框架，接下来我们就将开始正式开始一步步的完善我们的主题，以下两个文档我们将频繁的使用，最好可以提前阅读一遍有个了解：</p>
 <ul>
 <li><a href="https://hexo.io/zh-cn/docs/variables" target="_blank" rel="noopener">Hexo | 变量</a></li>
@@ -238,7 +242,7 @@ theme: theme-example
 &lt;/footer&gt;
 </code></pre>
 <p>这样，我们就得到了一个包含导航栏和底部信息的简单页面。</p>
-<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0is6aotexj21z20l2n17.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://ws1.sinaimg.cn/large/c542ee77ly1g0is6aotexj21z20l2n17.jpg" data-height="800"><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0is6aotexj21z20l2n17.jpg"></a></p>
 <h3 id="添加主题配置"><a href="#添加主题配置" class="headerlink" title="添加主题配置"></a>添加主题配置</h3><p>实际上我们需要让导航菜单根据我们的需要显示不同的项，上面这种写法不方便修改。所以我们会在主题的配置文件中添加导航菜单的配置。在 <code>theme-example</code> 下的配置文件 <code>_config.yml</code>，在其中添加需要配置的字段。然后可以通过 <code>theme</code> 这个变量来拿到该配置文件中的配置。</p>
 <p><code>theme-example/_config.yml</code>:</p>
 <pre><code class="yaml">menu:
@@ -386,7 +390,7 @@ theme: theme-example
 &lt;/head&gt;
 </code></pre>
 <p>至此，我们会看到站点的首页是这个样子的：</p>
-<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0it4ozg82j21yy0vmq8g.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://ws1.sinaimg.cn/large/c542ee77ly1g0it4ozg82j21yy0vmq8g.jpg" data-height="800"><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0it4ozg82j21yy0vmq8g.jpg"></a></p>
 <h3 id="添加分页"><a href="#添加分页" class="headerlink" title="添加分页"></a>添加分页</h3><p>在站点的 <code>source/_post/</code> 目录下存放的是我们的文章，现在我们把原本的 <code>hello-world.md</code> 复制黏贴 10+ 次，再查看站点首页。会发现，首页只显示了 10 篇文章。</p>
 <p>首页显示的文章数量我们可以通过站点配置文件中的 <code>per_page</code> 字段来修改，但是我们不可能把所有文章都放在一页，所以我们现在来添加文章列表的分页。</p>
 <p>新建 <code>_partial/paginator.ejs</code>:</p>
@@ -405,7 +409,7 @@ theme: theme-example
 &lt;%- partial(&#39;_partial/paginator&#39;) %&gt;
 </code></pre>
 <p>这里我们使用到了另外的一个辅助函数 <a href="https://hexo.io/docs/helpers.html#paginator" target="_blank" rel="noopener"><code>paginator</code></a>，它能够帮助我们插入分页链接，这里我们只是实现了一个最基本的分页，具体的样式可以自行添加，或者根据文档使用其他配置自定义分页。</p>
-<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0ity1ov1qj21z014q7a5.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://ws1.sinaimg.cn/large/c542ee77ly1g0ity1ov1qj21z014q7a5.jpg" data-height="800"><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0ity1ov1qj21z014q7a5.jpg"></a></p>
 <h3 id="添加文章详情页"><a href="#添加文章详情页" class="headerlink" title="添加文章详情页"></a>添加文章详情页</h3><p>文章详情页对应的布局文件是 <code>post.ejs</code>，新建 <code>post.ejs</code>:</p>
 <pre><code class="ejs">&lt;article class=&quot;post&quot;&gt;
     &lt;div class=&quot;post-title&quot;&gt;
@@ -420,7 +424,7 @@ theme: theme-example
 &lt;/article&gt;
 </code></pre>
 <p>由于这里是文章的模板，所以变量 <code>page</code> 表示的是文章的数据，而不是首页的文章数据集合。</p>
-<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0ityp6mwmj21z214mtf5.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://ws1.sinaimg.cn/large/c542ee77ly1g0ityp6mwmj21z214mtf5.jpg" data-height="800"><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0ityp6mwmj21z214mtf5.jpg"></a></p>
 <h3 id="添加归档页"><a href="#添加归档页" class="headerlink" title="添加归档页"></a>添加归档页</h3><p>创建归档页使用的模板文件 <code>archive.ejs</code>:</p>
 <pre><code class="ejs">&lt;section class=&quot;archive&quot;&gt;
     &lt;ul class=&quot;post-archive&quot;&gt;
@@ -464,7 +468,7 @@ theme: theme-example
     }
 }
 </code></pre>
-<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0iu1jngalj21z214qqax.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://ws1.sinaimg.cn/large/c542ee77ly1g0iu1jngalj21z214qqax.jpg" data-height="800"><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0iu1jngalj21z214qqax.jpg"></a></p>
 <h3 id="添加分类页"><a href="#添加分类页" class="headerlink" title="添加分类页"></a>添加分类页</h3><p>分类页跟归档页也类似，相当于根据不同的分类进行归档。</p>
 <p>分类页和标签页的模板编写比较特殊，本质上，分类页和标签页属于自定义页面，我们需要新建自定义页面模板<code>page.ejs</code>:</p>
 <pre><code class="ejs">&lt;% if (is_current(theme.menu.categories)) { %&gt;
@@ -538,7 +542,7 @@ type: &quot;categories&quot;
   about: /about
 </code></pre>
 <p>执行<code>hexo new page about</code>进行手动生成页面，编辑文件内容即可。</p>
-<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0iw9k3aonj21z214safs.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://ws1.sinaimg.cn/large/c542ee77ly1g0iw9k3aonj21z214safs.jpg" data-height="800"><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0iw9k3aonj21z214safs.jpg"></a></p>
 <h3 id="Hexo插件"><a href="#Hexo插件" class="headerlink" title="Hexo插件"></a>Hexo插件</h3><p>Hexo 有强大的插件系统，让我们能够轻松扩展功能而不用修改核心模块的源码。在 Hexo 中有两种形式的插件：</p>
 <ul>
 <li><p>脚本（Scripts）</p>
@@ -607,7 +611,7 @@ hexo.extend.helper.register(&#39;getPostBgColor&#39;, getPostBgColor);
 }
 </code></pre>
 <p>看下效果，Hello World 1这篇文章我们定义了<code>color：blue</code>，因此是蓝色，其他文章，我们未定义<code>color</code>，因此是随机颜色。</p>
-<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0jm9hctmlj21z214sq8n.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://ws1.sinaimg.cn/large/c542ee77ly1g0jm9hctmlj21z214sq8n.jpg" data-height="800"><img src="https://ws1.sinaimg.cn/large/c542ee77ly1g0jm9hctmlj21z214sq8n.jpg"></a></p>
 <p>这样，我们就实现了随机背景色这个小需求，当然这只是一个非常简单的例子，如果有其他复杂的需求，我们可以通过编写更加复杂的脚本来实现。</p>
 <h3 id="Hexo的数据DB扩展查询"><a href="#Hexo的数据DB扩展查询" class="headerlink" title="Hexo的数据DB扩展查询"></a>Hexo的数据DB扩展查询</h3><p>我们已经知道，Hexo已经为我们预先定义了很多常用的变量供我们使用，具体可以在 <a href="https://hexo.io/zh-cn/docs/variables" target="_blank" rel="noopener">Hexo | 变量</a> 查询。但是如果系统提供的变量数据不能满足我们的要求，那我们该怎么办呢？其实我们可以通过扩展查询来获取到我们期望的数据。</p>
 <p>其实Hexo所有的文章分类标签等等变量信息，在编译成本地静态文件之前，都是本地存储在一个<code>db.json</code>中的，相当于小型的本地数据库，Hexo在运行阶段，所有的数据相关操作其实都是在这个小型数据库上进行操作，其底层使用的查询引擎就是<a href="https://hexojs.github.io/warehouse/Query.html" target="_blank" rel="noopener">Warehouse</a>。因此我们可以通过Warehouse的语法进行自定义扩展查询。</p>
@@ -689,7 +693,7 @@ hexo.extend.helper.register(&#39;getPostBgColor&#39;, getPostBgColor);
 						<div class="item-title"><a href="/hexo-theme-pinghsu/">Pinghsu，A Hexo Theme</a></div>
 						<div class="item-meta clearfix">
 							<div class="item-meta-date" style="color: #5f5f5f;">Feb 02, 2019</div>
-							<div class="item-meta-ico bg-ico-design" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
+							<div class="item-meta-ico bg-ico-image" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
                             <div class="item-meta-cat">
                                 
                                 <a href="/categories/Tutorials/">Tutorials</a>

@@ -9,6 +9,7 @@
     
     <link rel="dns-prefetch" href="//cdn.bootcss.com">
     <link rel="dns-prefetch" href="//secure.gravatar.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
@@ -51,6 +52,9 @@
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
     <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
     
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 </head>
 <body class="bg-white" gtools_scp_screen_capture_injected="true">
 <!--[if lt IE 8]>
@@ -133,7 +137,7 @@
             
         </p>
 		<h1 id="初探Grid-Layout布局"><a href="#初探Grid-Layout布局" class="headerlink" title="初探Grid-Layout布局"></a>初探Grid-Layout布局</h1><h2 id="Grid布局简介"><a href="#Grid布局简介" class="headerlink" title="Grid布局简介"></a>Grid布局简介</h2><p>开始之前，我们先来看一张图：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/3/1/161dd2b9841e67fb?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="小草本"></p>
+<p><a data-fancybox="gallery" href="https://user-gold-cdn.xitu.io/2018/3/1/161dd2b9841e67fb?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-height="800"><img src="https://user-gold-cdn.xitu.io/2018/3/1/161dd2b9841e67fb?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></a></p>
 <p>没错，这其实就是我们小时候写的小格子本本，其实它跟我们今天要讲的主题Grid布局非常类似，其实Grid布局就是它的升级加强版。</p>
 <p>CSS网格布局（又称“网格”），是一种二维网格布局系统。</p>
 <p>CSS在处理网页布局方面一直做的不是很好。一开始我们用的是table（表格）布局，然后用float(浮动)，position（定位）和inline-block（行内块）布局，但是这些方法本质上是hack，遗漏了很多功能，例如垂直居中。后来出了<a href="https://link.juejin.im/?target=http%3A%2F%2Fpeale.cn%2F2016%2F11%2F30%2F2016_11_30_flex%2F%23more" target="_blank" rel="noopener">flexbox(盒子布局)</a>，解决了很多布局问题，但是它仅仅是一维布局，而不是复杂的二维布局，实际上它们（flexbox与grid）能很好的配合使用。</p>
@@ -148,29 +152,29 @@
 <ul>
 <li>Flex布局兼容性</li>
 </ul>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_4ck07e203b6hlb7ijcl35jkh992g3_2312x1110.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_4ck07e203b6hlb7ijcl35jkh992g3_2312x1110.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_4ck07e203b6hlb7ijcl35jkh992g3_2312x1110.png"></a></p>
 <p>可以看到，我们现在用的最多的Flex布局的浏览器兼容性已经达到了一个非常高的比例——95%，说明在如今的前端开发环境下，如果对浏览器要求不是非常苛刻，基本可以非常愉快的使用Flex布局了。</p>
 <ul>
 <li>Grid布局兼容性</li>
 </ul>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_66jb69f0idk0k7ig40jbblliaa6k9_2330x1106.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_66jb69f0idk0k7ig40jbblliaa6k9_2330x1106.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_66jb69f0idk0k7ig40jbblliaa6k9_2330x1106.png"></a></p>
 <p>从图中可以看到，Grid布局和前面的Flex布局相比起来，虽然没有那么高的兼容比例，但是，经过了6年的沉淀与发展，也已经达到了86%，相对来说也已经比较完备了。所以，如果你们的代码基本都是在常见的最新的浏览器上进行允许，不用兼容万恶的前端克星IE，可以在平时的开发中尝试使用体验一下最新的Grid布局。</p>
 <h2 id="Grid和Flex对比"><a href="#Grid和Flex对比" class="headerlink" title="Grid和Flex对比"></a>Grid和Flex对比</h2><p>Grid与Flex布局的共同点是元素均存放在一个父级容器内，尺寸与位置受容器影响。最核心的区别是Flex布局使用单坐标轴的布局系统，而Grid布局中使用二维布局，使元素可以在二个维度上进行排列，如下图所示：</p>
 <ul>
 <li>flex-layout</li>
 </ul>
-<p><img src="https://www.w3.org/TR/css3-grid-layout/images/flex-layout.png" alt="flex"></p>
+<p><a data-fancybox="gallery" href="https://www.w3.org/TR/css3-grid-layout/images/flex-layout.png" data-height="800"><img src="https://www.w3.org/TR/css3-grid-layout/images/flex-layout.png"></a></p>
 <ul>
 <li>grid-layout</li>
 </ul>
-<p><img src="https://www.w3.org/TR/css3-grid-layout/images/grid-layout.png" alt="grid"></p>
+<p><a data-fancybox="gallery" href="https://www.w3.org/TR/css3-grid-layout/images/grid-layout.png" data-height="800"><img src="https://www.w3.org/TR/css3-grid-layout/images/grid-layout.png"></a></p>
 <p>上面两张图片来自于w3c官方css规范对Grid布局的介绍中的一组对比图，我们可以看到，flex布局很明显的是一维布局，元素在容器中都是横向或者纵向进行排列，并不能跨越维度进行排列。</p>
 <p>而grid布局相比于flex布局，很明显是二维布局，grid布局不仅可以在横向上像flex已经排列，某些子元素还可以跨越维度，同时可以在横向和纵向上进行布局。</p>
 <h3 id="一维-vs-二维"><a href="#一维-vs-二维" class="headerlink" title="一维 vs 二维"></a>一维 vs 二维</h3><p>有这样一张图：</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_3ecg91kl5hfaaabbh2b51khjhk7fg_465x118.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_3ecg91kl5hfaaabbh2b51khjhk7fg_465x118.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_3ecg91kl5hfaaabbh2b51khjhk7fg_465x118.png"></a></p>
 <p>上面这个布局，我们其实主要是在一个方向上即横线上布局，比如在<code>header</code>里放3个button，此时，我们其实使用flex布局是最佳方案，我们可以使用很少的代码来实现这些布局。</p>
 <p>又比如有这样一张图：</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_89hcc0hf69e50hb7j77gka2j0445i_499x274.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_89hcc0hf69e50hb7j77gka2j0445i_499x274.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_89hcc0hf69e50hb7j77gka2j0445i_499x274.png"></a></p>
 <p>我们看到，其实这个布局已经不单单是一个维度了，他同时在横向和纵向上都有布局，这种情况下，其实我们使用Grid布局会更加灵活，并且会使你的标签更坚定，代码更容易维护。</p>
 <p>你也可以结合两者一起使用，在上面的例子中最完美的做法是使用Grid来布局页面，使用Flex去对齐header里面的内容。</p>
 <h3 id="内容优先-vs-布局优先"><a href="#内容优先-vs-布局优先" class="headerlink" title="内容优先 vs 布局优先"></a>内容优先 vs 布局优先</h3><p>再者，其实这两种布局方式的另一个核心区别是Flex是以<strong>内容</strong>为基础，而<strong>Grid</strong>是以布局为基础，听起来有些抽象，我们来用一个实际的例子来看一下。</p>
@@ -182,20 +186,20 @@
 &lt;/header&gt;
 </code></pre>
 <p>在没有使用任何布局时，他们是这样的：</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_7jh25ig17l7d4a9f399fjil5chcl4_673x161.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_7jh25ig17l7d4a9f399fjil5chcl4_673x161.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_7jh25ig17l7d4a9f399fjil5chcl4_673x161.png"></a></p>
 <p>当我们给外部<code>header</code>容器添加一个<code>display: flex</code>之后，他们会漂亮的在一条线上。</p>
 <pre><code class="css">header {
     display: flex;
 }
 </code></pre>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_6fc6dc8j307ja00ja17i765232jfh_668x76.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_6fc6dc8j307ja00ja17i765232jfh_668x76.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_6fc6dc8j307ja00ja17i765232jfh_668x76.png"></a></p>
 <p>为了让logout button在最右边，我们可以给他指定一个margin：</p>
 <pre><code class="css">header &gt; div:nth-child(3) {
     margin-left: auto;
 }
 </code></pre>
 <p>效果如下：</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_2gl52ecbh70060a8011gidl774cg3_670x77.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_2gl52ecbh70060a8011gidl774cg3_670x77.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_2gl52ecbh70060a8011gidl774cg3_670x77.png"></a></p>
 <p>值得注意的是，让元素本身决定他放在哪里，我们除了<code>display: flex</code>之外没有添加任何东西。</p>
 <p>这就是Flex和Grid的核心差别，当我们使用Grid来创建这个header时，这个差别会更加明显。</p>
 <p>使用Grid来实现上面的header布局，有很多方法，我们这里用一种非常简单的去做，我们的Grid有十列，没一列都是一个单位宽度。</p>
@@ -205,9 +209,9 @@
 }
 </code></pre>
 <p>添加上面的代码后，看起来其实和Flex的解决方案是一样的。</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_6fc6dc8j307ja00ja17i765232jfh_668x76.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_6fc6dc8j307ja00ja17i765232jfh_668x76.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_6fc6dc8j307ja00ja17i765232jfh_668x76.png"></a></p>
 <p>但是我们可以使用chrome的审查元素在上帝视角来看看两者有什么不同：</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_58j3egaefjf9833691k1g4i83li54_748x138.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_58j3egaefjf9833691k1g4i83li54_748x138.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_58j3egaefjf9833691k1g4i83li54_748x138.png"></a></p>
 <p>最关键的区别就是，这种方式必须先定义布局的列。从定义列的宽度开始，然后我们才能将元素放在可用的单元格中。这种方式强迫我们去分割我们的header有多少列。除非我们改变Grid，否则我们会被困死在这10列中，但是Flex中我们不会被这个麻烦困扰。</p>
 <p>为了把logout放在最右边，我们会把他放在第十列：</p>
 <pre><code class="css">header &gt; div:nth-child(3) {
@@ -215,7 +219,7 @@
 }
 </code></pre>
 <p>审查元素时，看起来是这样的：</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_7lkl68d536gl00lja0fd44k4k3ij6_701x126.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_7lkl68d536gl00lja0fd44k4k3ij6_701x126.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_7lkl68d536gl00lja0fd44k4k3ij6_701x126.png"></a></p>
 <p>我们不能简单的添加一个<code>margin-left: auto;</code>因为它引进被放在了第三个单元格中，想要移动它，我们得再找一个单元格把它放进去。</p>
 <p>Grid和flex的区别，总结起来就是以下几点：</p>
 <ul>
@@ -251,22 +255,22 @@
 <li>网格线（grid-line）</li>
 </ul>
 <p>网格线就是将网格划分开的线条。</p>
-<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8bye7zrj20an06306x.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8bye7zrj20an06306x.jpg" data-height="800"><img src="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8bye7zrj20an06306x.jpg"></a></p>
 <ul>
 <li>网格单元格（grid-cell）</li>
 </ul>
 <p>网格单元格就是网格容器中划分出来最小的单元。</p>
-<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8cfc0uoj20an06306u.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8cfc0uoj20an06306u.jpg" data-height="800"><img src="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8cfc0uoj20an06306u.jpg"></a></p>
 <ul>
 <li>网格轨道（grid-track）</li>
 </ul>
 <p>网格轨道就是由若干个网格单元格组成的横向或者纵向区域，他的常见规格是1x8，或者8x1这种格式。</p>
-<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8csje9pj20an06306r.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8csje9pj20an06306r.jpg" data-height="800"><img src="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8csje9pj20an06306r.jpg"></a></p>
 <ul>
 <li>网格区域（grid-area）</li>
 </ul>
 <p>网格区域也是由若干个网格单元格组成的区域，但是不用与网格轨道，他的规格不局限与单个维度。</p>
-<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8dgkwdwj20an06306n.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8dgkwdwj20an06306n.jpg" data-height="800"><img src="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8dgkwdwj20an06306n.jpg"></a></p>
 <h2 id="基本属性"><a href="#基本属性" class="headerlink" title="基本属性"></a>基本属性</h2><p>前面我们对grid布局的一些重要术语进行了介绍，接下来我们来一一介绍以下grid布局相关的基本属性。</p>
 <h4 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h4><p>容器属性，顾名思义，就是添加可以在网格容器中添加是属性，是对网格整体进行控制的一系列属性。</p>
 <ul>
@@ -281,17 +285,17 @@
     grid-template-rows: 25% 100px auto;
 }
 </code></pre>
-<p><img src="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8dyw8pxj20cw0a5a9u.jpg" alt=""></p>
+<p><a data-fancybox="gallery" href="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8dyw8pxj20cw0a5a9u.jpg" data-height="800"><img src="https://ws1.sinaimg.cn/large/c542ee77ly1fzs8dyw8pxj20cw0a5a9u.jpg"></a></p>
 <ul>
 <li>fr单位</li>
 </ul>
 <p>fr单位是grid布局中的一个新单位，它代表的是网格容器中<strong>可用空间</strong>的一份。下面我举三个小例子来介绍以下这个单位，注意，我们这里只关注列的宽度。</p>
 <p><code>1fr 1fr 1fr</code>表示三个轨道三等分。</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_396cg5l61dj1c7cf9gf3he9blidj8_619x418.png" alt="">)</p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_396cg5l61dj1c7cf9gf3he9blidj8_619x418.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_396cg5l61dj1c7cf9gf3he9blidj8_619x418.png"></a>)</p>
 <p><code>2fr 1fr 1fr</code>表示三个轨道，空间四等分，两份给第一个轨道，剩下三个轨道各占一份。</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_6akc87d6hg2bhk3kldibc0g1b7d31_621x412.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_6akc87d6hg2bhk3kldibc0g1b7d31_621x412.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_6akc87d6hg2bhk3kldibc0g1b7d31_621x412.png"></a></p>
 <p><code>400px 2fr 1fr</code>表示三个轨道，第一个轨道400px，抽走400px后剩下空间三等分，两份给第二个轨道，一份给第三个轨道。</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_209b72gal4136kl69ag5ce105ck81_589x403.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_209b72gal4136kl69ag5ce105ck81_589x403.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_209b72gal4136kl69ag5ce105ck81_589x403.png"></a></p>
 <ul>
 <li>repeat()和minmax()</li>
 </ul>
@@ -333,7 +337,7 @@ minmax(100px, auto)：表示网格最小是100px，最大为auto，auto意思是
         &quot;footer footer footer footer&quot;
 }
 </code></pre>
-<p><img src="https://user-gold-cdn.xitu.io/2016/12/12/8b3d9c5cbdbba4375f2e4eee09107d18?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<p><a data-fancybox="gallery" href="https://user-gold-cdn.xitu.io/2016/12/12/8b3d9c5cbdbba4375f2e4eee09107d18?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-height="800"><img src="https://user-gold-cdn.xitu.io/2016/12/12/8b3d9c5cbdbba4375f2e4eee09107d18?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></a></p>
 <ul>
 <li>grid-column-gap</li>
 <li>grid-row-gap</li>
@@ -353,7 +357,7 @@ minmax(100px, auto)：表示网格最小是100px，最大为auto，auto意思是
     grid-gap: 15px 10px;
 }
 </code></pre>
-<p><img src="https://user-gold-cdn.xitu.io/2016/12/12/57614742c974852d68a45aeb3b549335?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<p><a data-fancybox="gallery" href="https://user-gold-cdn.xitu.io/2016/12/12/57614742c974852d68a45aeb3b549335?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-height="800"><img src="https://user-gold-cdn.xitu.io/2016/12/12/57614742c974852d68a45aeb3b549335?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></a></p>
 <ul>
 <li>justify-items</li>
 <li>align-items</li>
@@ -361,10 +365,10 @@ minmax(100px, auto)：表示网格最小是100px，最大为auto，auto意思是
 <li>align-content</li>
 </ul>
 <p>这四个属性主要是用来控制网格项的对齐方式，具体用法和效果与Flex类似，这里就不详细展开，看图说话吧。</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_15h2gddfbed4i8gb01lj753j2ea5k_993x742.png" alt=""></p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_6kjbdic8f2j5853111jl9g7dllh8e_978x778.png" alt=""></p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_0ahbjl914lah4aaghcb5fk9i8de8d_1270x1004.png" alt=""></p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_3fkc4990h47elf541cg3k05lc4ikg_1256x909.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_15h2gddfbed4i8gb01lj753j2ea5k_993x742.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_15h2gddfbed4i8gb01lj753j2ea5k_993x742.png"></a></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_6kjbdic8f2j5853111jl9g7dllh8e_978x778.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_6kjbdic8f2j5853111jl9g7dllh8e_978x778.png"></a></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_0ahbjl914lah4aaghcb5fk9i8de8d_1270x1004.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_0ahbjl914lah4aaghcb5fk9i8de8d_1270x1004.png"></a></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_3fkc4990h47elf541cg3k05lc4ikg_1256x909.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_3fkc4990h47elf541cg3k05lc4ikg_1256x909.png"></a></p>
 <ul>
 <li>grid-auto-columns</li>
 <li>grid-auto-rows</li>
@@ -377,7 +381,7 @@ minmax(100px, auto)：表示网格最小是100px，最大为auto，auto意思是
     grid-template-rows: 90px 90px;
 }
 </code></pre>
-<p><img src="https://user-gold-cdn.xitu.io/2016/12/12/c18240896c8ea2108874dad1c3db5c44?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<p><a data-fancybox="gallery" href="https://user-gold-cdn.xitu.io/2016/12/12/c18240896c8ea2108874dad1c3db5c44?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-height="800"><img src="https://user-gold-cdn.xitu.io/2016/12/12/c18240896c8ea2108874dad1c3db5c44?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></a></p>
 <p>这是2x2的网格，但是我们来用grid-column 和 grid-row给网格项定位如下：</p>
 <pre><code>.item-a {
     grid-column: 1 / 2;
@@ -387,9 +391,9 @@ minmax(100px, auto)：表示网格最小是100px，最大为auto，auto意思是
     grid-column: 5 / 6;
     grid-row: 2 / 3;
 }
-</code></pre><p><img src="https://user-gold-cdn.xitu.io/2016/12/12/50645e52f1d44650e93ee2b410de7e65?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+</code></pre><p><a data-fancybox="gallery" href="https://user-gold-cdn.xitu.io/2016/12/12/50645e52f1d44650e93ee2b410de7e65?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-height="800"><img src="https://user-gold-cdn.xitu.io/2016/12/12/50645e52f1d44650e93ee2b410de7e65?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></a></p>
 <p>我们可以看出，网格项item-b定位在第五根列网格线（column line 5 ）和第六根列网格线（column line 6 ）之间。但是我们网格容器根本不存在这两条网格线，所以就用两个0宽度来填充。在这里我们可以用网格自动行（grid-auto-rows）和网格自动列（grid-auto-columns）来定义这些隐式轨道宽度。</p>
-<p><img src="https://user-gold-cdn.xitu.io/2016/12/12/9bae2992a3f353fc0f1de9d44e20da3e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<p><a data-fancybox="gallery" href="https://user-gold-cdn.xitu.io/2016/12/12/9bae2992a3f353fc0f1de9d44e20da3e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-height="800"><img src="https://user-gold-cdn.xitu.io/2016/12/12/9bae2992a3f353fc0f1de9d44e20da3e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></a></p>
 <ul>
 <li>grid-auto-flow</li>
 </ul>
@@ -428,9 +432,9 @@ dense: 按先后顺序排列。
 }
 </code></pre>
 <p>由于我们设置了grid-auto-flow：row，item-b、item-c和item-d在行上是从左到右排列，如下：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2016/12/12/1514a1df1667618e3259fefcef9a8b9b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<p><a data-fancybox="gallery" href="https://user-gold-cdn.xitu.io/2016/12/12/1514a1df1667618e3259fefcef9a8b9b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-height="800"><img src="https://user-gold-cdn.xitu.io/2016/12/12/1514a1df1667618e3259fefcef9a8b9b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></a></p>
 <p>如果我们设置 grid-auto-flow: column;结果如下：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2016/12/12/4b1c7ece0f66b1d6be3e6a82fad0a1c0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<p><a data-fancybox="gallery" href="https://user-gold-cdn.xitu.io/2016/12/12/4b1c7ece0f66b1d6be3e6a82fad0a1c0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-height="800"><img src="https://user-gold-cdn.xitu.io/2016/12/12/4b1c7ece0f66b1d6be3e6a82fad0a1c0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></a></p>
 <h4 id="网格项目属性"><a href="#网格项目属性" class="headerlink" title="网格项目属性"></a>网格项目属性</h4><p>网格项目属性，是添加在具体的网格单元上来控制网格单元的属性。</p>
 <ul>
 <li>grid-column-start</li>
@@ -449,9 +453,9 @@ span: 跨越轨道的数量。
 span: 跨越轨道直到对应名字的网格线。
 
 auto: 自动展示位置，默认跨度为1。
-</code></pre><p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_66h2dcgef69gg214bgg6k3h99hlf9_1312x715.png" alt=""></p>
+</code></pre><p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_66h2dcgef69gg214bgg6k3h99hlf9_1312x715.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_66h2dcgef69gg214bgg6k3h99hlf9_1312x715.png"></a></p>
 <p>grid-column，grid-row是grid-column-start、grid-column-end 和 grid-row-start、grid-row-end 的简写。</p>
-<p><img src="https://user-gold-cdn.xitu.io/2016/12/12/d2bb8e2996cc62dd620642020463a2ca?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<p><a data-fancybox="gallery" href="https://user-gold-cdn.xitu.io/2016/12/12/d2bb8e2996cc62dd620642020463a2ca?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-height="800"><img src="https://user-gold-cdn.xitu.io/2016/12/12/d2bb8e2996cc62dd620642020463a2ca?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></a></p>
 <ul>
 <li>gid-area</li>
 </ul>
@@ -466,14 +470,14 @@ auto: 自动展示位置，默认跨度为1。
     grid-area: 1 / col-start / last-line / 6;
 }
 </code></pre>
-<p><img src="https://user-gold-cdn.xitu.io/2016/12/12/e6c5321f34896104ac004ee45ac50e58?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<p><a data-fancybox="gallery" href="https://user-gold-cdn.xitu.io/2016/12/12/e6c5321f34896104ac004ee45ac50e58?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-height="800"><img src="https://user-gold-cdn.xitu.io/2016/12/12/e6c5321f34896104ac004ee45ac50e58?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></a></p>
 <ul>
 <li>justify-self</li>
 <li>align-self</li>
 </ul>
 <p>这两属性用来定义单个网格项垂直于列网格线的对齐方式。</p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_639hfc468ffighej44il14j5i4j11_1010x706.png" alt=""></p>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_7ekdll98jiada99247401bf6ehf38_1031x709.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_639hfc468ffighej44il14j5i4j11_1010x706.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_639hfc468ffighej44il14j5i4j11_1010x706.png"></a></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180810_7ekdll98jiada99247401bf6ehf38_1031x709.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180810_7ekdll98jiada99247401bf6ehf38_1031x709.png"></a></p>
 <h3 id="实际布局应用"><a href="#实际布局应用" class="headerlink" title="实际布局应用"></a>实际布局应用</h3><p>说了这么多，下面我们就拿几个常见的布局来应用一下刚刚学到的grid布局。</p>
 <ul>
 <li>左右固定，中间自适应</li>
@@ -502,7 +506,7 @@ auto: 自动展示位置，默认跨度为1。
     background: greenyellow;
 }
 </code></pre>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180811_1af7a6170cgac69gae8875988da5g_1786x510.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180811_1af7a6170cgac69gae8875988da5g_1786x510.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180811_1af7a6170cgac69gae8875988da5g_1786x510.png"></a></p>
 <ul>
 <li>九宫格</li>
 </ul>
@@ -530,7 +534,7 @@ auto: 自动展示位置，默认跨度为1。
     background: lightskyblue;
 }
 </code></pre>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180811_1ek17147c2075fj4g2d9d6gf980h8_938x944.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180811_1ek17147c2075fj4g2d9d6gf980h8_938x944.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180811_1ek17147c2075fj4g2d9d6gf980h8_938x944.png"></a></p>
 <ul>
 <li>圣杯布局和双飞翼布局</li>
 </ul>
@@ -565,7 +569,7 @@ auto: 自动展示位置，默认跨度为1。
     background: yellowgreen;
 }
 </code></pre>
-<p><img src="https://s10.mogucdn.com/mlcdn/c45406/180811_80ic9digjjg4hh0e2kd738fgllj6l_1718x620.png" alt=""></p>
+<p><a data-fancybox="gallery" href="https://s10.mogucdn.com/mlcdn/c45406/180811_80ic9digjjg4hh0e2kd738fgllj6l_1718x620.png" data-height="800"><img src="https://s10.mogucdn.com/mlcdn/c45406/180811_80ic9digjjg4hh0e2kd738fgllj6l_1718x620.png"></a></p>
 <h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>但是也不要放弃flex-layout，它是目前为止最厉害的页面布局属性，是时代召唤的结果，只是它并不适合布局整个页面框架。flex在响应式布局中是很关键的，它是内容驱动型的布局。不需要预先知道会有什么内容，可以设定元素如何分配剩余的空间以及在空间不足的时候如何表现。显得较为强大的是一维布局的能力，而grid优势在于二维布局。这也是他们设计的初衷。</p>
 <p>大概可以设想，网格布局被广泛支持之后会出现很多网格布局内嵌flex的布局情形。</p>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
@@ -645,7 +649,7 @@ auto: 自动展示位置，默认跨度为1。
 						<div class="item-title"><a href="/start-scroll-snap/">初见Scroll-Snap</a></div>
 						<div class="item-meta clearfix">
 							<div class="item-meta-date" style="color: #5f5f5f;">Oct 18, 2018</div>
-							<div class="item-meta-ico bg-ico-link" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
+							<div class="item-meta-ico bg-ico-chat" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
                             <div class="item-meta-cat">
                                 
                                 <a href="/categories/Tutorials/">Tutorials</a>
