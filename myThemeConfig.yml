@@ -156,4 +156,4 @@ music:
   server: netease # music platform: netease, tencent, kugou, xiami, baidu
   type: song # song, playlist, album, search, artist
   auto: # music link, support: netease, tencent, xiami
-  autoplay: true # 是否自动播放
+  autoplay: false # 是否自动播放
